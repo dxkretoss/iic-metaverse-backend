@@ -28,9 +28,11 @@ const PAGE_SECTIONS = {
   ],
   about: [
     { id: 'about-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
+    { id: 'about-gallery', name: 'Gallery & Who We Are', icon: 'fa-circle' },
+    { id: 'about-owners', name: 'Leadership / Owners Management', icon: 'fa-user' },
     { id: 'vision-mission', name: 'Vision & Mission', icon: 'fa-eye' },
     { id: 'ecosystem', name: 'Strong Ecosystem', icon: 'fa-network-wired' },
-    { id: 'team', name: 'Team Introduction', icon: 'fa-users-gear' }
+    { id: 'spotlight', name: 'Community Spotlight', icon: 'fa-earth-americas' },
   ],
   technology: [
     { id: 'tech-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
@@ -173,8 +175,6 @@ const DEFAULT_VALUES = {
     ],
     ecosystemImage: "/assests/images/Innovativesolutions.svg",
     ecosystemBgImage: "",
-    teamHeading: "Leading The Revolution",
-    teamDescription: "Meet the decentralized finance engineers, security auditors, and product builders shaping the IIC ecosystem.",
 
     // Leadership Defaults
     owner1Image: "/assests/images/ArshadMahmood.svg",
@@ -210,6 +210,7 @@ const DEFAULT_VALUES = {
     supplyDistribution: "50% Staking Rewards, 20% Ecosystem Development, 15% Public Sale, 10% Team, 5% Advisers"
   },
   contact: {
+    contactHeroTopDescription:'Let’s Build the Future Together',
     contactHeroTitle: "Get in Touch",
     contactHeroDescription: "Have questions about integration or institutional partnerships? Our 24/7 technical team is here to assist.",
     supportEmail: "support@iic-metaverse.com",
@@ -620,8 +621,26 @@ function populateForm(data) {
     document.getElementById('remove_ecosystemBgImage').value = 'false';
     renderEcosystemParagraphsEditor(data.ecosystemParagraphs || []);
 
-    document.getElementById('teamHeading').value = data.teamHeading || '';
-    document.getElementById('teamDescription').value = data.teamDescription || '';
+    document.getElementById('spotlightTitle').value = data.spotlightTitle || '';
+    renderSpotlightParagraphsEditor(data.spotlightParagraphs || []);
+    document.getElementById('spotlightPrimaryBtnText').value = data.ctaPrimaryBtnText || '';
+    document.getElementById('spotlightPrimaryBtnLink').value = data.ctaPrimaryBtnLink || '';
+    document.getElementById('spotlightSecondaryBtnText').value = data.ctaSecondaryBtnText || '';
+    document.getElementById('spotlightSecondaryBtnLink').value = data.ctaSecondaryBtnLink || '';
+
+    // document.getElementById('spotlightTopIcon-preview').src = data.spotlightTopIcon || '';
+
+    // Metaverse Image
+    // document.getElementById('spotlightLetter1Image-preview').src = data.spotlightLetter1Image || '';
+    // document.getElementById('spotlightLetter2Image-preview').src = data.spotlightLetter2Image || '';
+    // document.getElementById('spotlightLetter3Image-preview').src = data.spotlightLetter3Image || '';
+    // document.getElementById('spotlightLetter4Image-preview').src = data.spotlightLetter4Image || '';
+    // document.getElementById('spotlightLetter5Image-preview').src = data.spotlightLetter5Image || '';
+    // document.getElementById('spotlightLetter6Image-preview').src = data.spotlightLetter6Image || '';
+    // document.getElementById('spotlightLetter7Image-preview').src = data.spotlightLetter7Image || '';
+    // document.getElementById('spotlightLetter8Image-preview').src = data.spotlightLetter8Image || '';
+    // document.getElementById('spotlightLetter9Image-preview').src = data.spotlightLetter9Image || '';
+
   }
 
   // 3. Technology Inputs
@@ -648,6 +667,7 @@ function populateForm(data) {
   else if (activePage === 'contact') {
     document.getElementById('contactHeroTitle').value = data.contactHeroTitle || '';
     document.getElementById('contactHeroDescription').value = data.contactHeroDescription || '';
+    document.getElementById('contactHeroTopDescription').value = data.contactHeroTopDescription || '';
     document.getElementById('supportEmail').value = data.supportEmail || '';
     document.getElementById('officeAddress').value = data.officeAddress || '';
     document.getElementById('telegramLink').value = data.telegramLink || '';
@@ -664,7 +684,6 @@ form.addEventListener('submit', async (e) => {
   btnSave.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Syncing in database...';
 
   const formData = new FormData();
-
   // Map page values selectively based on active page selection
   if (activePage === 'home') {
     formData.append('heroTopHeader', document.getElementById('heroTopHeader').value);
@@ -957,6 +976,7 @@ form.addEventListener('submit', async (e) => {
     }
 
     formData.append('spotlightTitle', document.getElementById('spotlightTitle').value);
+
     formData.append('spotlightPrimaryBtnText', document.getElementById('spotlightPrimaryBtnText').value);
     formData.append('spotlightPrimaryBtnLink', document.getElementById('spotlightPrimaryBtnLink').value);
     formData.append('spotlightSecondaryBtnText', document.getElementById('spotlightSecondaryBtnText').value);
@@ -968,8 +988,7 @@ form.addEventListener('submit', async (e) => {
     });
     formData.append('spotlightParagraphs', JSON.stringify(spotlightParagraphs));
 
-    formData.append('teamHeading', document.getElementById('teamHeading').value);
-    formData.append('teamDescription', document.getElementById('teamDescription').value);
+    // formData.append('teamDescription', document.getElementById('teamDescription').value);
   }
 
   else if (activePage === 'technology') {
@@ -993,6 +1012,7 @@ form.addEventListener('submit', async (e) => {
   else if (activePage === 'contact') {
     formData.append('contactHeroTitle', document.getElementById('contactHeroTitle').value);
     formData.append('contactHeroDescription', document.getElementById('contactHeroDescription').value);
+    formData.append('contactHeroTopDescription', document.getElementById('contactHeroTopDescription').value);
     formData.append('supportEmail', document.getElementById('supportEmail').value);
     formData.append('officeAddress', document.getElementById('officeAddress').value);
     formData.append('telegramLink', document.getElementById('telegramLink').value);

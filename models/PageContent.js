@@ -241,8 +241,6 @@ const pageContentSchema = new mongoose.Schema({
   spotlightLetter8Image: { type: String, default: "/assests/images/s.svg" },
   spotlightLetter9Image: { type: String, default: "/assests/images/e.svg" },
 
-  teamHeading: { type: String, default: "Leading The Revolution" },
-  teamDescription: { type: String, default: "Meet the decentralized finance engineers, security auditors, and product builders shaping the IIC ecosystem." },
 
   // Owners / Bios Section
   owner1Image: { type: String, default: "/assests/images/ArshadMahmood.svg" },
@@ -285,6 +283,7 @@ const pageContentSchema = new mongoose.Schema({
   supplyDistribution: { type: String, default: "50% Staking Rewards, 20% Ecosystem Development, 15% Public Sale, 10% Team, 5% Advisers" },
 
   // 5. Contact Us Page Fields
+  contactHeroTopDescription: { type: String, default: "Let’s Build the Future Together" },
   contactHeroTitle: { type: String, default: "Get in Touch" },
   contactHeroDescription: { type: String, default: "Have questions about integration or institutional partnerships? Our 24/7 technical team is here to assist." },
   supportEmail: { type: String, default: "support@iic-metaverse.com" },
