@@ -267,6 +267,7 @@ const pageContentSchema = new mongoose.Schema({
   },
 
   // 3. Technology Page Fields
+  techHeroTopTitle: { type: String, default: "Engineered for the Next Generation of Digital Economy" },
   techHeroTitle: { type: String, default: "Next-Gen Tech Infrastructure" },
   techHeroDescription: { type: String, default: "Deep dive into our highly secure smart contracts, AI trade optimizations, and custom cross-chain layers." },
   coreTechTitle: { type: String, default: "Core Blockchain Capabilities" },

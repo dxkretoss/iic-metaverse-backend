@@ -195,6 +195,7 @@ const DEFAULT_VALUES = {
     ]
   },
   technology: {
+    techHeroTopTitle: "Engineered for the Next Generation of Digital Economy",
     techHeroTitle: "Next-Gen Tech Infrastructure",
     techHeroDescription: "Deep dive into our highly secure smart contracts, AI trade optimizations, and custom cross-chain layers.",
     coreTechTitle: "Core Blockchain Capabilities",
@@ -883,6 +884,7 @@ function populateForm(data) {
 
   // 3. Technology Inputs
   else if (activePage === 'technology') {
+    document.getElementById('techHeroTopTitle').value = data.techHeroTopTitle || '';
     document.getElementById('techHeroTitle').value = data.techHeroTitle || '';
     document.getElementById('techHeroDescription').value = data.techHeroDescription || '';
     document.getElementById('coreTechTitle').value = data.coreTechTitle || '';
@@ -1257,7 +1259,8 @@ form.addEventListener('submit', async (e) => {
   }
 
   else if (activePage === 'technology') {
-    formData.append('techHeroTitle', document.getElementById('techHeroTitle').value);
+    formData.append('techHeroTopTitle', document.getElementById('techHeroTopTitle').value);
+     formData.append('techHeroTitle', document.getElementById('techHeroTitle').value);
     formData.append('techHeroDescription', document.getElementById('techHeroDescription').value);
     formData.append('coreTechTitle', document.getElementById('coreTechTitle').value);
     formData.append('coreTechDescription', document.getElementById('coreTechDescription').value);
