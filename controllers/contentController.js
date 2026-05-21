@@ -85,6 +85,13 @@ const updateContent = async (req, res) => {
           } catch (parseErr) {
             console.error('Failed to parse dynamic contactGlobalParagraphs JSON:', parseErr);
           }
+
+        } else if (['techCard1Paragraphs', 'techCard2TopParagraphs', 'techCard2BottomParagraphs', 'techCard3Paragraphs', 'techSmartCheckpoints', 'techSecuritySlider2FeatureList', 'techCostParagraphs'].includes(field)) {
+          try {
+            content[field] = JSON.parse(fields[field]);
+          } catch (parseErr) {
+            console.error('Failed to parse dynamic JSON for', field, parseErr);
+          }
         } else if (!field.startsWith('featureTitle') && !field.startsWith('remove_')) { // skip featureTitles & remove flags
           content[field] = fields[field];
         }
@@ -204,8 +211,138 @@ const updateContent = async (req, res) => {
       }
     }
 
+        if (fields.remove_techCard1BgImage === 'true') content.techCard1BgImage = '';
+    if (fields.remove_techCard1Image === 'true') content.techCard1Image = '';
+    if (fields.remove_techCard2Point1Icon === 'true') content.techCard2Point1Icon = '';
+    if (fields.remove_techCard2Point2Icon === 'true') content.techCard2Point2Icon = '';
+    if (fields.remove_techCard2Point3Icon === 'true') content.techCard2Point3Icon = '';
+    if (fields.remove_techCard2Point4Icon === 'true') content.techCard2Point4Icon = '';
+    if (fields.remove_techCard2BgImage === 'true') content.techCard2BgImage = '';
+    if (fields.remove_techCard2Image === 'true') content.techCard2Image = '';
+    if (fields.remove_techCard3Point1Icon === 'true') content.techCard3Point1Icon = '';
+    if (fields.remove_techCard3Point2Icon === 'true') content.techCard3Point2Icon = '';
+    if (fields.remove_techCard3Point3Icon === 'true') content.techCard3Point3Icon = '';
+    if (fields.remove_techCard3BgImage === 'true') content.techCard3BgImage = '';
+    if (fields.remove_techCard3Image === 'true') content.techCard3Image = '';
+
+        if (fields.remove_techConsensusCard1Icon === 'true') content.techConsensusCard1Icon = '';
+    if (fields.remove_techConsensusCard2Icon === 'true') content.techConsensusCard2Icon = '';
+    if (fields.remove_techConsensusCard3Icon === 'true') content.techConsensusCard3Icon = '';
+    if (fields.remove_techSmartFeature1Icon === 'true') content.techSmartFeature1Icon = '';
+    if (fields.remove_techSmartFeature2Icon === 'true') content.techSmartFeature2Icon = '';
+    if (fields.remove_techSmartFeature3Icon === 'true') content.techSmartFeature3Icon = '';
+    if (fields.remove_techSmartRightBgImage === 'true') content.techSmartRightBgImage = '';
+    if (fields.remove_techSmartRightImage === 'true') content.techSmartRightImage = '';
+
+        if (fields.remove_techSlide1Image === 'true') content.techSlide1Image = '';
+    if (fields.remove_techSlide1Point1Icon === 'true') content.techSlide1Point1Icon = '';
+    if (fields.remove_techSlide1Point2Icon === 'true') content.techSlide1Point2Icon = '';
+    if (fields.remove_techSlide1Feature1Icon === 'true') content.techSlide1Feature1Icon = '';
+    if (fields.remove_techSlide1Feature2Icon === 'true') content.techSlide1Feature2Icon = '';
+    if (fields.remove_techSlide1Feature3Icon === 'true') content.techSlide1Feature3Icon = '';
+    if (fields.remove_techSlide2Image === 'true') content.techSlide2Image = '';
+    if (fields.remove_techSlide2Feature1Icon === 'true') content.techSlide2Feature1Icon = '';
+    if (fields.remove_techSlide2Feature2Icon === 'true') content.techSlide2Feature2Icon = '';
+    if (fields.remove_techSlide2Feature3Icon === 'true') content.techSlide2Feature3Icon = '';
+    if (fields.remove_techSlide3Image === 'true') content.techSlide3Image = '';
+    if (fields.remove_techSlide3Feature1Icon === 'true') content.techSlide3Feature1Icon = '';
+    if (fields.remove_techSlide3Feature2Icon === 'true') content.techSlide3Feature2Icon = '';
+    if (fields.remove_techSlide3Feature3Icon === 'true') content.techSlide3Feature3Icon = '';
+
+        if (fields.remove_techSecuritySlider1Feature1Icon === 'true') content.techSecuritySlider1Feature1Icon = '';
+    if (fields.remove_techSecuritySlider1Feature2Icon === 'true') content.techSecuritySlider1Feature2Icon = '';
+    if (fields.remove_techSecuritySlider1Feature3Icon === 'true') content.techSecuritySlider1Feature3Icon = '';
+    if (fields.remove_techSecuritySlider1RightImage === 'true') content.techSecuritySlider1RightImage = '';
+    if (fields.remove_techSecuritySlider1RightBgImage === 'true') content.techSecuritySlider1RightBgImage = '';
+    if (fields.remove_techSecuritySlider2Point1Icon === 'true') content.techSecuritySlider2Point1Icon = '';
+    if (fields.remove_techSecuritySlider2Point2Icon === 'true') content.techSecuritySlider2Point2Icon = '';
+
+        if (fields.remove_techSecuritySlider2RightImage === 'true') content.techSecuritySlider2RightImage = '';
+    if (fields.remove_techSecuritySlider2RightBgImage === 'true') content.techSecuritySlider2RightBgImage = '';
+
+        if (fields.remove_techTransparencyCard1Icon === 'true') content.techTransparencyCard1Icon = '';
+    if (fields.remove_techTransparencyCard2Icon === 'true') content.techTransparencyCard2Icon = '';
+    if (fields.remove_techTransparencyCard3Icon === 'true') content.techTransparencyCard3Icon = '';
+    if (fields.remove_techTransparencyCard4Icon === 'true') content.techTransparencyCard4Icon = '';
+
+        if (fields.remove_techCompAdvFeature1Icon === 'true') content.techCompAdvFeature1Icon = '';
+    if (fields.remove_techCompAdvFeature2Icon === 'true') content.techCompAdvFeature2Icon = '';
+    if (fields.remove_techCompAdvFeature3Icon === 'true') content.techCompAdvFeature3Icon = '';
+    if (fields.remove_techCompAdvPoint1Icon === 'true') content.techCompAdvPoint1Icon = '';
+    if (fields.remove_techCompAdvPoint2Icon === 'true') content.techCompAdvPoint2Icon = '';
+    if (fields.remove_techCompAdvPoint3Icon === 'true') content.techCompAdvPoint3Icon = '';
+    if (fields.remove_techCompAdvRightImage === 'true') content.techCompAdvRightImage = '';
+    if (fields.remove_techCompAdvRightBgImage === 'true') content.techCompAdvRightBgImage = '';
+    if (fields.remove_techFutureTopRightImage === 'true') content.techFutureTopRightImage = '';
+    if (fields.remove_techFutureBottomLeftImage === 'true') content.techFutureBottomLeftImage = '';
+
     // Handle File Upload paths if files were submitted
     if (req.files) {
+      if (req.files.techCompAdvFeature1Icon && req.files.techCompAdvFeature1Icon[0]) content.techCompAdvFeature1Icon = '/uploads/' + req.files.techCompAdvFeature1Icon[0].filename;
+      if (req.files.techCompAdvFeature2Icon && req.files.techCompAdvFeature2Icon[0]) content.techCompAdvFeature2Icon = '/uploads/' + req.files.techCompAdvFeature2Icon[0].filename;
+      if (req.files.techCompAdvFeature3Icon && req.files.techCompAdvFeature3Icon[0]) content.techCompAdvFeature3Icon = '/uploads/' + req.files.techCompAdvFeature3Icon[0].filename;
+      if (req.files.techCompAdvPoint1Icon && req.files.techCompAdvPoint1Icon[0]) content.techCompAdvPoint1Icon = '/uploads/' + req.files.techCompAdvPoint1Icon[0].filename;
+      if (req.files.techCompAdvPoint2Icon && req.files.techCompAdvPoint2Icon[0]) content.techCompAdvPoint2Icon = '/uploads/' + req.files.techCompAdvPoint2Icon[0].filename;
+      if (req.files.techCompAdvPoint3Icon && req.files.techCompAdvPoint3Icon[0]) content.techCompAdvPoint3Icon = '/uploads/' + req.files.techCompAdvPoint3Icon[0].filename;
+      if (req.files.techCompAdvRightImage && req.files.techCompAdvRightImage[0]) content.techCompAdvRightImage = '/uploads/' + req.files.techCompAdvRightImage[0].filename;
+      if (req.files.techCompAdvRightBgImage && req.files.techCompAdvRightBgImage[0]) content.techCompAdvRightBgImage = '/uploads/' + req.files.techCompAdvRightBgImage[0].filename;
+      if (req.files.techFutureTopRightImage && req.files.techFutureTopRightImage[0]) content.techFutureTopRightImage = '/uploads/' + req.files.techFutureTopRightImage[0].filename;
+      if (req.files.techFutureBottomLeftImage && req.files.techFutureBottomLeftImage[0]) content.techFutureBottomLeftImage = '/uploads/' + req.files.techFutureBottomLeftImage[0].filename;
+
+      if (req.files.techTransparencyCard1Icon && req.files.techTransparencyCard1Icon[0]) content.techTransparencyCard1Icon = '/uploads/' + req.files.techTransparencyCard1Icon[0].filename;
+      if (req.files.techTransparencyCard2Icon && req.files.techTransparencyCard2Icon[0]) content.techTransparencyCard2Icon = '/uploads/' + req.files.techTransparencyCard2Icon[0].filename;
+      if (req.files.techTransparencyCard3Icon && req.files.techTransparencyCard3Icon[0]) content.techTransparencyCard3Icon = '/uploads/' + req.files.techTransparencyCard3Icon[0].filename;
+      if (req.files.techTransparencyCard4Icon && req.files.techTransparencyCard4Icon[0]) content.techTransparencyCard4Icon = '/uploads/' + req.files.techTransparencyCard4Icon[0].filename;
+
+      if (req.files.techSecuritySlider2RightImage && req.files.techSecuritySlider2RightImage[0]) content.techSecuritySlider2RightImage = '/uploads/' + req.files.techSecuritySlider2RightImage[0].filename;
+      if (req.files.techSecuritySlider2RightBgImage && req.files.techSecuritySlider2RightBgImage[0]) content.techSecuritySlider2RightBgImage = '/uploads/' + req.files.techSecuritySlider2RightBgImage[0].filename;
+
+      if (req.files.techSecuritySlider1Feature1Icon && req.files.techSecuritySlider1Feature1Icon[0]) content.techSecuritySlider1Feature1Icon = '/uploads/' + req.files.techSecuritySlider1Feature1Icon[0].filename;
+      if (req.files.techSecuritySlider1Feature2Icon && req.files.techSecuritySlider1Feature2Icon[0]) content.techSecuritySlider1Feature2Icon = '/uploads/' + req.files.techSecuritySlider1Feature2Icon[0].filename;
+      if (req.files.techSecuritySlider1Feature3Icon && req.files.techSecuritySlider1Feature3Icon[0]) content.techSecuritySlider1Feature3Icon = '/uploads/' + req.files.techSecuritySlider1Feature3Icon[0].filename;
+      if (req.files.techSecuritySlider1RightImage && req.files.techSecuritySlider1RightImage[0]) content.techSecuritySlider1RightImage = '/uploads/' + req.files.techSecuritySlider1RightImage[0].filename;
+      if (req.files.techSecuritySlider1RightBgImage && req.files.techSecuritySlider1RightBgImage[0]) content.techSecuritySlider1RightBgImage = '/uploads/' + req.files.techSecuritySlider1RightBgImage[0].filename;
+      if (req.files.techSecuritySlider2Point1Icon && req.files.techSecuritySlider2Point1Icon[0]) content.techSecuritySlider2Point1Icon = '/uploads/' + req.files.techSecuritySlider2Point1Icon[0].filename;
+      if (req.files.techSecuritySlider2Point2Icon && req.files.techSecuritySlider2Point2Icon[0]) content.techSecuritySlider2Point2Icon = '/uploads/' + req.files.techSecuritySlider2Point2Icon[0].filename;
+
+      if (req.files.techSlide1Image && req.files.techSlide1Image[0]) content.techSlide1Image = '/uploads/' + req.files.techSlide1Image[0].filename;
+      if (req.files.techSlide1Point1Icon && req.files.techSlide1Point1Icon[0]) content.techSlide1Point1Icon = '/uploads/' + req.files.techSlide1Point1Icon[0].filename;
+      if (req.files.techSlide1Point2Icon && req.files.techSlide1Point2Icon[0]) content.techSlide1Point2Icon = '/uploads/' + req.files.techSlide1Point2Icon[0].filename;
+      if (req.files.techSlide1Feature1Icon && req.files.techSlide1Feature1Icon[0]) content.techSlide1Feature1Icon = '/uploads/' + req.files.techSlide1Feature1Icon[0].filename;
+      if (req.files.techSlide1Feature2Icon && req.files.techSlide1Feature2Icon[0]) content.techSlide1Feature2Icon = '/uploads/' + req.files.techSlide1Feature2Icon[0].filename;
+      if (req.files.techSlide1Feature3Icon && req.files.techSlide1Feature3Icon[0]) content.techSlide1Feature3Icon = '/uploads/' + req.files.techSlide1Feature3Icon[0].filename;
+      if (req.files.techSlide2Image && req.files.techSlide2Image[0]) content.techSlide2Image = '/uploads/' + req.files.techSlide2Image[0].filename;
+      if (req.files.techSlide2Feature1Icon && req.files.techSlide2Feature1Icon[0]) content.techSlide2Feature1Icon = '/uploads/' + req.files.techSlide2Feature1Icon[0].filename;
+      if (req.files.techSlide2Feature2Icon && req.files.techSlide2Feature2Icon[0]) content.techSlide2Feature2Icon = '/uploads/' + req.files.techSlide2Feature2Icon[0].filename;
+      if (req.files.techSlide2Feature3Icon && req.files.techSlide2Feature3Icon[0]) content.techSlide2Feature3Icon = '/uploads/' + req.files.techSlide2Feature3Icon[0].filename;
+      if (req.files.techSlide3Image && req.files.techSlide3Image[0]) content.techSlide3Image = '/uploads/' + req.files.techSlide3Image[0].filename;
+      if (req.files.techSlide3Feature1Icon && req.files.techSlide3Feature1Icon[0]) content.techSlide3Feature1Icon = '/uploads/' + req.files.techSlide3Feature1Icon[0].filename;
+      if (req.files.techSlide3Feature2Icon && req.files.techSlide3Feature2Icon[0]) content.techSlide3Feature2Icon = '/uploads/' + req.files.techSlide3Feature2Icon[0].filename;
+      if (req.files.techSlide3Feature3Icon && req.files.techSlide3Feature3Icon[0]) content.techSlide3Feature3Icon = '/uploads/' + req.files.techSlide3Feature3Icon[0].filename;
+
+      if (req.files.techConsensusCard1Icon && req.files.techConsensusCard1Icon[0]) content.techConsensusCard1Icon = '/uploads/' + req.files.techConsensusCard1Icon[0].filename;
+      if (req.files.techConsensusCard2Icon && req.files.techConsensusCard2Icon[0]) content.techConsensusCard2Icon = '/uploads/' + req.files.techConsensusCard2Icon[0].filename;
+      if (req.files.techConsensusCard3Icon && req.files.techConsensusCard3Icon[0]) content.techConsensusCard3Icon = '/uploads/' + req.files.techConsensusCard3Icon[0].filename;
+      if (req.files.techSmartFeature1Icon && req.files.techSmartFeature1Icon[0]) content.techSmartFeature1Icon = '/uploads/' + req.files.techSmartFeature1Icon[0].filename;
+      if (req.files.techSmartFeature2Icon && req.files.techSmartFeature2Icon[0]) content.techSmartFeature2Icon = '/uploads/' + req.files.techSmartFeature2Icon[0].filename;
+      if (req.files.techSmartFeature3Icon && req.files.techSmartFeature3Icon[0]) content.techSmartFeature3Icon = '/uploads/' + req.files.techSmartFeature3Icon[0].filename;
+      if (req.files.techSmartRightBgImage && req.files.techSmartRightBgImage[0]) content.techSmartRightBgImage = '/uploads/' + req.files.techSmartRightBgImage[0].filename;
+      if (req.files.techSmartRightImage && req.files.techSmartRightImage[0]) content.techSmartRightImage = '/uploads/' + req.files.techSmartRightImage[0].filename;
+
+      if (req.files.techCard1BgImage && req.files.techCard1BgImage[0]) content.techCard1BgImage = '/uploads/' + req.files.techCard1BgImage[0].filename;
+      if (req.files.techCard1Image && req.files.techCard1Image[0]) content.techCard1Image = '/uploads/' + req.files.techCard1Image[0].filename;
+      if (req.files.techCard2Point1Icon && req.files.techCard2Point1Icon[0]) content.techCard2Point1Icon = '/uploads/' + req.files.techCard2Point1Icon[0].filename;
+      if (req.files.techCard2Point2Icon && req.files.techCard2Point2Icon[0]) content.techCard2Point2Icon = '/uploads/' + req.files.techCard2Point2Icon[0].filename;
+      if (req.files.techCard2Point3Icon && req.files.techCard2Point3Icon[0]) content.techCard2Point3Icon = '/uploads/' + req.files.techCard2Point3Icon[0].filename;
+      if (req.files.techCard2Point4Icon && req.files.techCard2Point4Icon[0]) content.techCard2Point4Icon = '/uploads/' + req.files.techCard2Point4Icon[0].filename;
+      if (req.files.techCard2BgImage && req.files.techCard2BgImage[0]) content.techCard2BgImage = '/uploads/' + req.files.techCard2BgImage[0].filename;
+      if (req.files.techCard2Image && req.files.techCard2Image[0]) content.techCard2Image = '/uploads/' + req.files.techCard2Image[0].filename;
+      if (req.files.techCard3Point1Icon && req.files.techCard3Point1Icon[0]) content.techCard3Point1Icon = '/uploads/' + req.files.techCard3Point1Icon[0].filename;
+      if (req.files.techCard3Point2Icon && req.files.techCard3Point2Icon[0]) content.techCard3Point2Icon = '/uploads/' + req.files.techCard3Point2Icon[0].filename;
+      if (req.files.techCard3Point3Icon && req.files.techCard3Point3Icon[0]) content.techCard3Point3Icon = '/uploads/' + req.files.techCard3Point3Icon[0].filename;
+      if (req.files.techCard3BgImage && req.files.techCard3BgImage[0]) content.techCard3BgImage = '/uploads/' + req.files.techCard3BgImage[0].filename;
+      if (req.files.techCard3Image && req.files.techCard3Image[0]) content.techCard3Image = '/uploads/' + req.files.techCard3Image[0].filename;
+
       if (req.files.dinaarImage && req.files.dinaarImage[0]) {
         content.dinaarImage = `/uploads/${req.files.dinaarImage[0].filename}`;
       }

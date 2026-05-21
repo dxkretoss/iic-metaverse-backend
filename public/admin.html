@@ -131,16 +131,26 @@
                 placeholder="Enter description text..."></textarea>
             </div>
             <div class="grid-layout cols-2">
+              
               <div class="form-group">
                 <label for="heroPrimaryBtnText">Primary Button Text</label>
                 <input type="text" id="heroPrimaryBtnText" name="heroPrimaryBtnText" required
                   placeholder="Explore Token Economy">
               </div>
               <div class="form-group">
+                <label for="heroPrimaryBtnLink">Primary Button Link</label>
+                <input type="text" id="heroPrimaryBtnLink" name="heroPrimaryBtnLink">
+              </div>
+              <div class="form-group">
                 <label for="heroSecondaryBtnText">Secondary Button Text</label>
                 <input type="text" id="heroSecondaryBtnText" name="heroSecondaryBtnText" required
                   placeholder="Get started">
               </div>
+              <div class="form-group">
+                <label for="heroSecondaryBtnLink">Secondary Button Link</label>
+                <input type="text" id="heroSecondaryBtnLink" name="heroSecondaryBtnLink">
+              </div>
+
             </div>
           </div>
         </section>
@@ -1889,7 +1899,7 @@
             <span class="section-tag">Hero</span>
           </div>
           <div class="card-body">
-              <div class="form-group">
+            <div class="form-group">
               <label for="techHeroTopTitle">Top Title</label>
               <input type="text" id="techHeroTopTitle" name="techHeroTopTitle">
             </div>
@@ -1902,49 +1912,1461 @@
               <textarea id="techHeroDescription" name="techHeroDescription" rows="3"></textarea>
             </div>
           </div>
+          <div class="grid-layout cols-2 mb20">
+            <div class="form-group">
+              <label for="techHeroPrimaryBtnText">Primary Button Text</label>
+              <input type="text" id="techHeroPrimaryBtnText" name="techHeroPrimaryBtnText" required>
+            </div>
+            <div class="form-group">
+              <label for="techHeroPrimaryBtnLink">Primary Button Link</label>
+              <input type="text" id="techHeroPrimaryBtnLink" name="techHeroPrimaryBtnLink">
+            </div>
+            <div class="form-group">
+              <label for="techHeroSecondaryBtnText">Secondary Button Text</label>
+              <input type="text" id="techHeroSecondaryBtnText" name="techHeroSecondaryBtnText">
+            </div>
+            <div class="form-group">
+              <label for="techHeroSecondaryBtnLink">Secondary Button Link</label>
+              <input type="text" id="techHeroSecondaryBtnLink" name="techHeroSecondaryBtnLink">
+            </div>
+          </div>
         </section>
-
-        <!-- CORE TECH -->
-        <section id="sec-core-tech" class="form-card section-block page-section-technology">
+        <!-- TECH HERO CARD 1 -->
+        <section id="sec-tech-card-1" class="form-card section-block page-section-technology">
           <div class="card-header">
             <div class="header-title">
-              <i class="fa-solid fa-microchip card-icon"></i>
-              <h2>Core Tech Capabilities</h2>
+              <i class="fa-solid fa-square-poll-vertical card-icon"></i>
+              <h2>Tech Hero Card 1</h2>
             </div>
-            <span class="section-tag">Infrastructure</span>
+            <span class="section-tag">Hero</span>
           </div>
           <div class="card-body">
             <div class="form-group">
-              <label for="coreTechTitle">Title Label</label>
-              <input type="text" id="coreTechTitle" name="coreTechTitle">
+              <label for="techCard1Title">Card Title</label>
+              <input type="text" id="techCard1Title" name="techCard1Title">
+            </div>
+            
+            <div class="dynamic-paragraphs-group mb20">
+              <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Card Description (Paragraphs)</label>
+                <button type="button" class="btn btn-upload" onclick="addParagraphField('techCard1Paragraphs')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-plus"></i> Add Paragraph</button>
+              </div>
+              <div id="techCard1Paragraphs-container" class="paragraphs-container">
+                <!-- Dynamically loaded -->
+              </div>
+              <input type="hidden" id="techCard1Paragraphs" name="techCard1Paragraphs" value="[]">
+            </div>
+
+            <div class="sub-card-group-title mt20">Section Images</div>
+            <div class="grid-layout cols-2 mb20">
+              <!-- Right Side Background Image -->
+              <div class="sub-card">
+                <h3>Right Side Background Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard1BgImage-preview" src="" alt="Right Side Background" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard1BgImage" name="techCard1BgImage" accept="image/*" onchange="previewImage(this, 'techCard1BgImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard1BgImage', 'techCard1BgImage-preview', 'remove_techCard1BgImage', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard1BgImage" name="remove_techCard1BgImage" value="false">
+                </div>
+              </div>
+
+              <!-- Right Side Image -->
+              <div class="sub-card">
+                <h3>Right Side Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard1Image-preview" src="" alt="Right Side Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard1Image" name="techCard1Image" accept="image/*" onchange="previewImage(this, 'techCard1Image-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard1Image', 'techCard1Image-preview', 'remove_techCard1Image', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard1Image" name="remove_techCard1Image" value="false">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH HERO CARD 2 -->
+        <section id="sec-tech-card-2" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-square-poll-vertical card-icon"></i>
+              <h2>Tech Hero Card 2</h2>
+            </div>
+            <span class="section-tag">Hero</span>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="techCard2Title">Card Title</label>
+              <input type="text" id="techCard2Title" name="techCard2Title">
+            </div>
+            
+            <div class="dynamic-paragraphs-group mb20">
+              <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Top Description (Paragraphs)</label>
+                <button type="button" class="btn btn-upload" onclick="addParagraphField('techCard2TopParagraphs')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-plus"></i> Add Paragraph</button>
+              </div>
+              <div id="techCard2TopParagraphs-container" class="paragraphs-container">
+                <!-- Dynamically loaded -->
+              </div>
+              <input type="hidden" id="techCard2TopParagraphs" name="techCard2TopParagraphs" value="[]">
+            </div>
+
+            <div class="sub-card-group-title mt20">Feature Points (Up to 4)</div>
+            <div class="grid-layout cols-2 mb20">
+              <!-- Point 1 -->
+              <div class="sub-card">
+                <h3>Point 1</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard2Point1Icon-preview" src="" alt="Icon 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard2Point1Icon" name="techCard2Point1Icon" accept="image/*" onchange="previewImage(this, 'techCard2Point1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard2Point1Icon', 'techCard2Point1Icon-preview', 'remove_techCard2Point1Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard2Point1Icon" name="remove_techCard2Point1Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard2Point1Text">Text</label>
+                  <input type="text" id="techCard2Point1Text" name="techCard2Point1Text">
+                </div>
+              </div>
+
+              <!-- Point 2 -->
+              <div class="sub-card">
+                <h3>Point 2</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard2Point2Icon-preview" src="" alt="Icon 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard2Point2Icon" name="techCard2Point2Icon" accept="image/*" onchange="previewImage(this, 'techCard2Point2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard2Point2Icon', 'techCard2Point2Icon-preview', 'remove_techCard2Point2Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard2Point2Icon" name="remove_techCard2Point2Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard2Point2Text">Text</label>
+                  <input type="text" id="techCard2Point2Text" name="techCard2Point2Text">
+                </div>
+              </div>
+
+              <!-- Point 3 -->
+              <div class="sub-card">
+                <h3>Point 3</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard2Point3Icon-preview" src="" alt="Icon 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard2Point3Icon" name="techCard2Point3Icon" accept="image/*" onchange="previewImage(this, 'techCard2Point3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard2Point3Icon', 'techCard2Point3Icon-preview', 'remove_techCard2Point3Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard2Point3Icon" name="remove_techCard2Point3Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard2Point3Text">Text</label>
+                  <input type="text" id="techCard2Point3Text" name="techCard2Point3Text">
+                </div>
+              </div>
+
+              <!-- Point 4 -->
+              <div class="sub-card">
+                <h3>Point 4</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard2Point4Icon-preview" src="" alt="Icon 4" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard2Point4Icon" name="techCard2Point4Icon" accept="image/*" onchange="previewImage(this, 'techCard2Point4Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard2Point4Icon', 'techCard2Point4Icon-preview', 'remove_techCard2Point4Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard2Point4Icon" name="remove_techCard2Point4Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard2Point4Text">Text</label>
+                  <input type="text" id="techCard2Point4Text" name="techCard2Point4Text">
+                </div>
+              </div>
+            </div>
+
+            <div class="dynamic-paragraphs-group mb20">
+              <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Bottom Description (Paragraphs)</label>
+                <button type="button" class="btn btn-upload" onclick="addParagraphField('techCard2BottomParagraphs')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-plus"></i> Add Paragraph</button>
+              </div>
+              <div id="techCard2BottomParagraphs-container" class="paragraphs-container">
+                <!-- Dynamically loaded -->
+              </div>
+              <input type="hidden" id="techCard2BottomParagraphs" name="techCard2BottomParagraphs" value="[]">
+            </div>
+
+            <div class="sub-card-group-title mt20">Section Images</div>
+            <div class="grid-layout cols-2 mb20">
+              <!-- Left Side Background Image -->
+              <div class="sub-card">
+                <h3>Left Side Background Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard2BgImage-preview" src="" alt="Left Side Background" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard2BgImage" name="techCard2BgImage" accept="image/*" onchange="previewImage(this, 'techCard2BgImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard2BgImage', 'techCard2BgImage-preview', 'remove_techCard2BgImage', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard2BgImage" name="remove_techCard2BgImage" value="false">
+                </div>
+              </div>
+
+              <!-- Left Side Image -->
+              <div class="sub-card">
+                <h3>Left Side Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard2Image-preview" src="" alt="Left Side Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard2Image" name="techCard2Image" accept="image/*" onchange="previewImage(this, 'techCard2Image-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard2Image', 'techCard2Image-preview', 'remove_techCard2Image', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard2Image" name="remove_techCard2Image" value="false">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH HERO CARD 3 -->
+        <section id="sec-tech-card-3" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-square-poll-vertical card-icon"></i>
+              <h2>Tech Hero Card 3</h2>
+            </div>
+            <span class="section-tag">Hero</span>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="techCard3Title">Card Title</label>
+              <input type="text" id="techCard3Title" name="techCard3Title">
+            </div>
+
+            <div class="sub-card-group-title mt20">Feature Points (Up to 3)</div>
+            <div class="grid-layout cols-3 mb20">
+              <!-- Point 1 -->
+              <div class="sub-card">
+                <h3>Point 1</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard3Point1Icon-preview" src="" alt="Icon 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard3Point1Icon" name="techCard3Point1Icon" accept="image/*" onchange="previewImage(this, 'techCard3Point1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard3Point1Icon', 'techCard3Point1Icon-preview', 'remove_techCard3Point1Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard3Point1Icon" name="remove_techCard3Point1Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard3Point1Text">Text</label>
+                  <input type="text" id="techCard3Point1Text" name="techCard3Point1Text">
+                </div>
+              </div>
+
+              <!-- Point 2 -->
+              <div class="sub-card">
+                <h3>Point 2</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard3Point2Icon-preview" src="" alt="Icon 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard3Point2Icon" name="techCard3Point2Icon" accept="image/*" onchange="previewImage(this, 'techCard3Point2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard3Point2Icon', 'techCard3Point2Icon-preview', 'remove_techCard3Point2Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard3Point2Icon" name="remove_techCard3Point2Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard3Point2Text">Text</label>
+                  <input type="text" id="techCard3Point2Text" name="techCard3Point2Text">
+                </div>
+              </div>
+
+              <!-- Point 3 -->
+              <div class="sub-card">
+                <h3>Point 3</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard3Point3Icon-preview" src="" alt="Icon 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard3Point3Icon" name="techCard3Point3Icon" accept="image/*" onchange="previewImage(this, 'techCard3Point3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard3Point3Icon', 'techCard3Point3Icon-preview', 'remove_techCard3Point3Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard3Point3Icon" name="remove_techCard3Point3Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techCard3Point3Text">Text</label>
+                  <input type="text" id="techCard3Point3Text" name="techCard3Point3Text">
+                </div>
+              </div>
+            </div>
+
+            <div class="dynamic-paragraphs-group mb20">
+              <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Card Description (Paragraphs)</label>
+                <button type="button" class="btn btn-upload" onclick="addParagraphField('techCard3Paragraphs')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-plus"></i> Add Paragraph</button>
+              </div>
+              <div id="techCard3Paragraphs-container" class="paragraphs-container">
+                <!-- Dynamically loaded -->
+              </div>
+              <input type="hidden" id="techCard3Paragraphs" name="techCard3Paragraphs" value="[]">
+            </div>
+
+            <div class="sub-card-group-title mt20">Section Images</div>
+            <div class="grid-layout cols-2 mb20">
+              <!-- Right Side Background Image -->
+              <div class="sub-card">
+                <h3>Right Side Background Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard3BgImage-preview" src="" alt="Right Side Background" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard3BgImage" name="techCard3BgImage" accept="image/*" onchange="previewImage(this, 'techCard3BgImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard3BgImage', 'techCard3BgImage-preview', 'remove_techCard3BgImage', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard3BgImage" name="remove_techCard3BgImage" value="false">
+                </div>
+              </div>
+
+              <!-- Right Side Image -->
+              <div class="sub-card">
+                <h3>Right Side Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techCard3Image-preview" src="" alt="Right Side Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techCard3Image" name="techCard3Image" accept="image/*" onchange="previewImage(this, 'techCard3Image-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCard3Image', 'techCard3Image-preview', 'remove_techCard3Image', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCard3Image" name="remove_techCard3Image" value="false">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH CONSENSUS MECHANISM -->
+        <section id="sec-tech-consensus" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-square-poll-vertical card-icon"></i>
+              <h2>Consensus Mechanism</h2>
+            </div>
+            <span class="section-tag">Hero</span>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="techConsensusBadge">Top Badge</label>
+              <input type="text" id="techConsensusBadge" name="techConsensusBadge" value="[ POA ]">
             </div>
             <div class="form-group">
-              <label for="coreTechDescription">Tech Stack Details</label>
-              <textarea id="coreTechDescription" name="coreTechDescription" rows="4"></textarea>
+              <label for="techConsensusTitle">Section Title</label>
+              <input type="text" id="techConsensusTitle" name="techConsensusTitle">
             </div>
+            <div class="form-group">
+              <label for="techConsensusDescription">Top Description</label>
+              <textarea id="techConsensusDescription" class="form-control" name="techConsensusDescription" rows="2"></textarea>
+            </div>
+
+            <div class="sub-card-group-title mt20">Consensus Features (3 Cards)</div>
+            <div class="grid-layout cols-3 mb20">
+              <!-- Card 1 -->
+              <div class="sub-card">
+                <h3>Card 1</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techConsensusCard1Icon-preview" src="" alt="Icon 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techConsensusCard1Icon" name="techConsensusCard1Icon" accept="image/*" onchange="previewImage(this, 'techConsensusCard1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techConsensusCard1Icon', 'techConsensusCard1Icon-preview', 'remove_techConsensusCard1Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techConsensusCard1Icon" name="remove_techConsensusCard1Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techConsensusCard1Desc">Description</label>
+                  <textarea id="techConsensusCard1Desc" name="techConsensusCard1Desc" class="form-control" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="sub-card">
+                <h3>Card 2</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techConsensusCard2Icon-preview" src="" alt="Icon 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techConsensusCard2Icon" name="techConsensusCard2Icon" accept="image/*" onchange="previewImage(this, 'techConsensusCard2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techConsensusCard2Icon', 'techConsensusCard2Icon-preview', 'remove_techConsensusCard2Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techConsensusCard2Icon" name="remove_techConsensusCard2Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techConsensusCard2Desc">Description</label>
+                  <textarea id="techConsensusCard2Desc" name="techConsensusCard2Desc" class="form-control" rows="2"></textarea>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="sub-card">
+                <h3>Card 3</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techConsensusCard3Icon-preview" src="" alt="Icon 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techConsensusCard3Icon" name="techConsensusCard3Icon" accept="image/*" onchange="previewImage(this, 'techConsensusCard3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techConsensusCard3Icon', 'techConsensusCard3Icon-preview', 'remove_techConsensusCard3Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techConsensusCard3Icon" name="remove_techConsensusCard3Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techConsensusCard3Desc">Description</label>
+                  <textarea id="techConsensusCard3Desc" name="techConsensusCard3Desc" class="form-control" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="techConsensusBottomDesc">Bottom Description</label>
+              <textarea id="techConsensusBottomDesc" class="form-control" name="techConsensusBottomDesc" rows="2"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH SMART CONTRACTS -->
+        <section id="sec-tech-smart-contracts" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-square-poll-vertical card-icon"></i>
+              <h2>Smart Contracts & Automation</h2>
+            </div>
+            <span class="section-tag">Hero</span>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="techSmartTitle">Title</label>
+              <input type="text" id="techSmartTitle" name="techSmartTitle">
+            </div>
+            <div class="form-group">
+              <label for="techSmartDesc">Description</label>
+              <textarea id="techSmartDesc" class="form-control" name="techSmartDesc" rows="2"></textarea>
+            </div>
+            
+            <div class="dynamic-paragraphs-group mb20">
+              <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Checkpoints (Points with checkmark)</label>
+                <button type="button" class="btn btn-upload" onclick="addParagraphField('techSmartCheckpoints')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-plus"></i> Add Point
+                </button>
+              </div>
+              <div id="techSmartCheckpoints-container" class="paragraphs-container">
+                <!-- Dynamically loaded -->
+              </div>
+              <input type="hidden" id="techSmartCheckpoints" name="techSmartCheckpoints" value="[]">
+            </div>
+
+            <div class="sub-card-group-title mt20">Features (with Icons)</div>
+            <div class="grid-layout cols-3 mb20">
+              <!-- Feature 1 -->
+              <div class="sub-card">
+                <h3>Feature 1</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techSmartFeature1Icon-preview" src="" alt="Icon 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techSmartFeature1Icon" name="techSmartFeature1Icon" accept="image/*" onchange="previewImage(this, 'techSmartFeature1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techSmartFeature1Icon', 'techSmartFeature1Icon-preview', 'remove_techSmartFeature1Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techSmartFeature1Icon" name="remove_techSmartFeature1Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techSmartFeature1Name">Text</label>
+                  <input type="text" id="techSmartFeature1Name" name="techSmartFeature1Name">
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="sub-card">
+                <h3>Feature 2</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techSmartFeature2Icon-preview" src="" alt="Icon 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techSmartFeature2Icon" name="techSmartFeature2Icon" accept="image/*" onchange="previewImage(this, 'techSmartFeature2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techSmartFeature2Icon', 'techSmartFeature2Icon-preview', 'remove_techSmartFeature2Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techSmartFeature2Icon" name="remove_techSmartFeature2Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techSmartFeature2Name">Text</label>
+                  <input type="text" id="techSmartFeature2Name" name="techSmartFeature2Name">
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="sub-card">
+                <h3>Feature 3</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techSmartFeature3Icon-preview" src="" alt="Icon 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techSmartFeature3Icon" name="techSmartFeature3Icon" accept="image/*" onchange="previewImage(this, 'techSmartFeature3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techSmartFeature3Icon', 'techSmartFeature3Icon-preview', 'remove_techSmartFeature3Icon', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techSmartFeature3Icon" name="remove_techSmartFeature3Icon" value="false">
+                </div>
+                <div class="form-group mt15">
+                  <label for="techSmartFeature3Name">Text</label>
+                  <input type="text" id="techSmartFeature3Name" name="techSmartFeature3Name">
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-card-group-title mt20">Section Images</div>
+            <div class="grid-layout cols-2 mb20">
+              <!-- Right Side Background Image -->
+              <div class="sub-card">
+                <h3>Right Side Background Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techSmartRightBgImage-preview" src="" alt="Right Side Background" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techSmartRightBgImage" name="techSmartRightBgImage" accept="image/*" onchange="previewImage(this, 'techSmartRightBgImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techSmartRightBgImage', 'techSmartRightBgImage-preview', 'remove_techSmartRightBgImage', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techSmartRightBgImage" name="remove_techSmartRightBgImage" value="false">
+                </div>
+              </div>
+
+              <!-- Right Side Image -->
+              <div class="sub-card">
+                <h3>Right Side Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="techSmartRightImage-preview" src="" alt="Right Side Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                    <input type="file" id="techSmartRightImage" name="techSmartRightImage" accept="image/*" onchange="previewImage(this, 'techSmartRightImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techSmartRightImage', 'techSmartRightImage-preview', 'remove_techSmartRightImage', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techSmartRightImage" name="remove_techSmartRightImage" value="false">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH SLIDES -->
+        <section id="sec-tech-slides" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-layer-group card-icon"></i>
+              <h2>Core Technologies (3 Slides)</h2>
+            </div>
+            <span class="section-tag">Features</span>
+          </div>
+          <div class="card-body">
+            
+            <!-- SLIDE 1 -->
+            <div class="sub-card-group-title mt20">Slide 1: Interoperability</div>
+            <div class="sub-card">
+              <div class="grid-layout cols-2 mb20">
+                <!-- Slide 1 Image -->
+                <div>
+                  <label>Left Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techSlide1Image-preview" src="" alt="Slide 1 Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techSlide1Image" name="techSlide1Image" accept="image/*" onchange="previewImage(this, 'techSlide1Image-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide1Image', 'techSlide1Image-preview', 'remove_techSlide1Image', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide1Image" name="remove_techSlide1Image" value="false">
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-group">
+                    <label for="techSlide1Title">Title</label>
+                    <input type="text" id="techSlide1Title" name="techSlide1Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="techSlide1Desc">Description</label>
+                    <textarea id="techSlide1Desc" class="form-control" name="techSlide1Desc" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
+              
+              <label>Points</label>
+              <div class="grid-layout cols-2 mb20">
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Point 1</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide1Point1Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide1Point1Icon" name="techSlide1Point1Icon" accept="image/*" onchange="previewImage(this, 'techSlide1Point1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide1Point1Icon', 'techSlide1Point1Icon-preview', 'remove_techSlide1Point1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide1Point1Icon" name="remove_techSlide1Point1Icon" value="false">
+                  </div>
+                  <input type="text" id="techSlide1Point1Text" name="techSlide1Point1Text" placeholder="Text">
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Point 2</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide1Point2Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide1Point2Icon" name="techSlide1Point2Icon" accept="image/*" onchange="previewImage(this, 'techSlide1Point2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide1Point2Icon', 'techSlide1Point2Icon-preview', 'remove_techSlide1Point2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide1Point2Icon" name="remove_techSlide1Point2Icon" value="false">
+                  </div>
+                  <input type="text" id="techSlide1Point2Text" name="techSlide1Point2Text" placeholder="Text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="techSlide1FeatureHeading">Feature Heading</label>
+                <input type="text" id="techSlide1FeatureHeading" name="techSlide1FeatureHeading">
+              </div>
+              <div class="grid-layout cols-3 mb20">
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 1</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide1Feature1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide1Feature1Icon" name="techSlide1Feature1Icon" accept="image/*" onchange="previewImage(this, 'techSlide1Feature1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide1Feature1Icon', 'techSlide1Feature1Icon-preview', 'remove_techSlide1Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide1Feature1Icon" name="remove_techSlide1Feature1Icon" value="false">
+                  </div>
+                  <input type="text" id="techSlide1Feature1Text" name="techSlide1Feature1Text" placeholder="Text">
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 2</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide1Feature2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide1Feature2Icon" name="techSlide1Feature2Icon" accept="image/*" onchange="previewImage(this, 'techSlide1Feature2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide1Feature2Icon', 'techSlide1Feature2Icon-preview', 'remove_techSlide1Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide1Feature2Icon" name="remove_techSlide1Feature2Icon" value="false">
+                  </div>
+                  <input type="text" id="techSlide1Feature2Text" name="techSlide1Feature2Text" placeholder="Text">
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 3</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide1Feature3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide1Feature3Icon" name="techSlide1Feature3Icon" accept="image/*" onchange="previewImage(this, 'techSlide1Feature3Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide1Feature3Icon', 'techSlide1Feature3Icon-preview', 'remove_techSlide1Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide1Feature3Icon" name="remove_techSlide1Feature3Icon" value="false">
+                  </div>
+                  <input type="text" id="techSlide1Feature3Text" name="techSlide1Feature3Text" placeholder="Text">
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="sub-card-group-title mt20">Slide 2: Real-World Integration</div>
+            <div class="sub-card">
+              <div class="grid-layout cols-2 mb20">
+                <div>
+                  <div class="form-group">
+                    <label for="techSlide2Title">Title</label>
+                    <input type="text" id="techSlide2Title" name="techSlide2Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="techSlide2Desc">Description</label>
+                    <textarea id="techSlide2Desc" class="form-control" name="techSlide2Desc" rows="2"></textarea>
+                  </div>
+                </div>
+                <!-- Slide 2 Image -->
+                <div>
+                  <label>Right Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techSlide2Image-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techSlide2Image" name="techSlide2Image" accept="image/*" onchange="previewImage(this, 'techSlide2Image-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide2Image', 'techSlide2Image-preview', 'remove_techSlide2Image', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide2Image" name="remove_techSlide2Image" value="false">
+                  </div>
+                </div>
+              </div>
+
+              <label>Features</label>
+              <div class="grid-layout cols-3 mb20">
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 1</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide2Feature1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide2Feature1Icon" name="techSlide2Feature1Icon" accept="image/*" onchange="previewImage(this, 'techSlide2Feature1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide2Feature1Icon', 'techSlide2Feature1Icon-preview', 'remove_techSlide2Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide2Feature1Icon" name="remove_techSlide2Feature1Icon" value="false">
+                  </div>
+                  <textarea id="techSlide2Feature1Text" name="techSlide2Feature1Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 2</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide2Feature2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide2Feature2Icon" name="techSlide2Feature2Icon" accept="image/*" onchange="previewImage(this, 'techSlide2Feature2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide2Feature2Icon', 'techSlide2Feature2Icon-preview', 'remove_techSlide2Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide2Feature2Icon" name="remove_techSlide2Feature2Icon" value="false">
+                  </div>
+                  <textarea id="techSlide2Feature2Text" name="techSlide2Feature2Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 3</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide3Feature3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide2Feature3Icon" name="techSlide2Feature3Icon" accept="image/*" onchange="previewImage(this, 'techSlide2Feature3Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide2Feature3Icon', 'techSlide2Feature3Icon-preview', 'remove_techSlide2Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide2Feature3Icon" name="remove_techSlide2Feature3Icon" value="false">
+                  </div>
+                  <textarea id="techSlide2Feature3Text" name="techSlide2Feature3Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="sub-card-group-title mt20">Slide 3: AI Integration</div>
+            <div class="sub-card">
+              <div class="grid-layout cols-2 mb20">
+                <!-- Slide 3 Image -->
+                <div>
+                  <label>Left Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techSlide3Image-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techSlide3Image" name="techSlide3Image" accept="image/*" onchange="previewImage(this, 'techSlide3Image-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide3Image', 'techSlide3Image-preview', 'remove_techSlide3Image', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide3Image" name="remove_techSlide3Image" value="false">
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label for="techSlide3Title">Title</label>
+                    <input type="text" id="techSlide3Title" name="techSlide3Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="techSlide3Desc">Description</label>
+                    <textarea id="techSlide3Desc" class="form-control" name="techSlide3Desc" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
+              <label>Features</label>
+              <div class="grid-layout cols-3 mb20">
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 1</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide3Feature1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide3Feature1Icon" name="techSlide3Feature1Icon" accept="image/*" onchange="previewImage(this, 'techSlide3Feature1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide3Feature1Icon', 'techSlide3Feature1Icon-preview', 'remove_techSlide3Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide3Feature1Icon" name="remove_techSlide3Feature1Icon" value="false">
+                  </div>
+                  <textarea id="techSlide3Feature1Text" name="techSlide3Feature1Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 2</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide3Feature2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide3Feature2Icon" name="techSlide3Feature2Icon" accept="image/*" onchange="previewImage(this, 'techSlide3Feature2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide3Feature2Icon', 'techSlide3Feature2Icon-preview', 'remove_techSlide3Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide3Feature2Icon" name="remove_techSlide3Feature2Icon" value="false">
+                  </div>
+                  <textarea id="techSlide3Feature2Text" name="techSlide3Feature2Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 3</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSlide3Feature3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSlide3Feature3Icon" name="techSlide3Feature3Icon" accept="image/*" onchange="previewImage(this, 'techSlide3Feature3Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSlide3Feature3Icon', 'techSlide3Feature3Icon-preview', 'remove_techSlide3Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSlide3Feature3Icon" name="remove_techSlide3Feature3Icon" value="false">
+                  </div>
+                  <textarea id="techSlide3Feature3Text" name="techSlide3Feature3Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
         <!-- TECH SECURITY -->
-        <section id="sec-security" class="form-card section-block page-section-technology">
+        <section id="sec-tech-security" class="form-card section-block page-section-technology">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-shield-halved card-icon"></i>
-              <h2>Security Audits & Multi-Sig Parameters</h2>
+              <h2>Security Infrastructure (2 Sliders)</h2>
             </div>
-            <span class="section-tag">Security</span>
+            <span class="section-tag">Features</span>
           </div>
           <div class="card-body">
-            <div class="form-group">
-              <label for="securityTitle">Title Label</label>
-              <input type="text" id="securityTitle" name="securityTitle">
+            
+            <!-- SLIDER 1 -->
+            <div class="sub-card-group-title mt20">Slider 1: Security Infrastructure</div>
+            <div class="sub-card">
+              <div class="grid-layout cols-2 mb20">
+                <!-- Slider 1 Info -->
+                <div>
+                  <div class="form-group">
+                    <label for="techSecuritySlider1Title">Title</label>
+                    <input type="text" id="techSecuritySlider1Title" name="techSecuritySlider1Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="techSecuritySlider1Desc">Description</label>
+                    <textarea id="techSecuritySlider1Desc" class="form-control" name="techSecuritySlider1Desc" rows="2"></textarea>
+                  </div>
+                </div>
+
+                <!-- Slider 1 Right Images -->
+                <div class="grid-layout cols-2">
+                  <div>
+                    <label>Right Image</label>
+                    <div class="coin-preview-row">
+                      <div class="coin-image-container spec-square">
+                        <img id="techSecuritySlider1RightImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                        <input type="file" id="techSecuritySlider1RightImage" name="techSecuritySlider1RightImage" accept="image/*" onchange="previewImage(this, 'techSecuritySlider1RightImage-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider1RightImage', 'techSecuritySlider1RightImage-preview', 'remove_techSecuritySlider1RightImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_techSecuritySlider1RightImage" name="remove_techSecuritySlider1RightImage" value="false">
+                    </div>
+                  </div>
+                  <div>
+                    <label>Right Background Image</label>
+                    <div class="coin-preview-row">
+                      <div class="coin-image-container spec-square">
+                        <img id="techSecuritySlider1RightBgImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                        <input type="file" id="techSecuritySlider1RightBgImage" name="techSecuritySlider1RightBgImage" accept="image/*" onchange="previewImage(this, 'techSecuritySlider1RightBgImage-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider1RightBgImage', 'techSecuritySlider1RightBgImage-preview', 'remove_techSecuritySlider1RightBgImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_techSecuritySlider1RightBgImage" name="remove_techSecuritySlider1RightBgImage" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <label>Features (with Image Upload)</label>
+              <div class="grid-layout cols-3 mb20">
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 1</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSecuritySlider1Feature1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSecuritySlider1Feature1Icon" name="techSecuritySlider1Feature1Icon" accept="image/*" onchange="previewImage(this, 'techSecuritySlider1Feature1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider1Feature1Icon', 'techSecuritySlider1Feature1Icon-preview', 'remove_techSecuritySlider1Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider1Feature1Icon" name="remove_techSecuritySlider1Feature1Icon" value="false">
+                  </div>
+                  <textarea id="techSecuritySlider1Feature1Text" name="techSecuritySlider1Feature1Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 2</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSecuritySlider1Feature2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSecuritySlider1Feature2Icon" name="techSecuritySlider1Feature2Icon" accept="image/*" onchange="previewImage(this, 'techSecuritySlider1Feature2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider1Feature2Icon', 'techSecuritySlider1Feature2Icon-preview', 'remove_techSecuritySlider1Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider1Feature2Icon" name="remove_techSecuritySlider1Feature2Icon" value="false">
+                  </div>
+                  <textarea id="techSecuritySlider1Feature2Text" name="techSecuritySlider1Feature2Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Feature 3</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSecuritySlider1Feature3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSecuritySlider1Feature3Icon" name="techSecuritySlider1Feature3Icon" accept="image/*" onchange="previewImage(this, 'techSecuritySlider1Feature3Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider1Feature3Icon', 'techSecuritySlider1Feature3Icon-preview', 'remove_techSecuritySlider1Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider1Feature3Icon" name="remove_techSecuritySlider1Feature3Icon" value="false">
+                  </div>
+                  <textarea id="techSecuritySlider1Feature3Text" name="techSecuritySlider1Feature3Text" class="form-control" rows="2" placeholder="Text"></textarea>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="securityDescription">Security Details</label>
-              <textarea id="securityDescription" name="securityDescription" rows="4"></textarea>
+
+            <!-- SLIDER 2 -->
+            <div class="sub-card-group-title mt20">Slider 2: Hardware Security</div>
+            <div class="sub-card">
+              <div class="form-group">
+                <label for="techSecuritySlider2Title">Title</label>
+                <input type="text" id="techSecuritySlider2Title" name="techSecuritySlider2Title">
+              </div>
+              <div class="form-group">
+                <label for="techSecuritySlider2Desc">Description</label>
+                <textarea id="techSecuritySlider2Desc" class="form-control" name="techSecuritySlider2Desc" rows="2"></textarea>
+              </div>
+
+              
+              <!-- Slider 2 Right Images -->
+              <div class="grid-layout cols-2 mb20">
+                <div>
+                  <label>Right Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techSecuritySlider2RightImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techSecuritySlider2RightImage" name="techSecuritySlider2RightImage" accept="image/*" onchange="previewImage(this, 'techSecuritySlider2RightImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider2RightImage', 'techSecuritySlider2RightImage-preview', 'remove_techSecuritySlider2RightImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider2RightImage" name="remove_techSecuritySlider2RightImage" value="false">
+                  </div>
+                </div>
+                <div>
+                  <label>Right Background Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techSecuritySlider2RightBgImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techSecuritySlider2RightBgImage" name="techSecuritySlider2RightBgImage" accept="image/*" onchange="previewImage(this, 'techSecuritySlider2RightBgImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider2RightBgImage', 'techSecuritySlider2RightBgImage-preview', 'remove_techSecuritySlider2RightBgImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider2RightBgImage" name="remove_techSecuritySlider2RightBgImage" value="false">
+                  </div>
+                </div>
+              </div>
+
+              <label>Points (with Image Upload)</label>
+              <div class="grid-layout cols-2 mb20">
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Point 1</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSecuritySlider2Point1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSecuritySlider2Point1Icon" name="techSecuritySlider2Point1Icon" accept="image/*" onchange="previewImage(this, 'techSecuritySlider2Point1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider2Point1Icon', 'techSecuritySlider2Point1Icon-preview', 'remove_techSecuritySlider2Point1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider2Point1Icon" name="remove_techSecuritySlider2Point1Icon" value="false">
+                  </div>
+                  <input type="text" id="techSecuritySlider2Point1Text" name="techSecuritySlider2Point1Text" placeholder="Text">
+                </div>
+                <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                  <label>Point 2</label>
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:40px; height:40px;">
+                      <img id="techSecuritySlider2Point2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                      <input type="file" id="techSecuritySlider2Point2Icon" name="techSecuritySlider2Point2Icon" accept="image/*" onchange="previewImage(this, 'techSecuritySlider2Point2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techSecuritySlider2Point2Icon', 'techSecuritySlider2Point2Icon-preview', 'remove_techSecuritySlider2Point2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techSecuritySlider2Point2Icon" name="remove_techSecuritySlider2Point2Icon" value="false">
+                  </div>
+                  <input type="text" id="techSecuritySlider2Point2Text" name="techSecuritySlider2Point2Text" placeholder="Text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="techSecuritySlider2FeatureTitle">Feature Title</label>
+                <input type="text" id="techSecuritySlider2FeatureTitle" name="techSecuritySlider2FeatureTitle">
+              </div>
+
+              <div class="dynamic-paragraphs-group mb20">
+                <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <label style="margin-bottom: 0; font-weight: 600;">Feature List</label>
+                  <button type="button" class="btn btn-upload" onclick="addParagraphField('techSecuritySlider2FeatureList')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-plus"></i> Add Feature
+                  </button>
+                </div>
+                <div id="techSecuritySlider2FeatureList-container" class="paragraphs-container">
+                  <!-- Dynamically loaded -->
+                </div>
+                <input type="hidden" id="techSecuritySlider2FeatureList" name="techSecuritySlider2FeatureList" value="[]">
+              </div>
+
             </div>
           </div>
         </section>
+
+        <!-- TECH COST EFFICIENCY -->
+        <section id="sec-tech-cost" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-money-bill-trend-up card-icon"></i>
+              <h2>Cost Efficiency</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="techCostTitle">Title</label>
+              <input type="text" id="techCostTitle" name="techCostTitle">
+            </div>
+            
+            <div class="dynamic-paragraphs-group mb20">
+              <div class="group-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Descriptions (Paragraphs)</label>
+                <button type="button" class="btn btn-upload" onclick="addParagraphField('techCostParagraphs')" style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-plus"></i> Add Description
+                </button>
+              </div>
+              <div id="techCostParagraphs-container" class="paragraphs-container">
+                <!-- Dynamically loaded -->
+              </div>
+              <input type="hidden" id="techCostParagraphs" name="techCostParagraphs" value="[]">
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH TRANSPARENCY -->
+        <section id="sec-tech-transparency" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-magnifying-glass-chart card-icon"></i>
+              <h2>Transparency & Blockchain Explorer</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="techTransparencyTitle">Title</label>
+              <input type="text" id="techTransparencyTitle" name="techTransparencyTitle">
+            </div>
+            <div class="form-group">
+              <label for="techTransparencyDesc">Description</label>
+              <textarea id="techTransparencyDesc" class="form-control" name="techTransparencyDesc" rows="2"></textarea>
+            </div>
+
+            <label>Card Boxes (4)</label>
+            <div class="grid-layout cols-2 mb20">
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Box 1</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techTransparencyCard1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techTransparencyCard1Icon" name="techTransparencyCard1Icon" accept="image/*" onchange="previewImage(this, 'techTransparencyCard1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techTransparencyCard1Icon', 'techTransparencyCard1Icon-preview', 'remove_techTransparencyCard1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techTransparencyCard1Icon" name="remove_techTransparencyCard1Icon" value="false">
+                </div>
+                <textarea id="techTransparencyCard1Desc" name="techTransparencyCard1Desc" class="form-control" rows="2" placeholder="Description"></textarea>
+              </div>
+
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Box 2</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techTransparencyCard2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techTransparencyCard2Icon" name="techTransparencyCard2Icon" accept="image/*" onchange="previewImage(this, 'techTransparencyCard2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techTransparencyCard2Icon', 'techTransparencyCard2Icon-preview', 'remove_techTransparencyCard2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techTransparencyCard2Icon" name="remove_techTransparencyCard2Icon" value="false">
+                </div>
+                <textarea id="techTransparencyCard2Desc" name="techTransparencyCard2Desc" class="form-control" rows="2" placeholder="Description"></textarea>
+              </div>
+              
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Box 3</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techTransparencyCard3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techTransparencyCard3Icon" name="techTransparencyCard3Icon" accept="image/*" onchange="previewImage(this, 'techTransparencyCard3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techTransparencyCard3Icon', 'techTransparencyCard3Icon-preview', 'remove_techTransparencyCard3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techTransparencyCard3Icon" name="remove_techTransparencyCard3Icon" value="false">
+                </div>
+                <textarea id="techTransparencyCard3Desc" name="techTransparencyCard3Desc" class="form-control" rows="2" placeholder="Description"></textarea>
+              </div>
+
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Box 4</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techTransparencyCard4Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techTransparencyCard4Icon" name="techTransparencyCard4Icon" accept="image/*" onchange="previewImage(this, 'techTransparencyCard4Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techTransparencyCard4Icon', 'techTransparencyCard4Icon-preview', 'remove_techTransparencyCard4Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techTransparencyCard4Icon" name="remove_techTransparencyCard4Icon" value="false">
+                </div>
+                <textarea id="techTransparencyCard4Desc" name="techTransparencyCard4Desc" class="form-control" rows="2" placeholder="Description"></textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TECH COMPETITIVE ADVANTAGE -->
+        <section id="sec-tech-competitive" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-trophy card-icon"></i>
+              <h2>Competitive Advantage</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="grid-layout cols-2 mb20">
+              <div>
+                <div class="form-group">
+                  <label for="techCompAdvTitle">Title</label>
+                  <input type="text" id="techCompAdvTitle" name="techCompAdvTitle">
+                </div>
+                <div class="form-group">
+                  <label for="techCompAdvDesc">Description</label>
+                  <textarea id="techCompAdvDesc" class="form-control" name="techCompAdvDesc" rows="2"></textarea>
+                </div>
+              </div>
+              
+              <div class="grid-layout cols-2">
+                <div>
+                  <label>Right Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techCompAdvRightImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techCompAdvRightImage" name="techCompAdvRightImage" accept="image/*" onchange="previewImage(this, 'techCompAdvRightImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvRightImage', 'techCompAdvRightImage-preview', 'remove_techCompAdvRightImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techCompAdvRightImage" name="remove_techCompAdvRightImage" value="false">
+                  </div>
+                </div>
+                <div>
+                  <label>Right Background Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techCompAdvRightBgImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techCompAdvRightBgImage" name="techCompAdvRightBgImage" accept="image/*" onchange="previewImage(this, 'techCompAdvRightBgImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvRightBgImage', 'techCompAdvRightBgImage-preview', 'remove_techCompAdvRightBgImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techCompAdvRightBgImage" name="remove_techCompAdvRightBgImage" value="false">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mt20">
+              <label for="techCompAdvFeatureTitle">Feature Title</label>
+              <input type="text" id="techCompAdvFeatureTitle" name="techCompAdvFeatureTitle">
+            </div>
+            <label>Features (3 Items)</label>
+            <div class="grid-layout cols-3 mb20">
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Feature 1</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techCompAdvFeature1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techCompAdvFeature1Icon" name="techCompAdvFeature1Icon" accept="image/*" onchange="previewImage(this, 'techCompAdvFeature1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvFeature1Icon', 'techCompAdvFeature1Icon-preview', 'remove_techCompAdvFeature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCompAdvFeature1Icon" name="remove_techCompAdvFeature1Icon" value="false">
+                </div>
+                <textarea id="techCompAdvFeature1Text" name="techCompAdvFeature1Text" class="form-control" rows="2" placeholder="Text"></textarea>
+              </div>
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Feature 2</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techCompAdvFeature2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techCompAdvFeature2Icon" name="techCompAdvFeature2Icon" accept="image/*" onchange="previewImage(this, 'techCompAdvFeature2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvFeature2Icon', 'techCompAdvFeature2Icon-preview', 'remove_techCompAdvFeature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCompAdvFeature2Icon" name="remove_techCompAdvFeature2Icon" value="false">
+                </div>
+                <textarea id="techCompAdvFeature2Text" name="techCompAdvFeature2Text" class="form-control" rows="2" placeholder="Text"></textarea>
+              </div>
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Feature 3</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techCompAdvFeature3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techCompAdvFeature3Icon" name="techCompAdvFeature3Icon" accept="image/*" onchange="previewImage(this, 'techCompAdvFeature3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvFeature3Icon', 'techCompAdvFeature3Icon-preview', 'remove_techCompAdvFeature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCompAdvFeature3Icon" name="remove_techCompAdvFeature3Icon" value="false">
+                </div>
+                <textarea id="techCompAdvFeature3Text" name="techCompAdvFeature3Text" class="form-control" rows="2" placeholder="Text"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group mt20">
+              <label for="techCompAdvPointsTitle">Points Title</label>
+              <input type="text" id="techCompAdvPointsTitle" name="techCompAdvPointsTitle">
+            </div>
+            <label>Points (3 Items)</label>
+            <div class="grid-layout cols-3 mb20">
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Point 1</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techCompAdvPoint1Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techCompAdvPoint1Icon" name="techCompAdvPoint1Icon" accept="image/*" onchange="previewImage(this, 'techCompAdvPoint1Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvPoint1Icon', 'techCompAdvPoint1Icon-preview', 'remove_techCompAdvPoint1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCompAdvPoint1Icon" name="remove_techCompAdvPoint1Icon" value="false">
+                </div>
+                <textarea id="techCompAdvPoint1Text" name="techCompAdvPoint1Text" class="form-control" rows="2" placeholder="Text"></textarea>
+              </div>
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Point 2</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techCompAdvPoint2Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techCompAdvPoint2Icon" name="techCompAdvPoint2Icon" accept="image/*" onchange="previewImage(this, 'techCompAdvPoint2Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvPoint2Icon', 'techCompAdvPoint2Icon-preview', 'remove_techCompAdvPoint2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCompAdvPoint2Icon" name="remove_techCompAdvPoint2Icon" value="false">
+                </div>
+                <textarea id="techCompAdvPoint2Text" name="techCompAdvPoint2Text" class="form-control" rows="2" placeholder="Text"></textarea>
+              </div>
+              <div style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                <label>Point 3</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container" style="width:40px; height:40px;">
+                    <img id="techCompAdvPoint3Icon-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                    <input type="file" id="techCompAdvPoint3Icon" name="techCompAdvPoint3Icon" accept="image/*" onchange="previewImage(this, 'techCompAdvPoint3Icon-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('techCompAdvPoint3Icon', 'techCompAdvPoint3Icon-preview', 'remove_techCompAdvPoint3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_techCompAdvPoint3Icon" name="remove_techCompAdvPoint3Icon" value="false">
+                </div>
+                <textarea id="techCompAdvPoint3Text" name="techCompAdvPoint3Text" class="form-control" rows="2" placeholder="Text"></textarea>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- TECH BUILT FOR THE FUTURE -->
+        <section id="sec-tech-future" class="form-card section-block page-section-technology">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-rocket card-icon"></i>
+              <h2>Technology Built for the Future</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="grid-layout cols-2 mb20">
+              <!-- Info -->
+              <div>
+                <div class="form-group">
+                  <label for="techFutureTitle">Title</label>
+                  <input type="text" id="techFutureTitle" name="techFutureTitle">
+                </div>
+                <div class="form-group">
+                  <label for="techFutureDesc">Description</label>
+                  <textarea id="techFutureDesc" class="form-control" name="techFutureDesc" rows="4"></textarea>
+                </div>
+                <div class="grid-layout cols-2 mb20">
+                  <div class="form-group">
+                    <label for="techFutureBtn1Text">Primary Button Text</label>
+                    <input type="text" id="techFutureBtn1Text" name="techFutureBtn1Text">
+                  </div>
+                  <div class="form-group">
+                    <label for="techFutureBtn1Link">Primary Button Link</label>
+                    <input type="text" id="techFutureBtn1Link" name="techFutureBtn1Link">
+                  </div>
+                  <div class="form-group">
+                    <label for="techFutureBtn2Text">Secondary Button Text</label>
+                    <input type="text" id="techFutureBtn2Text" name="techFutureBtn2Text">
+                  </div>
+                  <div class="form-group">
+                    <label for="techFutureBtn2Link">Secondary Button Link</label>
+                    <input type="text" id="techFutureBtn2Link" name="techFutureBtn2Link">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Images -->
+              <div class="grid-layout cols-2">
+                <div>
+                  <label>Top Right Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techFutureTopRightImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techFutureTopRightImage" name="techFutureTopRightImage" accept="image/*" onchange="previewImage(this, 'techFutureTopRightImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techFutureTopRightImage', 'techFutureTopRightImage-preview', 'remove_techFutureTopRightImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techFutureTopRightImage" name="remove_techFutureTopRightImage" value="false">
+                  </div>
+                </div>
+                <div>
+                  <label>Bottom Left Image</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="techFutureBottomLeftImage-preview" src="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</button>
+                      <input type="file" id="techFutureBottomLeftImage" name="techFutureBottomLeftImage" accept="image/*" onchange="previewImage(this, 'techFutureBottomLeftImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('techFutureBottomLeftImage', 'techFutureBottomLeftImage-preview', 'remove_techFutureBottomLeftImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_techFutureBottomLeftImage" name="remove_techFutureBottomLeftImage" value="false">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+
+
+
+      
 
 
         <!-- ==================== 4. TOKEN ECONOMY PAGE SECTIONS ==================== -->
@@ -1958,7 +3380,11 @@
             <span class="section-tag">Hero</span>
           </div>
           <div class="card-body">
-            <div class="form-group">
+                        <div class="form-group">
+              <label for="tokenHeroTopHeader">Top Header</label>
+              <input type="text" id="tokenHeroTopHeader" name="tokenHeroTopHeader">
+            </div>
+<div class="form-group">
               <label for="tokenHeroTitle">Page Header Headline</label>
               <input type="text" id="tokenHeroTitle" name="tokenHeroTitle">
             </div>
@@ -1966,40 +3392,1013 @@
               <label for="tokenHeroDescription">Sub-Header Description</label>
               <textarea id="tokenHeroDescription" name="tokenHeroDescription" rows="3"></textarea>
             </div>
+            <div class="grid-layout cols-2 mb20">
+              <div class="form-group">
+                <label for="tokenHeroPrimaryBtnText">Primary Button Text</label>
+                <input type="text" id="tokenHeroPrimaryBtnText" name="tokenHeroPrimaryBtnText" required>
+              </div>
+              <div class="form-group">
+                <label for="tokenHeroPrimaryBtnLink">Primary Button Link</label>
+                <input type="text" id="tokenHeroPrimaryBtnLink" name="tokenHeroPrimaryBtnLink">
+              </div>
+              <div class="form-group">
+                <label for="tokenHeroSecondaryBtnText">Secondary Button Text</label>
+                <input type="text" id="tokenHeroSecondaryBtnText" name="tokenHeroSecondaryBtnText">
+              </div>
+              <div class="form-group">
+                <label for="tokenHeroSecondaryBtnLink">Secondary Button Link</label>
+                <input type="text" id="tokenHeroSecondaryBtnLink" name="tokenHeroSecondaryBtnLink">
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- TOKENOMICS DETAILS -->
-        <section id="sec-tokenomics" class="form-card section-block page-section-token">
+      
+
+
+        
+        <!-- TOKEN DUAL ECOSYSTEM -->
+        <section id="sec-token-dual" class="form-card section-block page-section-token">
           <div class="card-header">
             <div class="header-title">
-              <i class="fa-solid fa-chart-pie card-icon"></i>
-              <h2>Token Supply & Distribution Schemes</h2>
+              <i class="fa-solid fa-coins card-icon"></i>
+              <h2>A Dual-Token Ecosystem</h2>
             </div>
-            <span class="section-tag">Tokenomics</span>
           </div>
           <div class="card-body">
             <div class="form-group">
-              <label for="tokenomicsTitle">Ecosystem System Title</label>
-              <input type="text" id="tokenomicsTitle" name="tokenomicsTitle">
+              <label for="tokenDualEcosystemTitle">Title</label>
+              <input type="text" id="tokenDualEcosystemTitle" name="tokenDualEcosystemTitle">
             </div>
+            <div class="form-group mb20">
+              <label for="tokenDualEcosystemDesc">Description</label>
+              <textarea id="tokenDualEcosystemDesc" name="tokenDualEcosystemDesc" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="grid-layout cols-2 mb20">
+              <!-- Card 1 -->
+              <div class="sub-card">
+                <h3>Card 1 (e.g. DINAAR)</h3>
+                <div class="form-group">
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:60px; height:60px;">
+                      <img id="tokenDualEcosystemCard1Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                      <input type="file" id="tokenDualEcosystemCard1Image" name="tokenDualEcosystemCard1Image" accept="image/*" onchange="previewImage(this, 'tokenDualEcosystemCard1Image-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('tokenDualEcosystemCard1Image', 'tokenDualEcosystemCard1Image-preview', 'remove_tokenDualEcosystemCard1Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_tokenDualEcosystemCard1Image" name="remove_tokenDualEcosystemCard1Image" value="false">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Card 1 Description</label>
+                  <textarea id="tokenDualEcosystemCard1Desc" name="tokenDualEcosystemCard1Desc" class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+              
+              <!-- Card 2 -->
+              <div class="sub-card">
+                <h3>Card 2 (e.g. SAYA)</h3>
+                <div class="form-group">
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:60px; height:60px;">
+                      <img id="tokenDualEcosystemCard2Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                      <input type="file" id="tokenDualEcosystemCard2Image" name="tokenDualEcosystemCard2Image" accept="image/*" onchange="previewImage(this, 'tokenDualEcosystemCard2Image-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('tokenDualEcosystemCard2Image', 'tokenDualEcosystemCard2Image-preview', 'remove_tokenDualEcosystemCard2Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_tokenDualEcosystemCard2Image" name="remove_tokenDualEcosystemCard2Image" value="false">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Card 2 Description</label>
+                  <textarea id="tokenDualEcosystemCard2Desc" name="tokenDualEcosystemCard2Desc" class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+
             <div class="form-group">
-              <label for="tokenomicsDescription">Liquidity System Details</label>
-              <textarea id="tokenomicsDescription" name="tokenomicsDescription" rows="3"></textarea>
-            </div>
-            <div class="grid-layout cols-2">
-              <div class="form-group">
-                <label for="supplyTotal">Total Coin Supply Pool</label>
-                <input type="text" id="supplyTotal" name="supplyTotal" placeholder="e.g. 1,000,000,000 DINAAR">
-              </div>
-              <div class="form-group">
-                <label for="supplyDistribution">Distribution Fractions</label>
-                <input type="text" id="supplyDistribution" name="supplyDistribution">
-              </div>
+              <label for="tokenDualEcosystemBottomDesc">Bottom Description</label>
+              <textarea id="tokenDualEcosystemBottomDesc" name="tokenDualEcosystemBottomDesc" class="form-control" rows="2"></textarea>
             </div>
           </div>
         </section>
 
+        
+        <!-- TOKEN HYBRID MODEL -->
+        <section id="sec-token-hybrid" class="form-card section-block page-section-token">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-code-branch card-icon"></i>
+              <h2>Hybrid Model</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="tokenHybridBadge">Top Badge</label>
+              <input type="text" id="tokenHybridBadge" name="tokenHybridBadge" placeholder="[ WHY TWO TOKENS? ]">
+            </div>
+            <div class="form-group">
+              <label for="tokenHybridTitle">Title</label>
+              <input type="text" id="tokenHybridTitle" name="tokenHybridTitle">
+            </div>
+            <div class="form-group mb20">
+              <label for="tokenHybridDesc">Description</label>
+              <textarea id="tokenHybridDesc" name="tokenHybridDesc" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="grid-layout cols-2 mb20">
+              <!-- Card 1 -->
+              <div class="sub-card">
+                <h3>Card 1 (e.g. DINAAR)</h3>
+                <div class="form-group">
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:60px; height:60px;">
+                      <img id="tokenHybridCard1Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm">Upload Icon</button>
+                      <input type="file" id="tokenHybridCard1Icon" name="tokenHybridCard1Icon" accept="image/*" onchange="previewImage(this, 'tokenHybridCard1Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('tokenHybridCard1Icon', 'tokenHybridCard1Icon-preview', 'remove_tokenHybridCard1Icon', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_tokenHybridCard1Icon" name="remove_tokenHybridCard1Icon" value="false">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Card 1 Title</label>
+                  <input type="text" id="tokenHybridCard1Title" name="tokenHybridCard1Title">
+                </div>
+                <div class="form-group">
+                  <label>Card 1 Description</label>
+                  <input type="text" id="tokenHybridCard1Desc" name="tokenHybridCard1Desc">
+                </div>
+              </div>
+              
+              <!-- Card 2 -->
+              <div class="sub-card">
+                <h3>Card 2 (e.g. SAYA)</h3>
+                <div class="form-group">
+                  <div class="coin-preview-row mb10">
+                    <div class="coin-image-container" style="width:60px; height:60px;">
+                      <img id="tokenHybridCard2Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload btn-sm">Upload Icon</button>
+                      <input type="file" id="tokenHybridCard2Icon" name="tokenHybridCard2Icon" accept="image/*" onchange="previewImage(this, 'tokenHybridCard2Icon-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="clearImage('tokenHybridCard2Icon', 'tokenHybridCard2Icon-preview', 'remove_tokenHybridCard2Icon', event)"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_tokenHybridCard2Icon" name="remove_tokenHybridCard2Icon" value="false">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Card 2 Title</label>
+                  <input type="text" id="tokenHybridCard2Title" name="tokenHybridCard2Title">
+                </div>
+                <div class="form-group">
+                  <label>Card 2 Description</label>
+                  <input type="text" id="tokenHybridCard2Desc" name="tokenHybridCard2Desc">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tokenHybridBottomDesc">Bottom Description</label>
+              <textarea id="tokenHybridBottomDesc" name="tokenHybridBottomDesc" class="form-control" rows="2"></textarea>
+            </div>
+          </div>
+        </section>
+
+        
+        <!-- TOKEN SYSTEM WORKS -->
+        <section id="sec-token-system" class="form-card section-block page-section-token">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-cogs card-icon"></i>
+              <h2>How the System Works</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="tokenSystemTitle">Section Title</label>
+              <input type="text" id="tokenSystemTitle" name="tokenSystemTitle">
+            </div>
+            <div class="form-group mb20">
+              <label for="tokenSystemDesc">Section Description</label>
+              <textarea id="tokenSystemDesc" name="tokenSystemDesc" class="form-control" rows="2"></textarea>
+            </div>
+
+            <!-- SLIDER 1 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slider 1 (Account Establishment)</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Top Badge</label>
+                    <input type="text" id="tokenSystemSlide1Badge" name="tokenSystemSlide1Badge">
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenSystemSlide1Title" name="tokenSystemSlide1Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenSystemSlide1DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide1DescList-container', 'tokenSystemSlide1DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  <div class="form-group">
+                    <label>Button Text</label>
+                    <input type="text" id="tokenSystemSlide1BtnText" name="tokenSystemSlide1BtnText">
+                  </div>
+                  <div class="form-group">
+                    <label>Button Link</label>
+                    <input type="text" id="tokenSystemSlide1BtnLink" name="tokenSystemSlide1BtnLink">
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSystemSlide1Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSystemSlide1Image" name="tokenSystemSlide1Image" accept="image/*" onchange="previewImage(this, 'tokenSystemSlide1Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSystemSlide1Image', 'tokenSystemSlide1Image-preview', 'remove_tokenSystemSlide1Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSystemSlide1Image" name="remove_tokenSystemSlide1Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 2 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slider 2 (Fund Deposit)</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Top Badge</label>
+                    <input type="text" id="tokenSystemSlide2Badge" name="tokenSystemSlide2Badge">
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenSystemSlide2Title" name="tokenSystemSlide2Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenSystemSlide2DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide2DescList-container', 'tokenSystemSlide2DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSystemSlide2Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSystemSlide2Image" name="tokenSystemSlide2Image" accept="image/*" onchange="previewImage(this, 'tokenSystemSlide2Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSystemSlide2Image', 'tokenSystemSlide2Image-preview', 'remove_tokenSystemSlide2Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSystemSlide2Image" name="remove_tokenSystemSlide2Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 3 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slider 3 (DINAAR Acquisition)</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Top Badge</label>
+                    <input type="text" id="tokenSystemSlide3Badge" name="tokenSystemSlide3Badge">
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenSystemSlide3Title" name="tokenSystemSlide3Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenSystemSlide3DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide3DescList-container', 'tokenSystemSlide3DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSystemSlide3Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSystemSlide3Image" name="tokenSystemSlide3Image" accept="image/*" onchange="previewImage(this, 'tokenSystemSlide3Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSystemSlide3Image', 'tokenSystemSlide3Image-preview', 'remove_tokenSystemSlide3Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSystemSlide3Image" name="remove_tokenSystemSlide3Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 4 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slider 4 (Holding Period)</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Top Badge</label>
+                    <input type="text" id="tokenSystemSlide4Badge" name="tokenSystemSlide4Badge">
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenSystemSlide4Title" name="tokenSystemSlide4Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenSystemSlide4DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide4DescList-container', 'tokenSystemSlide4DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  <div class="form-group mt20">
+                    <label>Feature Heading</label>
+                    <input type="text" id="tokenSystemSlide4FeatureHeading" name="tokenSystemSlide4FeatureHeading">
+                  </div>
+                  <div class="form-group">
+                    <label>Features List</label>
+                    <div id="tokenSystemSlide4FeatureList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide4FeatureList-container', 'tokenSystemSlide4FeatureList')"><i class="fa-solid fa-plus"></i> Add Feature</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSystemSlide4Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSystemSlide4Image" name="tokenSystemSlide4Image" accept="image/*" onchange="previewImage(this, 'tokenSystemSlide4Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSystemSlide4Image', 'tokenSystemSlide4Image-preview', 'remove_tokenSystemSlide4Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSystemSlide4Image" name="remove_tokenSystemSlide4Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 5 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slider 5 (Value Protection Mechanism)</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Top Badge</label>
+                    <input type="text" id="tokenSystemSlide5Badge" name="tokenSystemSlide5Badge">
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenSystemSlide5Title" name="tokenSystemSlide5Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenSystemSlide5DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide5DescList-container', 'tokenSystemSlide5DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  <div class="form-group mt20">
+                    <label>Sub Heading (e.g. Example:)</label>
+                    <input type="text" id="tokenSystemSlide5Heading" name="tokenSystemSlide5Heading">
+                  </div>
+                  <div class="form-group">
+                    <label>Sub Heading Descriptions</label>
+                    <div id="tokenSystemSlide5HeadingDescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide5HeadingDescList-container', 'tokenSystemSlide5HeadingDescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSystemSlide5Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSystemSlide5Image" name="tokenSystemSlide5Image" accept="image/*" onchange="previewImage(this, 'tokenSystemSlide5Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSystemSlide5Image', 'tokenSystemSlide5Image-preview', 'remove_tokenSystemSlide5Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSystemSlide5Image" name="remove_tokenSystemSlide5Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 6 -->
+            <div class="sub-card">
+              <div class="sub-card-group-title">Slider 6 (Redemption & Exit)</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Top Badge</label>
+                    <input type="text" id="tokenSystemSlide6Badge" name="tokenSystemSlide6Badge">
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenSystemSlide6Title" name="tokenSystemSlide6Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenSystemSlide6DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide6DescList-container', 'tokenSystemSlide6DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  <div class="form-group mt20">
+                    <label>Feature Heading</label>
+                    <input type="text" id="tokenSystemSlide6FeatureHeading" name="tokenSystemSlide6FeatureHeading">
+                  </div>
+                  <div class="form-group">
+                    <label>Features List</label>
+                    <div id="tokenSystemSlide6FeatureList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSystemSlide6FeatureList-container', 'tokenSystemSlide6FeatureList')"><i class="fa-solid fa-plus"></i> Add Feature</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSystemSlide6Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSystemSlide6Image" name="tokenSystemSlide6Image" accept="image/*" onchange="previewImage(this, 'tokenSystemSlide6Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSystemSlide6Image', 'tokenSystemSlide6Image-preview', 'remove_tokenSystemSlide6Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSystemSlide6Image" name="remove_tokenSystemSlide6Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        
+        <!-- TOKEN INTEGRATION SLIDES -->
+        <section id="sec-token-integration" class="form-card section-block page-section-token">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-layer-group card-icon"></i>
+              <h2>Integration Features</h2>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <!-- SLIDER 1 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slide 1</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Left Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenIntegrationSlide1Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenIntegrationSlide1Image" name="tokenIntegrationSlide1Image" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide1Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide1Image', 'tokenIntegrationSlide1Image-preview', 'remove_tokenIntegrationSlide1Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide1Image" name="remove_tokenIntegrationSlide1Image" value="false">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenIntegrationSlide1Title" name="tokenIntegrationSlide1Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenIntegrationSlide1DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenIntegrationSlide1DescList-container', 'tokenIntegrationSlide1DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  <div class="form-group mt20">
+                    <label>Feature Heading</label>
+                    <input type="text" id="tokenIntegrationSlide1FeatureHeading" name="tokenIntegrationSlide1FeatureHeading">
+                  </div>
+                  
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 1</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide1Feature1Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide1Feature1Icon" name="tokenIntegrationSlide1Feature1Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide1Feature1Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide1Feature1Icon', 'tokenIntegrationSlide1Feature1Icon-preview', 'remove_tokenIntegrationSlide1Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide1Feature1Icon" name="remove_tokenIntegrationSlide1Feature1Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide1Feature1Text" name="tokenIntegrationSlide1Feature1Text" placeholder="Feature Text">
+                  </div>
+
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 2</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide1Feature2Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide1Feature2Icon" name="tokenIntegrationSlide1Feature2Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide1Feature2Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide1Feature2Icon', 'tokenIntegrationSlide1Feature2Icon-preview', 'remove_tokenIntegrationSlide1Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide1Feature2Icon" name="remove_tokenIntegrationSlide1Feature2Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide1Feature2Text" name="tokenIntegrationSlide1Feature2Text" placeholder="Feature Text">
+                  </div>
+
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 3</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide1Feature3Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide1Feature3Icon" name="tokenIntegrationSlide1Feature3Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide1Feature3Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide1Feature3Icon', 'tokenIntegrationSlide1Feature3Icon-preview', 'remove_tokenIntegrationSlide1Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide1Feature3Icon" name="remove_tokenIntegrationSlide1Feature3Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide1Feature3Text" name="tokenIntegrationSlide1Feature3Text" placeholder="Feature Text">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 2 -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Slide 2</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenIntegrationSlide2Title" name="tokenIntegrationSlide2Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenIntegrationSlide2DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenIntegrationSlide2DescList-container', 'tokenIntegrationSlide2DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 1</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide2Feature1Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide2Feature1Icon" name="tokenIntegrationSlide2Feature1Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide2Feature1Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide2Feature1Icon', 'tokenIntegrationSlide2Feature1Icon-preview', 'remove_tokenIntegrationSlide2Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide2Feature1Icon" name="remove_tokenIntegrationSlide2Feature1Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide2Feature1Text" name="tokenIntegrationSlide2Feature1Text" placeholder="Feature Text">
+                  </div>
+
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 2</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide2Feature2Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide2Feature2Icon" name="tokenIntegrationSlide2Feature2Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide2Feature2Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide2Feature2Icon', 'tokenIntegrationSlide2Feature2Icon-preview', 'remove_tokenIntegrationSlide2Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide2Feature2Icon" name="remove_tokenIntegrationSlide2Feature2Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide2Feature2Text" name="tokenIntegrationSlide2Feature2Text" placeholder="Feature Text">
+                  </div>
+
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 3</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide2Feature3Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide2Feature3Icon" name="tokenIntegrationSlide2Feature3Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide2Feature3Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide2Feature3Icon', 'tokenIntegrationSlide2Feature3Icon-preview', 'remove_tokenIntegrationSlide2Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide2Feature3Icon" name="remove_tokenIntegrationSlide2Feature3Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide2Feature3Text" name="tokenIntegrationSlide2Feature3Text" placeholder="Feature Text">
+                  </div>
+
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenIntegrationSlide2Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenIntegrationSlide2Image" name="tokenIntegrationSlide2Image" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide2Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide2Image', 'tokenIntegrationSlide2Image-preview', 'remove_tokenIntegrationSlide2Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide2Image" name="remove_tokenIntegrationSlide2Image" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDER 3 -->
+            <div class="sub-card">
+              <div class="sub-card-group-title">Slide 3</div>
+              <div class="grid-layout cols-2">
+                <div>
+                  <div class="form-group">
+                    <label>Left Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenIntegrationSlide3Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenIntegrationSlide3Image" name="tokenIntegrationSlide3Image" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide3Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide3Image', 'tokenIntegrationSlide3Image-preview', 'remove_tokenIntegrationSlide3Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide3Image" name="remove_tokenIntegrationSlide3Image" value="false">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="tokenIntegrationSlide3Title" name="tokenIntegrationSlide3Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Descriptions</label>
+                    <div id="tokenIntegrationSlide3DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenIntegrationSlide3DescList-container', 'tokenIntegrationSlide3DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                  
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 1</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide3Feature1Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide3Feature1Icon" name="tokenIntegrationSlide3Feature1Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide3Feature1Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide3Feature1Icon', 'tokenIntegrationSlide3Feature1Icon-preview', 'remove_tokenIntegrationSlide3Feature1Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide3Feature1Icon" name="remove_tokenIntegrationSlide3Feature1Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide3Feature1Text" name="tokenIntegrationSlide3Feature1Text" placeholder="Feature Text">
+                  </div>
+
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 2</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide3Feature2Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide3Feature2Icon" name="tokenIntegrationSlide3Feature2Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide3Feature2Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide3Feature2Icon', 'tokenIntegrationSlide3Feature2Icon-preview', 'remove_tokenIntegrationSlide3Feature2Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide3Feature2Icon" name="remove_tokenIntegrationSlide3Feature2Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide3Feature2Text" name="tokenIntegrationSlide3Feature2Text" placeholder="Feature Text">
+                  </div>
+
+                  <div class="form-group" style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 3</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide3Feature3Icon-preview" src="" alt="Icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide3Feature3Icon" name="tokenIntegrationSlide3Feature3Icon" accept="image/*" onchange="previewImage(this, 'tokenIntegrationSlide3Feature3Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenIntegrationSlide3Feature3Icon', 'tokenIntegrationSlide3Feature3Icon-preview', 'remove_tokenIntegrationSlide3Feature3Icon', event)" style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide3Feature3Icon" name="remove_tokenIntegrationSlide3Feature3Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide3Feature3Text" name="tokenIntegrationSlide3Feature3Text" placeholder="Feature Text">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        
+        
+        <!-- SMART COINS SECTION -->
+        <section id="sec-token-smartcoins" class="form-card section-block page-section-token">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-gem card-icon"></i>
+              <h2>Smart Coins, Strong Value</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Main Section Title</label>
+              <input type="text" id="tokenSmartCoinsTitle" name="tokenSmartCoinsTitle" placeholder="Smart Coins, Strong Value">
+            </div>
+
+            <!-- TAB 1: DINAAR -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Tab 1 (e.g. Dinaar Coin)</div>
+              <div class="form-group">
+                <label>Tab 1 Button Text</label>
+                <input type="text" id="tokenSmartCoinsTab1BtnText" name="tokenSmartCoinsTab1BtnText">
+              </div>
+              
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Top Section</h4>
+              <div class="grid-layout cols-2 mb20">
+                <div>
+                  <div class="form-group">
+                    <label>Left Side Title</label>
+                    <input type="text" id="tokenSmartCoinsTab1Title" name="tokenSmartCoinsTab1Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Left Side Descriptions</label>
+                    <div id="tokenSmartCoinsTab1DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSmartCoinsTab1DescList-container', 'tokenSmartCoinsTab1DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab1Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSmartCoinsTab1Image" name="tokenSmartCoinsTab1Image" accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab1Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSmartCoinsTab1Image', 'tokenSmartCoinsTab1Image-preview', 'remove_tokenSmartCoinsTab1Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab1Image" name="remove_tokenSmartCoinsTab1Image" value="false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Right Side Background Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab1BgImage-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Bg Image</button>
+                        <input type="file" id="tokenSmartCoinsTab1BgImage" name="tokenSmartCoinsTab1BgImage" accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab1BgImage-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSmartCoinsTab1BgImage', 'tokenSmartCoinsTab1BgImage-preview', 'remove_tokenSmartCoinsTab1BgImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab1BgImage" name="remove_tokenSmartCoinsTab1BgImage" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Bottom Section (Key Features)</h4>
+              <div class="form-group">
+                <label>Features Heading</label>
+                <input type="text" id="tokenSmartCoinsTab1FeatureHeading" name="tokenSmartCoinsTab1FeatureHeading" placeholder="Key Features">
+              </div>
+              <div class="grid-layout cols-2 mb20">
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 1 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F1Title" name="tokenSmartCoinsTab1F1Title">
+                  <label class="mt10">Feature 1 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F1Desc" name="tokenSmartCoinsTab1F1Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 2 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F2Title" name="tokenSmartCoinsTab1F2Title">
+                  <label class="mt10">Feature 2 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F2Desc" name="tokenSmartCoinsTab1F2Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 3 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F3Title" name="tokenSmartCoinsTab1F3Title">
+                  <label class="mt10">Feature 3 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F3Desc" name="tokenSmartCoinsTab1F3Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 4 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F4Title" name="tokenSmartCoinsTab1F4Title">
+                  <label class="mt10">Feature 4 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F4Desc" name="tokenSmartCoinsTab1F4Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 5 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F5Title" name="tokenSmartCoinsTab1F5Title">
+                  <label class="mt10">Feature 5 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F5Desc" name="tokenSmartCoinsTab1F5Desc">
+                </div>
+              </div>
+              
+              <div class="form-group mt20">
+                <label>Value Proposition Heading</label>
+                <input type="text" id="tokenSmartCoinsTab1ValueHeading" name="tokenSmartCoinsTab1ValueHeading" placeholder="Value Proposition">
+              </div>
+              <div class="form-group">
+                <label>Value Proposition Description</label>
+                <textarea id="tokenSmartCoinsTab1ValueDesc" name="tokenSmartCoinsTab1ValueDesc" class="form-control" rows="2"></textarea>
+              </div>
+            </div>
+
+            <!-- TAB 2: SAYA -->
+            <div class="sub-card">
+              <div class="sub-card-group-title">Tab 2 (e.g. Saya Coin)</div>
+              <div class="form-group">
+                <label>Tab 2 Button Text</label>
+                <input type="text" id="tokenSmartCoinsTab2BtnText" name="tokenSmartCoinsTab2BtnText">
+              </div>
+              
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Top Section</h4>
+              <div class="grid-layout cols-2 mb20">
+                <div>
+                  <div class="form-group">
+                    <label>Left Side Title</label>
+                    <input type="text" id="tokenSmartCoinsTab2Title" name="tokenSmartCoinsTab2Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Left Side Descriptions</label>
+                    <div id="tokenSmartCoinsTab2DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSmartCoinsTab2DescList-container', 'tokenSmartCoinsTab2DescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab2Image-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSmartCoinsTab2Image" name="tokenSmartCoinsTab2Image" accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab2Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSmartCoinsTab2Image', 'tokenSmartCoinsTab2Image-preview', 'remove_tokenSmartCoinsTab2Image', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab2Image" name="remove_tokenSmartCoinsTab2Image" value="false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Right Side Background Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab2BgImage-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Bg Image</button>
+                        <input type="file" id="tokenSmartCoinsTab2BgImage" name="tokenSmartCoinsTab2BgImage" accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab2BgImage-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger" onclick="clearImage('tokenSmartCoinsTab2BgImage', 'tokenSmartCoinsTab2BgImage-preview', 'remove_tokenSmartCoinsTab2BgImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab2BgImage" name="remove_tokenSmartCoinsTab2BgImage" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Bottom Section</h4>
+              <div class="form-group mt20">
+                <label>Feature Heading 1 (e.g. Key Functions:)</label>
+                <input type="text" id="tokenSmartCoinsTab2F1Heading" name="tokenSmartCoinsTab2F1Heading">
+              </div>
+              <div class="form-group">
+                <label>Feature 1 List (Bullets)</label>
+                <div id="tokenSmartCoinsTab2F1List-container" class="ticker-row-wrapper mb10"></div>
+                <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSmartCoinsTab2F1List-container', 'tokenSmartCoinsTab2F1List')"><i class="fa-solid fa-plus"></i> Add Bullet Point</button>
+              </div>
+
+              <div class="form-group mt20">
+                <label>Feature Heading 2 (e.g. Token Model Highlights:)</label>
+                <input type="text" id="tokenSmartCoinsTab2F2Heading" name="tokenSmartCoinsTab2F2Heading">
+              </div>
+              <div class="form-group">
+                <label>Feature 2 List (Bullets)</label>
+                <div id="tokenSmartCoinsTab2F2List-container" class="ticker-row-wrapper mb10"></div>
+                <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenSmartCoinsTab2F2List-container', 'tokenSmartCoinsTab2F2List')"><i class="fa-solid fa-plus"></i> Add Bullet Point</button>
+              </div>
+
+              <div class="form-group mt20">
+                <label>Value Proposition Heading</label>
+                <input type="text" id="tokenSmartCoinsTab2ValueHeading" name="tokenSmartCoinsTab2ValueHeading" placeholder="Value Proposition">
+              </div>
+              <div class="form-group">
+                <label>Value Proposition Description</label>
+                <textarea id="tokenSmartCoinsTab2ValueDesc" name="tokenSmartCoinsTab2ValueDesc" class="form-control" rows="2"></textarea>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- TOKEN FUTURE CTA -->
+        <section id="sec-token-future" class="form-card section-block page-section-token">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-rocket card-icon"></i>
+              <h2>Step Into the Future</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Title</label>
+              <input type="text" id="tokenFutureTitle" name="tokenFutureTitle">
+            </div>
+            <div class="form-group">
+              <label>Descriptions</label>
+              <div id="tokenFutureDescList-container" class="ticker-row-wrapper mb10"></div>
+              <button type="button" class="btn btn-secondary btn-sm mt10" onclick="addDynamicParagraph('tokenFutureDescList-container', 'tokenFutureDescList')"><i class="fa-solid fa-plus"></i> Add Description</button>
+            </div>
+
+            <div class="grid-layout cols-2 mb20 mt20">
+              <div class="form-group">
+                <label>Primary Button Text</label>
+                <input type="text" id="tokenFuturePrimaryBtnText" name="tokenFuturePrimaryBtnText">
+              </div>
+              <div class="form-group">
+                <label>Primary Button Link</label>
+                <input type="text" id="tokenFuturePrimaryBtnLink" name="tokenFuturePrimaryBtnLink">
+              </div>
+              <div class="form-group">
+                <label>Secondary Button Text</label>
+                <input type="text" id="tokenFutureSecondaryBtnText" name="tokenFutureSecondaryBtnText">
+              </div>
+              <div class="form-group">
+                <label>Secondary Button Link</label>
+                <input type="text" id="tokenFutureSecondaryBtnLink" name="tokenFutureSecondaryBtnLink">
+              </div>
+            </div>
+
+            <div class="grid-layout cols-2">
+              <div class="form-group">
+                <label>Top Right Image</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container spec-square">
+                    <img id="tokenFutureTopRightImage-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                    <input type="file" id="tokenFutureTopRightImage" name="tokenFutureTopRightImage" accept="image/*" onchange="previewImage(this, 'tokenFutureTopRightImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('tokenFutureTopRightImage', 'tokenFutureTopRightImage-preview', 'remove_tokenFutureTopRightImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_tokenFutureTopRightImage" name="remove_tokenFutureTopRightImage" value="false">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Bottom Left Image</label>
+                <div class="coin-preview-row mb10">
+                  <div class="coin-image-container spec-square">
+                    <img id="tokenFutureBottomLeftImage-preview" src="" alt="Image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                    <input type="file" id="tokenFutureBottomLeftImage" name="tokenFutureBottomLeftImage" accept="image/*" onchange="previewImage(this, 'tokenFutureBottomLeftImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('tokenFutureBottomLeftImage', 'tokenFutureBottomLeftImage-preview', 'remove_tokenFutureBottomLeftImage', event)"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_tokenFutureBottomLeftImage" name="remove_tokenFutureBottomLeftImage" value="false">
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
 
         <!-- ==================== 5. CONTACT US PAGE SECTIONS ==================== -->
         <!-- CONTACT HERO -->

@@ -36,8 +36,17 @@ const PAGE_SECTIONS = {
   ],
   technology: [
     { id: 'tech-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
-    { id: 'core-tech', name: 'Core Capabilities', icon: 'fa-microchip' },
-    { id: 'security', name: 'Security Features', icon: 'fa-shield-halved' }
+    { id: 'tech-card-1', name: 'Tech Hero Card 1', icon: 'fa-square-poll-vertical' },
+    { id: 'tech-card-2', name: 'Tech Hero Card 2', icon: 'fa-square-poll-vertical' },
+    { id: 'tech-card-3', name: 'Tech Hero Card 3', icon: 'fa-square-poll-vertical' },
+    { id: 'tech-consensus', name: 'Consensus Mechanism', icon: 'fa-square-poll-vertical' },
+    { id: 'tech-smart-contracts', name: 'Smart Contracts', icon: 'fa-square-poll-vertical' },
+    { id: 'tech-slides', name: 'Tech Slides', icon: 'fa-layer-group' },
+    { id: 'tech-security', name: 'Tech Security', icon: 'fa-shield-halved' },
+    { id: 'tech-cost', name: 'Cost Efficiency', icon: 'fa-money-bill-trend-up' },
+    { id: 'tech-transparency', name: 'Transparency', icon: 'fa-magnifying-glass-chart' },
+    { id: 'tech-competitive', name: 'Competitive Adv.', icon: 'fa-trophy' },
+    { id: 'tech-future', name: 'Built for Future', icon: 'fa-rocket' }
   ],
   token: [
     { id: 'token-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
@@ -58,7 +67,9 @@ const DEFAULT_VALUES = {
     heroTitle: "The Future of Digital Economy Starts Here",
     heroDescription: "A next-generation ecosystem combining blockchain, AI, and real-world assets to transform how the world trades, invests, and interacts.",
     heroPrimaryBtnText: "Explore Token Economy",
+    heroPrimaryBtnLink: "#",
     heroSecondaryBtnText: "Get started",
+    heroSecondaryBtnLink: "#",
     tickerCoins: [
       { symbol: "ETH", name: "Ethereum", price: "$2,282.83", change: "-1.66%" },
       { symbol: "USDT", name: "Tether USDt", price: "$1.00", change: "-0.01%" },
@@ -198,18 +209,10 @@ const DEFAULT_VALUES = {
     techHeroTopTitle: "Engineered for the Next Generation of Digital Economy",
     techHeroTitle: "Next-Gen Tech Infrastructure",
     techHeroDescription: "Deep dive into our highly secure smart contracts, AI trade optimizations, and custom cross-chain layers.",
-    coreTechTitle: "Core Blockchain Capabilities",
-    coreTechDescription: "Running on custom layer protocols to process up to 100,000 transactions per second with near-zero gas fees.",
-    securityTitle: "Secured to the Core",
-    securityDescription: "Audited multiple times by tier-1 security firms with integrated multi-sig parameters and real-time network monitors."
   },
   token: {
     tokenHeroTitle: "The Tokenomics Engine",
-    tokenHeroDescription: "Explore how DINAAR and SAYA utility tokens drive transaction velocity, rewards, and staking pools.",
-    tokenomicsTitle: "Dynamic Liquidity Systems",
-    tokenomicsDescription: "Engineered with deflationary burn schedules and automated rewards to incentivize long-term network support.",
-    supplyTotal: "1,000,000,000 DINAAR / SAYA",
-    supplyDistribution: "50% Staking Rewards, 20% Ecosystem Development, 15% Public Sale, 10% Team, 5% Advisers"
+    tokenHeroDescription: "Explore how DINAAR and SAYA utility tokens drive transaction velocity, rewards, and staking pools.",    
   },
   contact: {
     contactHeroTopDescription:'Let’s Build the Future Together',
@@ -655,6 +658,18 @@ function populateForm(data) {
     'remove_news1Image', 'remove_news1AuthorImage', 'remove_news2AuthorImage', 'remove_news3AuthorImage',
     'remove_visionImage', 'remove_missionImage', 'remove_ecosystemImage', 'remove_ecosystemBgImage',
     'remove_contacthelpImage','remove_contacthelpBgImage', "remove_ContactCard1Icon","remove_ContactCard2Icon"
+  ,
+    'remove_techCard1BgImage', 'remove_techCard1Image', 'remove_techCard2Point1Icon', 'remove_techCard2Point2Icon', 'remove_techCard2Point3Icon', 'remove_techCard2Point4Icon', 'remove_techCard2BgImage', 'remove_techCard2Image', 'remove_techCard3Point1Icon', 'remove_techCard3Point2Icon', 'remove_techCard3Point3Icon', 'remove_techCard3BgImage', 'remove_techCard3Image'
+  ,
+    'remove_techConsensusCard1Icon', 'remove_techConsensusCard2Icon', 'remove_techConsensusCard3Icon', 'remove_techSmartFeature1Icon', 'remove_techSmartFeature2Icon', 'remove_techSmartFeature3Icon', 'remove_techSmartRightBgImage', 'remove_techSmartRightImage'
+  ,
+    'remove_techSlide1Image', 'remove_techSlide1Point1Icon', 'remove_techSlide1Point2Icon', 'remove_techSlide1Feature1Icon', 'remove_techSlide1Feature2Icon', 'remove_techSlide1Feature3Icon', 'remove_techSlide2Image', 'remove_techSlide2Feature1Icon', 'remove_techSlide2Feature2Icon', 'remove_techSlide2Feature3Icon', 'remove_techSlide3Image', 'remove_techSlide3Feature1Icon', 'remove_techSlide3Feature2Icon', 'remove_techSlide3Feature3Icon'
+  ,
+    'remove_techSecuritySlider1Feature1Icon', 'remove_techSecuritySlider1Feature2Icon', 'remove_techSecuritySlider1Feature3Icon', 'remove_techSecuritySlider1RightImage', 'remove_techSecuritySlider1RightBgImage', 'remove_techSecuritySlider2Point1Icon', 'remove_techSecuritySlider2Point2Icon', 'remove_techSecuritySlider2RightImage', 'remove_techSecuritySlider2RightBgImage'
+  ,
+    'remove_techTransparencyCard1Icon', 'remove_techTransparencyCard2Icon', 'remove_techTransparencyCard3Icon', 'remove_techTransparencyCard4Icon'
+  ,
+    'remove_techCompAdvFeature1Icon', 'remove_techCompAdvFeature2Icon', 'remove_techCompAdvFeature3Icon', 'remove_techCompAdvPoint1Icon', 'remove_techCompAdvPoint2Icon', 'remove_techCompAdvPoint3Icon', 'remove_techCompAdvRightImage', 'remove_techCompAdvRightBgImage', 'remove_techFutureTopRightImage', 'remove_techFutureBottomLeftImage'
   ];
   removeFlags.forEach(flag => {
     const el = document.getElementById(flag);
@@ -667,7 +682,9 @@ function populateForm(data) {
     document.getElementById('heroTitle').value = data.heroTitle || '';
     document.getElementById('heroDescription').value = data.heroDescription || '';
     document.getElementById('heroPrimaryBtnText').value = data.heroPrimaryBtnText || '';
+    document.getElementById('heroPrimaryBtnLink').value = data.heroPrimaryBtnLink || '';
     document.getElementById('heroSecondaryBtnText').value = data.heroSecondaryBtnText || '';
+    document.getElementById('heroSecondaryBtnLink').value = data.heroSecondaryBtnLink || '';
 
     // Render dynamic ticker coins list row manager
     renderTickerCoinsEditor(data.tickerCoins || DEFAULT_VALUES.home.tickerCoins);
@@ -887,20 +904,316 @@ function populateForm(data) {
     document.getElementById('techHeroTopTitle').value = data.techHeroTopTitle || '';
     document.getElementById('techHeroTitle').value = data.techHeroTitle || '';
     document.getElementById('techHeroDescription').value = data.techHeroDescription || '';
-    document.getElementById('coreTechTitle').value = data.coreTechTitle || '';
-    document.getElementById('coreTechDescription').value = data.coreTechDescription || '';
-    document.getElementById('securityTitle').value = data.securityTitle || '';
-    document.getElementById('securityDescription').value = data.securityDescription || '';
+    document.getElementById('techHeroPrimaryBtnText').value = data.techHeroPrimaryBtnText || '';
+    document.getElementById('techHeroPrimaryBtnLink').value = data.techHeroPrimaryBtnLink || '';
+    document.getElementById('techHeroSecondaryBtnText').value = data.techHeroSecondaryBtnText || '';
+    document.getElementById('techHeroSecondaryBtnLink').value = data.techHeroSecondaryBtnLink || '';
+
+    document.getElementById('techCard1Title').value = data.techCard1Title || '';
+    renderDynamicParagraphs('techCard1Paragraphs', data.techCard1Paragraphs || []);
+    setImagePreview('techCard1BgImage-preview', data.techCard1BgImage);
+    setImagePreview('techCard1Image-preview', data.techCard1Image);
+
+    document.getElementById('techCard2Title').value = data.techCard2Title || '';
+    renderDynamicParagraphs('techCard2TopParagraphs', data.techCard2TopParagraphs || []);
+    document.getElementById('techCard2Point1Text').value = data.techCard2Point1Text || '';
+    setImagePreview('techCard2Point1Icon-preview', data.techCard2Point1Icon);
+    document.getElementById('techCard2Point2Text').value = data.techCard2Point2Text || '';
+    setImagePreview('techCard2Point2Icon-preview', data.techCard2Point2Icon);
+    document.getElementById('techCard2Point3Text').value = data.techCard2Point3Text || '';
+    setImagePreview('techCard2Point3Icon-preview', data.techCard2Point3Icon);
+    document.getElementById('techCard2Point4Text').value = data.techCard2Point4Text || '';
+    setImagePreview('techCard2Point4Icon-preview', data.techCard2Point4Icon);
+    renderDynamicParagraphs('techCard2BottomParagraphs', data.techCard2BottomParagraphs || []);
+    setImagePreview('techCard2BgImage-preview', data.techCard2BgImage);
+    setImagePreview('techCard2Image-preview', data.techCard2Image);
+
+    document.getElementById('techCard3Title').value = data.techCard3Title || '';
+    document.getElementById('techCard3Point1Text').value = data.techCard3Point1Text || '';
+    setImagePreview('techCard3Point1Icon-preview', data.techCard3Point1Icon);
+    document.getElementById('techCard3Point2Text').value = data.techCard3Point2Text || '';
+    setImagePreview('techCard3Point2Icon-preview', data.techCard3Point2Icon);
+    document.getElementById('techCard3Point3Text').value = data.techCard3Point3Text || '';
+    setImagePreview('techCard3Point3Icon-preview', data.techCard3Point3Icon);
+    renderDynamicParagraphs('techCard3Paragraphs', data.techCard3Paragraphs || []);
+    setImagePreview('techCard3BgImage-preview', data.techCard3BgImage);
+    setImagePreview('techCard3Image-preview', data.techCard3Image);
+
+    document.getElementById('techConsensusBadge').value = data.techConsensusBadge || '';
+    document.getElementById('techConsensusTitle').value = data.techConsensusTitle || '';
+    document.getElementById('techConsensusDescription').value = data.techConsensusDescription || '';
+    setImagePreview('techConsensusCard1Icon-preview', data.techConsensusCard1Icon);
+    document.getElementById('techConsensusCard1Desc').value = data.techConsensusCard1Desc || '';
+    setImagePreview('techConsensusCard2Icon-preview', data.techConsensusCard2Icon);
+    document.getElementById('techConsensusCard2Desc').value = data.techConsensusCard2Desc || '';
+    setImagePreview('techConsensusCard3Icon-preview', data.techConsensusCard3Icon);
+    document.getElementById('techConsensusCard3Desc').value = data.techConsensusCard3Desc || '';
+    document.getElementById('techConsensusBottomDesc').value = data.techConsensusBottomDesc || '';
+
+    document.getElementById('techSmartTitle').value = data.techSmartTitle || '';
+    document.getElementById('techSmartDesc').value = data.techSmartDesc || '';
+    renderDynamicParagraphs('techSmartCheckpoints', data.techSmartCheckpoints || []);
+    document.getElementById('techSmartFeature1Name').value = data.techSmartFeature1Name || '';
+    setImagePreview('techSmartFeature1Icon-preview', data.techSmartFeature1Icon);
+    document.getElementById('techSmartFeature2Name').value = data.techSmartFeature2Name || '';
+    setImagePreview('techSmartFeature2Icon-preview', data.techSmartFeature2Icon);
+    document.getElementById('techSmartFeature3Name').value = data.techSmartFeature3Name || '';
+    setImagePreview('techSmartFeature3Icon-preview', data.techSmartFeature3Icon);
+    setImagePreview('techSmartRightBgImage-preview', data.techSmartRightBgImage);
+    setImagePreview('techSmartRightImage-preview', data.techSmartRightImage);
+
+    setImagePreview('techSlide1Image-preview', data.techSlide1Image);
+    document.getElementById('techSlide1Title').value = data.techSlide1Title || '';
+    document.getElementById('techSlide1Desc').value = data.techSlide1Desc || '';
+    setImagePreview('techSlide1Point1Icon-preview', data.techSlide1Point1Icon);
+    document.getElementById('techSlide1Point1Text').value = data.techSlide1Point1Text || '';
+    setImagePreview('techSlide1Point2Icon-preview', data.techSlide1Point2Icon);
+    document.getElementById('techSlide1Point2Text').value = data.techSlide1Point2Text || '';
+    document.getElementById('techSlide1FeatureHeading').value = data.techSlide1FeatureHeading || '';
+    setImagePreview('techSlide1Feature1Icon-preview', data.techSlide1Feature1Icon);
+    document.getElementById('techSlide1Feature1Text').value = data.techSlide1Feature1Text || '';
+    setImagePreview('techSlide1Feature2Icon-preview', data.techSlide1Feature2Icon);
+    document.getElementById('techSlide1Feature2Text').value = data.techSlide1Feature2Text || '';
+    setImagePreview('techSlide1Feature3Icon-preview', data.techSlide1Feature3Icon);
+    document.getElementById('techSlide1Feature3Text').value = data.techSlide1Feature3Text || '';
+
+    document.getElementById('techSlide2Title').value = data.techSlide2Title || '';
+    document.getElementById('techSlide2Desc').value = data.techSlide2Desc || '';
+    setImagePreview('techSlide2Image-preview', data.techSlide2Image);
+    setImagePreview('techSlide2Feature1Icon-preview', data.techSlide2Feature1Icon);
+    document.getElementById('techSlide2Feature1Text').value = data.techSlide2Feature1Text || '';
+    setImagePreview('techSlide2Feature2Icon-preview', data.techSlide2Feature2Icon);
+    document.getElementById('techSlide2Feature2Text').value = data.techSlide2Feature2Text || '';
+    setImagePreview('techSlide2Feature3Icon-preview', data.techSlide2Feature3Icon); 
+    document.getElementById('techSlide2Feature3Text').value = data.techSlide2Feature3Text || '';
+
+    setImagePreview('techSlide3Image-preview', data.techSlide3Image);
+    document.getElementById('techSlide3Title').value = data.techSlide3Title || '';
+    document.getElementById('techSlide3Desc').value = data.techSlide3Desc || '';
+    setImagePreview('techSlide3Feature1Icon-preview', data.techSlide3Feature1Icon);
+    document.getElementById('techSlide3Feature1Text').value = data.techSlide3Feature1Text || '';
+    setImagePreview('techSlide3Feature2Icon-preview', data.techSlide3Feature2Icon);
+    document.getElementById('techSlide3Feature2Text').value = data.techSlide3Feature2Text || '';
+    setImagePreview('techSlide3Feature3Icon-preview', data.techSlide3Feature3Icon);
+    document.getElementById('techSlide3Feature3Text').value = data.techSlide3Feature3Text || '';
+
+    document.getElementById('techSecuritySlider1Title').value = data.techSecuritySlider1Title || '';
+    document.getElementById('techSecuritySlider1Desc').value = data.techSecuritySlider1Desc || '';
+    setImagePreview('techSecuritySlider1Feature1Icon-preview', data.techSecuritySlider1Feature1Icon);
+    document.getElementById('techSecuritySlider1Feature1Text').value = data.techSecuritySlider1Feature1Text || '';
+    setImagePreview('techSecuritySlider1Feature2Icon-preview', data.techSecuritySlider1Feature2Icon);
+    document.getElementById('techSecuritySlider1Feature2Text').value = data.techSecuritySlider1Feature2Text || '';
+    setImagePreview('techSecuritySlider1Feature3Icon-preview', data.techSecuritySlider1Feature3Icon);
+    document.getElementById('techSecuritySlider1Feature3Text').value = data.techSecuritySlider1Feature3Text || '';
+    setImagePreview('techSecuritySlider1RightImage-preview', data.techSecuritySlider1RightImage);
+    setImagePreview('techSecuritySlider1RightBgImage-preview', data.techSecuritySlider1RightBgImage);
+
+    document.getElementById('techSecuritySlider2Title').value = data.techSecuritySlider2Title || '';
+    document.getElementById('techSecuritySlider2Desc').value = data.techSecuritySlider2Desc || '';
+    setImagePreview('techSecuritySlider2Point1Icon-preview', data.techSecuritySlider2Point1Icon);
+    document.getElementById('techSecuritySlider2Point1Text').value = data.techSecuritySlider2Point1Text || '';
+    setImagePreview('techSecuritySlider2Point2Icon-preview', data.techSecuritySlider2Point2Icon);
+    document.getElementById('techSecuritySlider2Point2Text').value = data.techSecuritySlider2Point2Text || '';
+    document.getElementById('techSecuritySlider2FeatureTitle').value = data.techSecuritySlider2FeatureTitle || '';
+    renderDynamicParagraphs('techSecuritySlider2FeatureList', data.techSecuritySlider2FeatureList || []);
+    setImagePreview('techSecuritySlider2RightImage-preview', data.techSecuritySlider2RightImage);
+    setImagePreview('techSecuritySlider2RightBgImage-preview', data.techSecuritySlider2RightBgImage);
+
+    document.getElementById('techCostTitle').value = data.techCostTitle || '';
+    renderDynamicParagraphs('techCostParagraphs', data.techCostParagraphs || []);
+
+    document.getElementById('techTransparencyTitle').value = data.techTransparencyTitle || '';
+    document.getElementById('techTransparencyDesc').value = data.techTransparencyDesc || '';
+    setImagePreview('techTransparencyCard1Icon-preview', data.techTransparencyCard1Icon);
+    document.getElementById('techTransparencyCard1Desc').value = data.techTransparencyCard1Desc || '';
+    setImagePreview('techTransparencyCard2Icon-preview', data.techTransparencyCard2Icon);
+    document.getElementById('techTransparencyCard2Desc').value = data.techTransparencyCard2Desc || '';
+    setImagePreview('techTransparencyCard3Icon-preview', data.techTransparencyCard3Icon);
+    document.getElementById('techTransparencyCard3Desc').value = data.techTransparencyCard3Desc || '';
+    setImagePreview('techTransparencyCard4Icon-preview', data.techTransparencyCard4Icon);
+    document.getElementById('techTransparencyCard4Desc').value = data.techTransparencyCard4Desc || '';
+
+    document.getElementById('techCompAdvTitle').value = data.techCompAdvTitle || '';
+    document.getElementById('techCompAdvDesc').value = data.techCompAdvDesc || '';
+    document.getElementById('techCompAdvFeatureTitle').value = data.techCompAdvFeatureTitle || '';
+    setImagePreview('techCompAdvFeature1Icon-preview', data.techCompAdvFeature1Icon);
+    document.getElementById('techCompAdvFeature1Text').value = data.techCompAdvFeature1Text || '';
+    setImagePreview('techCompAdvFeature2Icon-preview', data.techCompAdvFeature2Icon);
+    document.getElementById('techCompAdvFeature2Text').value = data.techCompAdvFeature2Text || '';
+    setImagePreview('techCompAdvFeature3Icon-preview', data.techCompAdvFeature3Icon);
+    document.getElementById('techCompAdvFeature3Text').value = data.techCompAdvFeature3Text || '';
+    document.getElementById('techCompAdvPointsTitle').value = data.techCompAdvPointsTitle || '';
+    setImagePreview('techCompAdvPoint1Icon-preview', data.techCompAdvPoint1Icon);
+    document.getElementById('techCompAdvPoint1Text').value = data.techCompAdvPoint1Text || '';
+    setImagePreview('techCompAdvPoint2Icon-preview', data.techCompAdvPoint2Icon);
+    document.getElementById('techCompAdvPoint2Text').value = data.techCompAdvPoint2Text || '';
+    setImagePreview('techCompAdvPoint3Icon-preview', data.techCompAdvPoint3Icon);
+    document.getElementById('techCompAdvPoint3Text').value = data.techCompAdvPoint3Text || '';
+    setImagePreview('techCompAdvRightImage-preview', data.techCompAdvRightImage);
+    setImagePreview('techCompAdvRightBgImage-preview', data.techCompAdvRightBgImage);
+
+    document.getElementById('techFutureTitle').value = data.techFutureTitle || '';
+    document.getElementById('techFutureDesc').value = data.techFutureDesc || '';
+    document.getElementById('techFutureBtn1Text').value = data.techFutureBtn1Text || '';
+    document.getElementById('techFutureBtn1Link').value = data.techFutureBtn1Link || '';
+    document.getElementById('techFutureBtn2Text').value = data.techFutureBtn2Text || '';
+    document.getElementById('techFutureBtn2Link').value = data.techFutureBtn2Link || '';
+    setImagePreview('techFutureTopRightImage-preview', data.techFutureTopRightImage);
+    setImagePreview('techFutureBottomLeftImage-preview', data.techFutureBottomLeftImage);
+
+    
   }
 
   // 4. Token Economy Inputs
   else if (activePage === 'token') {
-    document.getElementById('tokenHeroTitle').value = data.tokenHeroTitle || '';
-    document.getElementById('tokenHeroDescription').value = data.tokenHeroDescription || '';
-    document.getElementById('tokenomicsTitle').value = data.tokenomicsTitle || '';
-    document.getElementById('tokenomicsDescription').value = data.tokenomicsDescription || '';
-    document.getElementById('supplyTotal').value = data.supplyTotal || '';
-    document.getElementById('supplyDistribution').value = data.supplyDistribution || '';
+        document.getElementById('tokenHeroTopHeader').value = data.tokenHeroTopHeader || '';
+document.getElementById('tokenHeroTitle').value = data.tokenHeroTitle || '';
+    document.getElementById('tokenHeroPrimaryBtnText').value = data.tokenHeroPrimaryBtnText || '';
+    document.getElementById('tokenHeroPrimaryBtnLink').value = data.tokenHeroPrimaryBtnLink || '';
+    document.getElementById('tokenHeroSecondaryBtnText').value = data.tokenHeroSecondaryBtnText || '';
+    document.getElementById('tokenHeroSecondaryBtnLink').value = data.tokenHeroSecondaryBtnLink || '';
+
+    document.getElementById('tokenDualEcosystemTitle').value = data.tokenDualEcosystemTitle || '';
+    document.getElementById('tokenDualEcosystemDesc').value = data.tokenDualEcosystemDesc || '';
+    setImagePreview('tokenDualEcosystemCard1Image-preview', data.tokenDualEcosystemCard1Image);
+    document.getElementById('tokenDualEcosystemCard1Desc').value = data.tokenDualEcosystemCard1Desc || '';
+    setImagePreview('tokenDualEcosystemCard2Image-preview', data.tokenDualEcosystemCard2Image);
+    document.getElementById('tokenDualEcosystemCard2Desc').value = data.tokenDualEcosystemCard2Desc || '';
+    document.getElementById('tokenDualEcosystemBottomDesc').value = data.tokenDualEcosystemBottomDesc || '';
+
+    document.getElementById('tokenHybridBadge').value = data.tokenHybridBadge || '';
+    document.getElementById('tokenHybridTitle').value = data.tokenHybridTitle || '';
+    document.getElementById('tokenHybridDesc').value = data.tokenHybridDesc || '';
+    setImagePreview('tokenHybridCard1Icon-preview', data.tokenHybridCard1Icon);
+    document.getElementById('tokenHybridCard1Title').value = data.tokenHybridCard1Title || '';
+    document.getElementById('tokenHybridCard1Desc').value = data.tokenHybridCard1Desc || '';
+    setImagePreview('tokenHybridCard2Icon-preview', data.tokenHybridCard2Icon);
+    document.getElementById('tokenHybridCard2Title').value = data.tokenHybridCard2Title || '';
+    document.getElementById('tokenHybridCard2Desc').value = data.tokenHybridCard2Desc || '';
+    document.getElementById('tokenHybridBottomDesc').value = data.tokenHybridBottomDesc || '';
+
+    document.getElementById('tokenSystemTitle').value = data.tokenSystemTitle || '';
+    document.getElementById('tokenSystemDesc').value = data.tokenSystemDesc || '';
+
+    document.getElementById('tokenSystemSlide1Badge').value = data.tokenSystemSlide1Badge || '';
+    document.getElementById('tokenSystemSlide1Title').value = data.tokenSystemSlide1Title || '';
+    renderDynamicParagraphs('tokenSystemSlide1DescList', data.tokenSystemSlide1DescList || []);
+    document.getElementById('tokenSystemSlide1BtnText').value = data.tokenSystemSlide1BtnText || '';
+    document.getElementById('tokenSystemSlide1BtnLink').value = data.tokenSystemSlide1BtnLink || '';
+    setImagePreview('tokenSystemSlide1Image-preview', data.tokenSystemSlide1Image);
+
+    document.getElementById('tokenSystemSlide2Badge').value = data.tokenSystemSlide2Badge || '';
+    document.getElementById('tokenSystemSlide2Title').value = data.tokenSystemSlide2Title || '';
+    renderDynamicParagraphs('tokenSystemSlide2DescList', data.tokenSystemSlide2DescList || []);
+    setImagePreview('tokenSystemSlide2Image-preview', data.tokenSystemSlide2Image);
+
+    document.getElementById('tokenSystemSlide3Badge').value = data.tokenSystemSlide3Badge || '';
+    document.getElementById('tokenSystemSlide3Title').value = data.tokenSystemSlide3Title || '';
+    renderDynamicParagraphs('tokenSystemSlide3DescList', data.tokenSystemSlide3DescList || []);
+    setImagePreview('tokenSystemSlide3Image-preview', data.tokenSystemSlide3Image);
+
+    document.getElementById('tokenSystemSlide4Badge').value = data.tokenSystemSlide4Badge || '';
+    document.getElementById('tokenSystemSlide4Title').value = data.tokenSystemSlide4Title || '';
+    renderDynamicParagraphs('tokenSystemSlide4DescList', data.tokenSystemSlide4DescList || []);
+    document.getElementById('tokenSystemSlide4FeatureHeading').value = data.tokenSystemSlide4FeatureHeading || '';
+    renderDynamicParagraphs('tokenSystemSlide4FeatureList', data.tokenSystemSlide4FeatureList || []);
+    setImagePreview('tokenSystemSlide4Image-preview', data.tokenSystemSlide4Image);
+
+    document.getElementById('tokenSystemSlide5Badge').value = data.tokenSystemSlide5Badge || '';
+    document.getElementById('tokenSystemSlide5Title').value = data.tokenSystemSlide5Title || '';
+    renderDynamicParagraphs('tokenSystemSlide5DescList', data.tokenSystemSlide5DescList || []);
+    document.getElementById('tokenSystemSlide5Heading').value = data.tokenSystemSlide5Heading || '';
+    renderDynamicParagraphs('tokenSystemSlide5HeadingDescList', data.tokenSystemSlide5HeadingDescList || []);
+    setImagePreview('tokenSystemSlide5Image-preview', data.tokenSystemSlide5Image);
+
+    document.getElementById('tokenSystemSlide6Badge').value = data.tokenSystemSlide6Badge || '';
+    document.getElementById('tokenSystemSlide6Title').value = data.tokenSystemSlide6Title || '';
+    renderDynamicParagraphs('tokenSystemSlide6DescList', data.tokenSystemSlide6DescList || []);
+    document.getElementById('tokenSystemSlide6FeatureHeading').value = data.tokenSystemSlide6FeatureHeading || '';
+    renderDynamicParagraphs('tokenSystemSlide6FeatureList', data.tokenSystemSlide6FeatureList || []);
+    setImagePreview('tokenSystemSlide6Image-preview', data.tokenSystemSlide6Image);
+
+    setImagePreview('tokenIntegrationSlide1Image-preview', data.tokenIntegrationSlide1Image);
+    document.getElementById('tokenIntegrationSlide1Title').value = data.tokenIntegrationSlide1Title || '';
+    renderDynamicParagraphs('tokenIntegrationSlide1DescList', data.tokenIntegrationSlide1DescList || []);
+    document.getElementById('tokenIntegrationSlide1FeatureHeading').value = data.tokenIntegrationSlide1FeatureHeading || '';
+    setImagePreview('tokenIntegrationSlide1Feature1Icon-preview', data.tokenIntegrationSlide1Feature1Icon);
+    document.getElementById('tokenIntegrationSlide1Feature1Text').value = data.tokenIntegrationSlide1Feature1Text || '';
+    setImagePreview('tokenIntegrationSlide1Feature2Icon-preview', data.tokenIntegrationSlide1Feature2Icon);
+    document.getElementById('tokenIntegrationSlide1Feature2Text').value = data.tokenIntegrationSlide1Feature2Text || '';
+    setImagePreview('tokenIntegrationSlide1Feature3Icon-preview', data.tokenIntegrationSlide1Feature3Icon);
+    document.getElementById('tokenIntegrationSlide1Feature3Text').value = data.tokenIntegrationSlide1Feature3Text || '';
+
+    setImagePreview('tokenIntegrationSlide2Image-preview', data.tokenIntegrationSlide2Image);
+    document.getElementById('tokenIntegrationSlide2Title').value = data.tokenIntegrationSlide2Title || '';
+    renderDynamicParagraphs('tokenIntegrationSlide2DescList', data.tokenIntegrationSlide2DescList || []);
+    setImagePreview('tokenIntegrationSlide2Feature1Icon-preview', data.tokenIntegrationSlide2Feature1Icon);
+    document.getElementById('tokenIntegrationSlide2Feature1Text').value = data.tokenIntegrationSlide2Feature1Text || '';
+    setImagePreview('tokenIntegrationSlide2Feature2Icon-preview', data.tokenIntegrationSlide2Feature2Icon);
+    document.getElementById('tokenIntegrationSlide2Feature2Text').value = data.tokenIntegrationSlide2Feature2Text || '';
+    setImagePreview('tokenIntegrationSlide2Feature3Icon-preview', data.tokenIntegrationSlide2Feature3Icon);
+    document.getElementById('tokenIntegrationSlide2Feature3Text').value = data.tokenIntegrationSlide2Feature3Text || '';
+
+    setImagePreview('tokenIntegrationSlide3Image-preview', data.tokenIntegrationSlide3Image);
+    document.getElementById('tokenIntegrationSlide3Title').value = data.tokenIntegrationSlide3Title || '';
+    renderDynamicParagraphs('tokenIntegrationSlide3DescList', data.tokenIntegrationSlide3DescList || []);
+    setImagePreview('tokenIntegrationSlide3Feature1Icon-preview', data.tokenIntegrationSlide3Feature1Icon);
+    document.getElementById('tokenIntegrationSlide3Feature1Text').value = data.tokenIntegrationSlide3Feature1Text || '';
+    setImagePreview('tokenIntegrationSlide3Feature2Icon-preview', data.tokenIntegrationSlide3Feature2Icon);
+    document.getElementById('tokenIntegrationSlide3Feature2Text').value = data.tokenIntegrationSlide3Feature2Text || '';
+    setImagePreview('tokenIntegrationSlide3Feature3Icon-preview', data.tokenIntegrationSlide3Feature3Icon);
+    document.getElementById('tokenIntegrationSlide3Feature3Text').value = data.tokenIntegrationSlide3Feature3Text || '';
+
+    document.getElementById('tokenSmartCoinsTitle').value = data.tokenSmartCoinsTitle || '';
+
+    // Tab 1
+    document.getElementById('tokenSmartCoinsTab1BtnText').value = data.tokenSmartCoinsTab1BtnText || '';
+    document.getElementById('tokenSmartCoinsTab1Title').value = data.tokenSmartCoinsTab1Title || '';
+    renderDynamicParagraphs('tokenSmartCoinsTab1DescList', data.tokenSmartCoinsTab1DescList || []);
+    setImagePreview('tokenSmartCoinsTab1Image-preview', data.tokenSmartCoinsTab1Image);
+    setImagePreview('tokenSmartCoinsTab1BgImage-preview', data.tokenSmartCoinsTab1BgImage);
+    document.getElementById('tokenSmartCoinsTab1FeatureHeading').value = data.tokenSmartCoinsTab1FeatureHeading || '';
+    document.getElementById('tokenSmartCoinsTab1F1Title').value = data.tokenSmartCoinsTab1F1Title || '';
+    document.getElementById('tokenSmartCoinsTab1F1Desc').value = data.tokenSmartCoinsTab1F1Desc || '';
+    document.getElementById('tokenSmartCoinsTab1F2Title').value = data.tokenSmartCoinsTab1F2Title || '';
+    document.getElementById('tokenSmartCoinsTab1F2Desc').value = data.tokenSmartCoinsTab1F2Desc || '';
+    document.getElementById('tokenSmartCoinsTab1F3Title').value = data.tokenSmartCoinsTab1F3Title || '';
+    document.getElementById('tokenSmartCoinsTab1F3Desc').value = data.tokenSmartCoinsTab1F3Desc || '';
+    document.getElementById('tokenSmartCoinsTab1F4Title').value = data.tokenSmartCoinsTab1F4Title || '';
+    document.getElementById('tokenSmartCoinsTab1F4Desc').value = data.tokenSmartCoinsTab1F4Desc || '';
+    document.getElementById('tokenSmartCoinsTab1F5Title').value = data.tokenSmartCoinsTab1F5Title || '';
+    document.getElementById('tokenSmartCoinsTab1F5Desc').value = data.tokenSmartCoinsTab1F5Desc || '';
+    document.getElementById('tokenSmartCoinsTab1ValueHeading').value = data.tokenSmartCoinsTab1ValueHeading || '';
+    document.getElementById('tokenSmartCoinsTab1ValueDesc').value = data.tokenSmartCoinsTab1ValueDesc || '';
+
+    // Tab 2
+    document.getElementById('tokenSmartCoinsTab2BtnText').value = data.tokenSmartCoinsTab2BtnText || '';
+    document.getElementById('tokenSmartCoinsTab2Title').value = data.tokenSmartCoinsTab2Title || '';
+    renderDynamicParagraphs('tokenSmartCoinsTab2DescList', data.tokenSmartCoinsTab2DescList || []);
+    setImagePreview('tokenSmartCoinsTab2Image-preview', data.tokenSmartCoinsTab2Image);
+    setImagePreview('tokenSmartCoinsTab2BgImage-preview', data.tokenSmartCoinsTab2BgImage);
+    document.getElementById('tokenSmartCoinsTab2F1Heading').value = data.tokenSmartCoinsTab2F1Heading || '';
+    renderDynamicParagraphs('tokenSmartCoinsTab2F1List', data.tokenSmartCoinsTab2F1List || []);
+    document.getElementById('tokenSmartCoinsTab2F2Heading').value = data.tokenSmartCoinsTab2F2Heading || '';
+    renderDynamicParagraphs('tokenSmartCoinsTab2F2List', data.tokenSmartCoinsTab2F2List || []);
+    document.getElementById('tokenSmartCoinsTab2ValueHeading').value = data.tokenSmartCoinsTab2ValueHeading || '';
+    document.getElementById('tokenSmartCoinsTab2ValueDesc').value = data.tokenSmartCoinsTab2ValueDesc || '';
+
+
+    document.getElementById('tokenFutureTitle').value = data.tokenFutureTitle || '';
+    renderDynamicParagraphs('tokenFutureDescList', data.tokenFutureDescList || []);
+    document.getElementById('tokenFuturePrimaryBtnText').value = data.tokenFuturePrimaryBtnText || '';
+    document.getElementById('tokenFuturePrimaryBtnLink').value = data.tokenFuturePrimaryBtnLink || '';
+    document.getElementById('tokenFutureSecondaryBtnText').value = data.tokenFutureSecondaryBtnText || '';
+    document.getElementById('tokenFutureSecondaryBtnLink').value = data.tokenFutureSecondaryBtnLink || '';
+    setImagePreview('tokenFutureTopRightImage-preview', data.tokenFutureTopRightImage);
+    setImagePreview('tokenFutureBottomLeftImage-preview', data.tokenFutureBottomLeftImage);
+
+
+
+
+
+    document.getElementById('tokenHeroDescription').value = data.tokenHeroDescription || '';   
   }
 
   // 5. Contact Us Inputs
@@ -957,7 +1270,9 @@ form.addEventListener('submit', async (e) => {
     formData.append('heroTitle', document.getElementById('heroTitle').value);
     formData.append('heroDescription', document.getElementById('heroDescription').value);
     formData.append('heroPrimaryBtnText', document.getElementById('heroPrimaryBtnText').value);
+    formData.append('heroPrimaryBtnLink', document.getElementById('heroPrimaryBtnLink').value);
     formData.append('heroSecondaryBtnText', document.getElementById('heroSecondaryBtnText').value);
+    formData.append('heroSecondaryBtnLink', document.getElementById('heroSecondaryBtnLink').value);
 
     // Serialize dynamic coin marquee rows into array
     const tickerCoins = [];
@@ -1260,21 +1575,375 @@ form.addEventListener('submit', async (e) => {
 
   else if (activePage === 'technology') {
     formData.append('techHeroTopTitle', document.getElementById('techHeroTopTitle').value);
-     formData.append('techHeroTitle', document.getElementById('techHeroTitle').value);
+    formData.append('techHeroTitle', document.getElementById('techHeroTitle').value);
     formData.append('techHeroDescription', document.getElementById('techHeroDescription').value);
-    formData.append('coreTechTitle', document.getElementById('coreTechTitle').value);
-    formData.append('coreTechDescription', document.getElementById('coreTechDescription').value);
-    formData.append('securityTitle', document.getElementById('securityTitle').value);
-    formData.append('securityDescription', document.getElementById('securityDescription').value);
+    formData.append('techHeroPrimaryBtnText', document.getElementById('techHeroPrimaryBtnText').value);
+    formData.append('techHeroPrimaryBtnLink', document.getElementById('techHeroPrimaryBtnLink').value);
+    formData.append('techHeroSecondaryBtnText', document.getElementById('techHeroSecondaryBtnText').value);
+    formData.append('techHeroSecondaryBtnLink', document.getElementById('techHeroSecondaryBtnLink').value);
+
+    formData.append('techCard1Title', document.getElementById('techCard1Title').value);
+    formData.append('techCard1Paragraphs', JSON.stringify(collectDynamicParagraphs('techCard1Paragraphs')));
+    if (document.getElementById('techCard1BgImage').files[0]) formData.append('techCard1BgImage', document.getElementById('techCard1BgImage').files[0]);
+    if (document.getElementById('techCard1Image').files[0]) formData.append('techCard1Image', document.getElementById('techCard1Image').files[0]);
+
+    formData.append('techCard2Title', document.getElementById('techCard2Title').value);
+    formData.append('techCard2TopParagraphs', JSON.stringify(collectDynamicParagraphs('techCard2TopParagraphs')));
+    formData.append('techCard2Point1Text', document.getElementById('techCard2Point1Text').value);
+    if (document.getElementById('techCard2Point1Icon').files[0]) formData.append('techCard2Point1Icon', document.getElementById('techCard2Point1Icon').files[0]);
+    formData.append('techCard2Point2Text', document.getElementById('techCard2Point2Text').value);
+    if (document.getElementById('techCard2Point2Icon').files[0]) formData.append('techCard2Point2Icon', document.getElementById('techCard2Point2Icon').files[0]);
+    formData.append('techCard2Point3Text', document.getElementById('techCard2Point3Text').value);
+    if (document.getElementById('techCard2Point3Icon').files[0]) formData.append('techCard2Point3Icon', document.getElementById('techCard2Point3Icon').files[0]);
+    formData.append('techCard2Point4Text', document.getElementById('techCard2Point4Text').value);
+    if (document.getElementById('techCard2Point4Icon').files[0]) formData.append('techCard2Point4Icon', document.getElementById('techCard2Point4Icon').files[0]);
+    formData.append('techCard2BottomParagraphs', JSON.stringify(collectDynamicParagraphs('techCard2BottomParagraphs')));
+    if (document.getElementById('techCard2BgImage').files[0]) formData.append('techCard2BgImage', document.getElementById('techCard2BgImage').files[0]);
+    if (document.getElementById('techCard2Image').files[0]) formData.append('techCard2Image', document.getElementById('techCard2Image').files[0]);
+
+    formData.append('techCard3Title', document.getElementById('techCard3Title').value);
+    formData.append('techCard3Point1Text', document.getElementById('techCard3Point1Text').value);
+    if (document.getElementById('techCard3Point1Icon').files[0]) formData.append('techCard3Point1Icon', document.getElementById('techCard3Point1Icon').files[0]);
+    formData.append('techCard3Point2Text', document.getElementById('techCard3Point2Text').value);
+    if (document.getElementById('techCard3Point2Icon').files[0]) formData.append('techCard3Point2Icon', document.getElementById('techCard3Point2Icon').files[0]);
+    formData.append('techCard3Point3Text', document.getElementById('techCard3Point3Text').value);
+    if (document.getElementById('techCard3Point3Icon').files[0]) formData.append('techCard3Point3Icon', document.getElementById('techCard3Point3Icon').files[0]);
+    formData.append('techCard3Paragraphs', JSON.stringify(collectDynamicParagraphs('techCard3Paragraphs')));
+    if (document.getElementById('techCard3BgImage').files[0]) formData.append('techCard3BgImage', document.getElementById('techCard3BgImage').files[0]);
+    if (document.getElementById('techCard3Image').files[0]) formData.append('techCard3Image', document.getElementById('techCard3Image').files[0]);
+
+    // append remove flags for tech cards
+    const techRemoveFlags = [
+      'remove_techCard1BgImage', 'remove_techCard1Image',
+      'remove_techCard2Point1Icon', 'remove_techCard2Point2Icon', 'remove_techCard2Point3Icon', 'remove_techCard2Point4Icon', 'remove_techCard2BgImage', 'remove_techCard2Image',
+      'remove_techCard3Point1Icon', 'remove_techCard3Point2Icon', 'remove_techCard3Point3Icon', 'remove_techCard3BgImage', 'remove_techCard3Image'
+    ];
+    techRemoveFlags.forEach(flag => {
+      const el = document.getElementById(flag);
+      if(el) formData.append(flag, el.value);
+    });
+
+    formData.append('techConsensusBadge', document.getElementById('techConsensusBadge').value);
+    formData.append('techConsensusTitle', document.getElementById('techConsensusTitle').value);
+    formData.append('techConsensusDescription', document.getElementById('techConsensusDescription').value);
+    formData.append('techConsensusCard1Desc', document.getElementById('techConsensusCard1Desc').value);
+    if (document.getElementById('techConsensusCard1Icon').files[0]) formData.append('techConsensusCard1Icon', document.getElementById('techConsensusCard1Icon').files[0]);
+    formData.append('techConsensusCard2Desc', document.getElementById('techConsensusCard2Desc').value);
+    if (document.getElementById('techConsensusCard2Icon').files[0]) formData.append('techConsensusCard2Icon', document.getElementById('techConsensusCard2Icon').files[0]);
+    formData.append('techConsensusCard3Desc', document.getElementById('techConsensusCard3Desc').value);
+    if (document.getElementById('techConsensusCard3Icon').files[0]) formData.append('techConsensusCard3Icon', document.getElementById('techConsensusCard3Icon').files[0]);
+    formData.append('techConsensusBottomDesc', document.getElementById('techConsensusBottomDesc').value);
+
+    formData.append('techSmartTitle', document.getElementById('techSmartTitle').value);
+    formData.append('techSmartDesc', document.getElementById('techSmartDesc').value);
+    formData.append('techSmartCheckpoints', JSON.stringify(collectDynamicParagraphs('techSmartCheckpoints')));
+    formData.append('techSmartFeature1Name', document.getElementById('techSmartFeature1Name').value);
+    if (document.getElementById('techSmartFeature1Icon').files[0]) formData.append('techSmartFeature1Icon', document.getElementById('techSmartFeature1Icon').files[0]);
+    formData.append('techSmartFeature2Name', document.getElementById('techSmartFeature2Name').value);
+    if (document.getElementById('techSmartFeature2Icon').files[0]) formData.append('techSmartFeature2Icon', document.getElementById('techSmartFeature2Icon').files[0]);
+    formData.append('techSmartFeature3Name', document.getElementById('techSmartFeature3Name').value);
+    if (document.getElementById('techSmartFeature3Icon').files[0]) formData.append('techSmartFeature3Icon', document.getElementById('techSmartFeature3Icon').files[0]);
+    if (document.getElementById('techSmartRightBgImage').files[0]) formData.append('techSmartRightBgImage', document.getElementById('techSmartRightBgImage').files[0]);
+    if (document.getElementById('techSmartRightImage').files[0]) formData.append('techSmartRightImage', document.getElementById('techSmartRightImage').files[0]);
+
+    const newTechRemoveFlags = [
+      'remove_techConsensusCard1Icon', 'remove_techConsensusCard2Icon', 'remove_techConsensusCard3Icon',
+      'remove_techSmartFeature1Icon', 'remove_techSmartFeature2Icon', 'remove_techSmartFeature3Icon',
+      'remove_techSmartRightBgImage', 'remove_techSmartRightImage'
+    ];
+    newTechRemoveFlags.forEach(flag => {
+      const el = document.getElementById(flag);
+      if(el) formData.append(flag, el.value);
+    });
+
+    if (document.getElementById('techSlide1Image').files[0]) formData.append('techSlide1Image', document.getElementById('techSlide1Image').files[0]);
+    formData.append('techSlide1Title', document.getElementById('techSlide1Title').value);
+    formData.append('techSlide1Desc', document.getElementById('techSlide1Desc').value);
+    if (document.getElementById('techSlide1Point1Icon').files[0]) formData.append('techSlide1Point1Icon', document.getElementById('techSlide1Point1Icon').files[0]);
+    formData.append('techSlide1Point1Text', document.getElementById('techSlide1Point1Text').value);
+    if (document.getElementById('techSlide1Point2Icon').files[0]) formData.append('techSlide1Point2Icon', document.getElementById('techSlide1Point2Icon').files[0]);
+    formData.append('techSlide1Point2Text', document.getElementById('techSlide1Point2Text').value);
+    formData.append('techSlide1FeatureHeading', document.getElementById('techSlide1FeatureHeading').value);
+    if (document.getElementById('techSlide1Feature1Icon').files[0]) formData.append('techSlide1Feature1Icon', document.getElementById('techSlide1Feature1Icon').files[0]);
+    formData.append('techSlide1Feature1Text', document.getElementById('techSlide1Feature1Text').value);
+    if (document.getElementById('techSlide1Feature2Icon').files[0]) formData.append('techSlide1Feature2Icon', document.getElementById('techSlide1Feature2Icon').files[0]);
+    formData.append('techSlide1Feature2Text', document.getElementById('techSlide1Feature2Text').value);
+    if (document.getElementById('techSlide1Feature3Icon').files[0]) formData.append('techSlide1Feature3Icon', document.getElementById('techSlide1Feature3Icon').files[0]);
+    formData.append('techSlide1Feature3Text', document.getElementById('techSlide1Feature3Text').value);
+
+    formData.append('techSlide2Title', document.getElementById('techSlide2Title').value);
+    formData.append('techSlide2Desc', document.getElementById('techSlide2Desc').value);
+    if (document.getElementById('techSlide2Image').files[0]) formData.append('techSlide2Image', document.getElementById('techSlide2Image').files[0]);
+    if (document.getElementById('techSlide2Feature1Icon').files[0]) formData.append('techSlide2Feature1Icon', document.getElementById('techSlide2Feature1Icon').files[0]);
+    formData.append('techSlide2Feature1Text', document.getElementById('techSlide2Feature1Text').value);
+    if (document.getElementById('techSlide2Feature2Icon').files[0]) formData.append('techSlide2Feature2Icon', document.getElementById('techSlide2Feature2Icon').files[0]);
+    formData.append('techSlide2Feature2Text', document.getElementById('techSlide2Feature2Text').value);
+    if (document.getElementById('techSlide2Feature3Icon').files[0]) formData.append('techSlide2Feature3Icon', document.getElementById('techSlide2Feature3Icon').files[0]);
+    formData.append('techSlide2Feature3Text', document.getElementById('techSlide2Feature3Text').value);
+
+    if (document.getElementById('techSlide3Image').files[0]) formData.append('techSlide3Image', document.getElementById('techSlide3Image').files[0]);
+    formData.append('techSlide3Title', document.getElementById('techSlide3Title').value);
+    formData.append('techSlide3Desc', document.getElementById('techSlide3Desc').value);
+    if (document.getElementById('techSlide3Feature1Icon').files[0]) formData.append('techSlide3Feature1Icon', document.getElementById('techSlide3Feature1Icon').files[0]);
+    formData.append('techSlide3Feature1Text', document.getElementById('techSlide3Feature1Text').value);
+    if (document.getElementById('techSlide3Feature2Icon').files[0]) formData.append('techSlide3Feature2Icon', document.getElementById('techSlide3Feature2Icon').files[0]);
+    formData.append('techSlide3Feature2Text', document.getElementById('techSlide3Feature2Text').value);
+    if (document.getElementById('techSlide3Feature3Icon').files[0]) formData.append('techSlide3Feature3Icon', document.getElementById('techSlide3Feature3Icon').files[0]);
+    formData.append('techSlide3Feature3Text', document.getElementById('techSlide3Feature3Text').value);
+
+    const slideRemoveFlags = [
+      'remove_techSlide1Image', 'remove_techSlide1Point1Icon', 'remove_techSlide1Point2Icon',
+      'remove_techSlide1Feature1Icon', 'remove_techSlide1Feature2Icon', 'remove_techSlide1Feature3Icon',
+      'remove_techSlide2Image', 'remove_techSlide2Feature1Icon', 'remove_techSlide2Feature2Icon', 'remove_techSlide2Feature3Icon',
+      'remove_techSlide3Image', 'remove_techSlide3Feature1Icon', 'remove_techSlide3Feature2Icon', 'remove_techSlide3Feature3Icon'
+    ];
+    slideRemoveFlags.forEach(flag => {
+      const el = document.getElementById(flag);
+      if(el) formData.append(flag, el.value);
+    });
+
+    formData.append('techSecuritySlider1Title', document.getElementById('techSecuritySlider1Title').value);
+    formData.append('techSecuritySlider1Desc', document.getElementById('techSecuritySlider1Desc').value);
+    if (document.getElementById('techSecuritySlider1Feature1Icon').files[0]) formData.append('techSecuritySlider1Feature1Icon', document.getElementById('techSecuritySlider1Feature1Icon').files[0]);
+    formData.append('techSecuritySlider1Feature1Text', document.getElementById('techSecuritySlider1Feature1Text').value);
+    if (document.getElementById('techSecuritySlider1Feature2Icon').files[0]) formData.append('techSecuritySlider1Feature2Icon', document.getElementById('techSecuritySlider1Feature2Icon').files[0]);
+    formData.append('techSecuritySlider1Feature2Text', document.getElementById('techSecuritySlider1Feature2Text').value);
+    if (document.getElementById('techSecuritySlider1Feature3Icon').files[0]) formData.append('techSecuritySlider1Feature3Icon', document.getElementById('techSecuritySlider1Feature3Icon').files[0]);
+    formData.append('techSecuritySlider1Feature3Text', document.getElementById('techSecuritySlider1Feature3Text').value);
+    if (document.getElementById('techSecuritySlider1RightImage').files[0]) formData.append('techSecuritySlider1RightImage', document.getElementById('techSecuritySlider1RightImage').files[0]);
+    if (document.getElementById('techSecuritySlider1RightBgImage').files[0]) formData.append('techSecuritySlider1RightBgImage', document.getElementById('techSecuritySlider1RightBgImage').files[0]);
+
+    formData.append('techSecuritySlider2Title', document.getElementById('techSecuritySlider2Title').value);
+    formData.append('techSecuritySlider2Desc', document.getElementById('techSecuritySlider2Desc').value);
+    if (document.getElementById('techSecuritySlider2RightImage').files[0]) formData.append('techSecuritySlider2RightImage', document.getElementById('techSecuritySlider2RightImage').files[0]);
+    if (document.getElementById('techSecuritySlider2RightBgImage').files[0]) formData.append('techSecuritySlider2RightBgImage', document.getElementById('techSecuritySlider2RightBgImage').files[0]);
+    if (document.getElementById('techSecuritySlider2Point1Icon').files[0]) formData.append('techSecuritySlider2Point1Icon', document.getElementById('techSecuritySlider2Point1Icon').files[0]);
+    formData.append('techSecuritySlider2Point1Text', document.getElementById('techSecuritySlider2Point1Text').value);
+    if (document.getElementById('techSecuritySlider2Point2Icon').files[0]) formData.append('techSecuritySlider2Point2Icon', document.getElementById('techSecuritySlider2Point2Icon').files[0]);
+    formData.append('techSecuritySlider2Point2Text', document.getElementById('techSecuritySlider2Point2Text').value);
+    formData.append('techSecuritySlider2FeatureTitle', document.getElementById('techSecuritySlider2FeatureTitle').value);
+    formData.append('techSecuritySlider2FeatureList', JSON.stringify(collectDynamicParagraphs('techSecuritySlider2FeatureList')));
+
+    const secRemoveFlags = [
+      'remove_techSecuritySlider1Feature1Icon', 'remove_techSecuritySlider1Feature2Icon', 'remove_techSecuritySlider1Feature3Icon',
+      'remove_techSecuritySlider1RightImage', 'remove_techSecuritySlider1RightBgImage',
+      'remove_techSecuritySlider2Point1Icon', 'remove_techSecuritySlider2Point2Icon'
+    ];
+    secRemoveFlags.forEach(flag => {
+      const el = document.getElementById(flag);
+      if(el) formData.append(flag, el.value);
+    });
+
+    formData.append('techCostTitle', document.getElementById('techCostTitle').value);
+    formData.append('techCostParagraphs', JSON.stringify(collectDynamicParagraphs('techCostParagraphs')));
+
+    formData.append('techTransparencyTitle', document.getElementById('techTransparencyTitle').value);
+    formData.append('techTransparencyDesc', document.getElementById('techTransparencyDesc').value);
+    if (document.getElementById('techTransparencyCard1Icon').files[0]) formData.append('techTransparencyCard1Icon', document.getElementById('techTransparencyCard1Icon').files[0]);
+    formData.append('techTransparencyCard1Desc', document.getElementById('techTransparencyCard1Desc').value);
+    if (document.getElementById('techTransparencyCard2Icon').files[0]) formData.append('techTransparencyCard2Icon', document.getElementById('techTransparencyCard2Icon').files[0]);
+    formData.append('techTransparencyCard2Desc', document.getElementById('techTransparencyCard2Desc').value);
+    if (document.getElementById('techTransparencyCard3Icon').files[0]) formData.append('techTransparencyCard3Icon', document.getElementById('techTransparencyCard3Icon').files[0]);
+    formData.append('techTransparencyCard3Desc', document.getElementById('techTransparencyCard3Desc').value);
+    if (document.getElementById('techTransparencyCard4Icon').files[0]) formData.append('techTransparencyCard4Icon', document.getElementById('techTransparencyCard4Icon').files[0]);
+    formData.append('techTransparencyCard4Desc', document.getElementById('techTransparencyCard4Desc').value);
+
+    const extraFlags = ['remove_techTransparencyCard1Icon', 'remove_techTransparencyCard2Icon', 'remove_techTransparencyCard3Icon', 'remove_techTransparencyCard4Icon'];
+    extraFlags.forEach(flag => {
+      const el = document.getElementById(flag);
+      if(el) formData.append(flag, el.value);
+    });
+
+    formData.append('techCompAdvTitle', document.getElementById('techCompAdvTitle').value);
+    formData.append('techCompAdvDesc', document.getElementById('techCompAdvDesc').value);
+    formData.append('techCompAdvFeatureTitle', document.getElementById('techCompAdvFeatureTitle').value);
+    if (document.getElementById('techCompAdvFeature1Icon').files[0]) formData.append('techCompAdvFeature1Icon', document.getElementById('techCompAdvFeature1Icon').files[0]);
+    formData.append('techCompAdvFeature1Text', document.getElementById('techCompAdvFeature1Text').value);
+    if (document.getElementById('techCompAdvFeature2Icon').files[0]) formData.append('techCompAdvFeature2Icon', document.getElementById('techCompAdvFeature2Icon').files[0]);
+    formData.append('techCompAdvFeature2Text', document.getElementById('techCompAdvFeature2Text').value);
+    if (document.getElementById('techCompAdvFeature3Icon').files[0]) formData.append('techCompAdvFeature3Icon', document.getElementById('techCompAdvFeature3Icon').files[0]);
+    formData.append('techCompAdvFeature3Text', document.getElementById('techCompAdvFeature3Text').value);
+    formData.append('techCompAdvPointsTitle', document.getElementById('techCompAdvPointsTitle').value);
+    if (document.getElementById('techCompAdvPoint1Icon').files[0]) formData.append('techCompAdvPoint1Icon', document.getElementById('techCompAdvPoint1Icon').files[0]);
+    formData.append('techCompAdvPoint1Text', document.getElementById('techCompAdvPoint1Text').value);
+    if (document.getElementById('techCompAdvPoint2Icon').files[0]) formData.append('techCompAdvPoint2Icon', document.getElementById('techCompAdvPoint2Icon').files[0]);
+    formData.append('techCompAdvPoint2Text', document.getElementById('techCompAdvPoint2Text').value);
+    if (document.getElementById('techCompAdvPoint3Icon').files[0]) formData.append('techCompAdvPoint3Icon', document.getElementById('techCompAdvPoint3Icon').files[0]);
+    formData.append('techCompAdvPoint3Text', document.getElementById('techCompAdvPoint3Text').value);
+    if (document.getElementById('techCompAdvRightImage').files[0]) formData.append('techCompAdvRightImage', document.getElementById('techCompAdvRightImage').files[0]);
+    if (document.getElementById('techCompAdvRightBgImage').files[0]) formData.append('techCompAdvRightBgImage', document.getElementById('techCompAdvRightBgImage').files[0]);
+
+    formData.append('techFutureTitle', document.getElementById('techFutureTitle').value);
+    formData.append('techFutureDesc', document.getElementById('techFutureDesc').value);
+    formData.append('techFutureBtn1Text', document.getElementById('techFutureBtn1Text').value);
+    formData.append('techFutureBtn1Link', document.getElementById('techFutureBtn1Link').value);
+    formData.append('techFutureBtn2Text', document.getElementById('techFutureBtn2Text').value);
+    formData.append('techFutureBtn2Link', document.getElementById('techFutureBtn2Link').value);
+    if (document.getElementById('techFutureTopRightImage').files[0]) formData.append('techFutureTopRightImage', document.getElementById('techFutureTopRightImage').files[0]);
+    if (document.getElementById('techFutureBottomLeftImage').files[0]) formData.append('techFutureBottomLeftImage', document.getElementById('techFutureBottomLeftImage').files[0]);
+
+    const compAdvFlags = ['remove_techCompAdvFeature1Icon', 'remove_techCompAdvFeature2Icon', 'remove_techCompAdvFeature3Icon', 'remove_techCompAdvPoint1Icon', 'remove_techCompAdvPoint2Icon', 'remove_techCompAdvPoint3Icon', 'remove_techCompAdvRightImage', 'remove_techCompAdvRightBgImage', 'remove_techFutureTopRightImage', 'remove_techFutureBottomLeftImage'];
+    compAdvFlags.forEach(flag => {
+      const el = document.getElementById(flag);
+      if(el) formData.append(flag, el.value);
+    });
+
+
+
+
+
+
   }
 
   else if (activePage === 'token') {
-    formData.append('tokenHeroTitle', document.getElementById('tokenHeroTitle').value);
-    formData.append('tokenHeroDescription', document.getElementById('tokenHeroDescription').value);
-    formData.append('tokenomicsTitle', document.getElementById('tokenomicsTitle').value);
-    formData.append('tokenomicsDescription', document.getElementById('tokenomicsDescription').value);
-    formData.append('supplyTotal', document.getElementById('supplyTotal').value);
-    formData.append('supplyDistribution', document.getElementById('supplyDistribution').value);
+        formData.append('tokenHeroTopHeader', document.getElementById('tokenHeroTopHeader').value);
+formData.append('tokenHeroTitle', document.getElementById('tokenHeroTitle').value);
+    formData.append('tokenHeroPrimaryBtnText', document.getElementById('tokenHeroPrimaryBtnText').value);
+    formData.append('tokenHeroPrimaryBtnLink', document.getElementById('tokenHeroPrimaryBtnLink').value);
+    formData.append('tokenHeroSecondaryBtnText', document.getElementById('tokenHeroSecondaryBtnText').value);
+    formData.append('tokenHeroSecondaryBtnLink', document.getElementById('tokenHeroSecondaryBtnLink').value);
+
+    formData.append('tokenDualEcosystemTitle', document.getElementById('tokenDualEcosystemTitle').value);
+    formData.append('tokenDualEcosystemDesc', document.getElementById('tokenDualEcosystemDesc').value);
+    appendFileToFormData('tokenDualEcosystemCard1Image', 'remove_tokenDualEcosystemCard1Image');
+    formData.append('tokenDualEcosystemCard1Desc', document.getElementById('tokenDualEcosystemCard1Desc').value);
+    appendFileToFormData('tokenDualEcosystemCard2Image', 'remove_tokenDualEcosystemCard2Image');
+    formData.append('tokenDualEcosystemCard2Desc', document.getElementById('tokenDualEcosystemCard2Desc').value);
+    formData.append('tokenDualEcosystemBottomDesc', document.getElementById('tokenDualEcosystemBottomDesc').value);
+
+    formData.append('tokenHybridBadge', document.getElementById('tokenHybridBadge').value);
+    formData.append('tokenHybridTitle', document.getElementById('tokenHybridTitle').value);
+    formData.append('tokenHybridDesc', document.getElementById('tokenHybridDesc').value);
+    appendFileToFormData('tokenHybridCard1Icon', 'remove_tokenHybridCard1Icon');
+    formData.append('tokenHybridCard1Title', document.getElementById('tokenHybridCard1Title').value);
+    formData.append('tokenHybridCard1Desc', document.getElementById('tokenHybridCard1Desc').value);
+    appendFileToFormData('tokenHybridCard2Icon', 'remove_tokenHybridCard2Icon');
+    formData.append('tokenHybridCard2Title', document.getElementById('tokenHybridCard2Title').value);
+    formData.append('tokenHybridCard2Desc', document.getElementById('tokenHybridCard2Desc').value);
+    formData.append('tokenHybridBottomDesc', document.getElementById('tokenHybridBottomDesc').value);
+
+    formData.append('tokenSystemTitle', document.getElementById('tokenSystemTitle').value);
+    formData.append('tokenSystemDesc', document.getElementById('tokenSystemDesc').value);
+
+    formData.append('tokenSystemSlide1Badge', document.getElementById('tokenSystemSlide1Badge').value);
+    formData.append('tokenSystemSlide1Title', document.getElementById('tokenSystemSlide1Title').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide1DescList');
+    formData.append('tokenSystemSlide1BtnText', document.getElementById('tokenSystemSlide1BtnText').value);
+    formData.append('tokenSystemSlide1BtnLink', document.getElementById('tokenSystemSlide1BtnLink').value);
+    appendFileToFormData('tokenSystemSlide1Image', 'remove_tokenSystemSlide1Image');
+
+    formData.append('tokenSystemSlide2Badge', document.getElementById('tokenSystemSlide2Badge').value);
+    formData.append('tokenSystemSlide2Title', document.getElementById('tokenSystemSlide2Title').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide2DescList');
+    appendFileToFormData('tokenSystemSlide2Image', 'remove_tokenSystemSlide2Image');
+
+    formData.append('tokenSystemSlide3Badge', document.getElementById('tokenSystemSlide3Badge').value);
+    formData.append('tokenSystemSlide3Title', document.getElementById('tokenSystemSlide3Title').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide3DescList');
+    appendFileToFormData('tokenSystemSlide3Image', 'remove_tokenSystemSlide3Image');
+
+    formData.append('tokenSystemSlide4Badge', document.getElementById('tokenSystemSlide4Badge').value);
+    formData.append('tokenSystemSlide4Title', document.getElementById('tokenSystemSlide4Title').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide4DescList');
+    formData.append('tokenSystemSlide4FeatureHeading', document.getElementById('tokenSystemSlide4FeatureHeading').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide4FeatureList');
+    appendFileToFormData('tokenSystemSlide4Image', 'remove_tokenSystemSlide4Image');
+
+    formData.append('tokenSystemSlide5Badge', document.getElementById('tokenSystemSlide5Badge').value);
+    formData.append('tokenSystemSlide5Title', document.getElementById('tokenSystemSlide5Title').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide5DescList');
+    formData.append('tokenSystemSlide5Heading', document.getElementById('tokenSystemSlide5Heading').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide5HeadingDescList');
+    appendFileToFormData('tokenSystemSlide5Image', 'remove_tokenSystemSlide5Image');
+
+    formData.append('tokenSystemSlide6Badge', document.getElementById('tokenSystemSlide6Badge').value);
+    formData.append('tokenSystemSlide6Title', document.getElementById('tokenSystemSlide6Title').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide6DescList');
+    formData.append('tokenSystemSlide6FeatureHeading', document.getElementById('tokenSystemSlide6FeatureHeading').value);
+    appendDynamicParagraphs(formData, 'tokenSystemSlide6FeatureList');
+    appendFileToFormData('tokenSystemSlide6Image', 'remove_tokenSystemSlide6Image');
+
+    appendFileToFormData('tokenIntegrationSlide1Image', 'remove_tokenIntegrationSlide1Image');
+    formData.append('tokenIntegrationSlide1Title', document.getElementById('tokenIntegrationSlide1Title').value);
+    appendDynamicParagraphs(formData, 'tokenIntegrationSlide1DescList');
+    formData.append('tokenIntegrationSlide1FeatureHeading', document.getElementById('tokenIntegrationSlide1FeatureHeading').value);
+    appendFileToFormData('tokenIntegrationSlide1Feature1Icon', 'remove_tokenIntegrationSlide1Feature1Icon');
+    formData.append('tokenIntegrationSlide1Feature1Text', document.getElementById('tokenIntegrationSlide1Feature1Text').value);
+    appendFileToFormData('tokenIntegrationSlide1Feature2Icon', 'remove_tokenIntegrationSlide1Feature2Icon');
+    formData.append('tokenIntegrationSlide1Feature2Text', document.getElementById('tokenIntegrationSlide1Feature2Text').value);
+    appendFileToFormData('tokenIntegrationSlide1Feature3Icon', 'remove_tokenIntegrationSlide1Feature3Icon');
+    formData.append('tokenIntegrationSlide1Feature3Text', document.getElementById('tokenIntegrationSlide1Feature3Text').value);
+
+    appendFileToFormData('tokenIntegrationSlide2Image', 'remove_tokenIntegrationSlide2Image');
+    formData.append('tokenIntegrationSlide2Title', document.getElementById('tokenIntegrationSlide2Title').value);
+    appendDynamicParagraphs(formData, 'tokenIntegrationSlide2DescList');
+    appendFileToFormData('tokenIntegrationSlide2Feature1Icon', 'remove_tokenIntegrationSlide2Feature1Icon');
+    formData.append('tokenIntegrationSlide2Feature1Text', document.getElementById('tokenIntegrationSlide2Feature1Text').value);
+    appendFileToFormData('tokenIntegrationSlide2Feature2Icon', 'remove_tokenIntegrationSlide2Feature2Icon');
+    formData.append('tokenIntegrationSlide2Feature2Text', document.getElementById('tokenIntegrationSlide2Feature2Text').value);
+    appendFileToFormData('tokenIntegrationSlide2Feature3Icon', 'remove_tokenIntegrationSlide2Feature3Icon');
+    formData.append('tokenIntegrationSlide2Feature3Text', document.getElementById('tokenIntegrationSlide2Feature3Text').value);
+
+    appendFileToFormData('tokenIntegrationSlide3Image', 'remove_tokenIntegrationSlide3Image');
+    formData.append('tokenIntegrationSlide3Title', document.getElementById('tokenIntegrationSlide3Title').value);
+    appendDynamicParagraphs(formData, 'tokenIntegrationSlide3DescList');
+    appendFileToFormData('tokenIntegrationSlide3Feature1Icon', 'remove_tokenIntegrationSlide3Feature1Icon');
+    formData.append('tokenIntegrationSlide3Feature1Text', document.getElementById('tokenIntegrationSlide3Feature1Text').value);
+    appendFileToFormData('tokenIntegrationSlide3Feature2Icon', 'remove_tokenIntegrationSlide3Feature2Icon');
+    formData.append('tokenIntegrationSlide3Feature2Text', document.getElementById('tokenIntegrationSlide3Feature2Text').value);
+    appendFileToFormData('tokenIntegrationSlide3Feature3Icon', 'remove_tokenIntegrationSlide3Feature3Icon');
+    formData.append('tokenIntegrationSlide3Feature3Text', document.getElementById('tokenIntegrationSlide3Feature3Text').value);
+
+    formData.append('tokenSmartCoinsTitle', document.getElementById('tokenSmartCoinsTitle').value);
+
+    // Tab 1
+    formData.append('tokenSmartCoinsTab1BtnText', document.getElementById('tokenSmartCoinsTab1BtnText').value);
+    formData.append('tokenSmartCoinsTab1Title', document.getElementById('tokenSmartCoinsTab1Title').value);
+    appendDynamicParagraphs(formData, 'tokenSmartCoinsTab1DescList');
+    appendFileToFormData('tokenSmartCoinsTab1Image', 'remove_tokenSmartCoinsTab1Image');
+    appendFileToFormData('tokenSmartCoinsTab1BgImage', 'remove_tokenSmartCoinsTab1BgImage');
+    formData.append('tokenSmartCoinsTab1FeatureHeading', document.getElementById('tokenSmartCoinsTab1FeatureHeading').value);
+    formData.append('tokenSmartCoinsTab1F1Title', document.getElementById('tokenSmartCoinsTab1F1Title').value);
+    formData.append('tokenSmartCoinsTab1F1Desc', document.getElementById('tokenSmartCoinsTab1F1Desc').value);
+    formData.append('tokenSmartCoinsTab1F2Title', document.getElementById('tokenSmartCoinsTab1F2Title').value);
+    formData.append('tokenSmartCoinsTab1F2Desc', document.getElementById('tokenSmartCoinsTab1F2Desc').value);
+    formData.append('tokenSmartCoinsTab1F3Title', document.getElementById('tokenSmartCoinsTab1F3Title').value);
+    formData.append('tokenSmartCoinsTab1F3Desc', document.getElementById('tokenSmartCoinsTab1F3Desc').value);
+    formData.append('tokenSmartCoinsTab1F4Title', document.getElementById('tokenSmartCoinsTab1F4Title').value);
+    formData.append('tokenSmartCoinsTab1F4Desc', document.getElementById('tokenSmartCoinsTab1F4Desc').value);
+    formData.append('tokenSmartCoinsTab1F5Title', document.getElementById('tokenSmartCoinsTab1F5Title').value);
+    formData.append('tokenSmartCoinsTab1F5Desc', document.getElementById('tokenSmartCoinsTab1F5Desc').value);
+    formData.append('tokenSmartCoinsTab1ValueHeading', document.getElementById('tokenSmartCoinsTab1ValueHeading').value);
+    formData.append('tokenSmartCoinsTab1ValueDesc', document.getElementById('tokenSmartCoinsTab1ValueDesc').value);
+
+    // Tab 2
+    formData.append('tokenSmartCoinsTab2BtnText', document.getElementById('tokenSmartCoinsTab2BtnText').value);
+    formData.append('tokenSmartCoinsTab2Title', document.getElementById('tokenSmartCoinsTab2Title').value);
+    appendDynamicParagraphs(formData, 'tokenSmartCoinsTab2DescList');
+    appendFileToFormData('tokenSmartCoinsTab2Image', 'remove_tokenSmartCoinsTab2Image');
+    appendFileToFormData('tokenSmartCoinsTab2BgImage', 'remove_tokenSmartCoinsTab2BgImage');
+    formData.append('tokenSmartCoinsTab2F1Heading', document.getElementById('tokenSmartCoinsTab2F1Heading').value);
+    appendDynamicParagraphs(formData, 'tokenSmartCoinsTab2F1List');
+    formData.append('tokenSmartCoinsTab2F2Heading', document.getElementById('tokenSmartCoinsTab2F2Heading').value);
+    appendDynamicParagraphs(formData, 'tokenSmartCoinsTab2F2List');
+    formData.append('tokenSmartCoinsTab2ValueHeading', document.getElementById('tokenSmartCoinsTab2ValueHeading').value);
+    formData.append('tokenSmartCoinsTab2ValueDesc', document.getElementById('tokenSmartCoinsTab2ValueDesc').value);
+
+
+    formData.append('tokenFutureTitle', document.getElementById('tokenFutureTitle').value);
+    appendDynamicParagraphs(formData, 'tokenFutureDescList');
+    formData.append('tokenFuturePrimaryBtnText', document.getElementById('tokenFuturePrimaryBtnText').value);
+    formData.append('tokenFuturePrimaryBtnLink', document.getElementById('tokenFuturePrimaryBtnLink').value);
+    formData.append('tokenFutureSecondaryBtnText', document.getElementById('tokenFutureSecondaryBtnText').value);
+    formData.append('tokenFutureSecondaryBtnLink', document.getElementById('tokenFutureSecondaryBtnLink').value);
+    appendFileToFormData('tokenFutureTopRightImage', 'remove_tokenFutureTopRightImage');
+    appendFileToFormData('tokenFutureBottomLeftImage', 'remove_tokenFutureBottomLeftImage');
+
+
+
+
+
+    formData.append('tokenHeroDescription', document.getElementById('tokenHeroDescription').value);    
   }
 
   else if (activePage === 'contact') {
@@ -2017,3 +2686,42 @@ function deleteSpotlightParagraphRow(button) {
 window.renderSpotlightParagraphsEditor = renderSpotlightParagraphsEditor;
 window.addNewSpotlightParagraphRow = addNewSpotlightParagraphRow;
 window.deleteSpotlightParagraphRow = deleteSpotlightParagraphRow;
+
+
+function addParagraphField(containerId) {
+  const container = document.getElementById(containerId + '-container');
+  if (!container) return;
+  const row = document.createElement('div');
+  row.className = 'ticker-row';
+  row.style.display = 'flex';
+  row.style.alignItems = 'center';
+  row.style.gap = '10px';
+  row.style.marginBottom = '10px';
+  row.innerHTML = "<div class='form-group' style='margin-bottom: 0; flex-grow: 1;'><textarea class='" + containerId + "-textarea spotlight-paragraph-textarea' rows='2' style='width: 100%; min-height: auto; resize: vertical;' required></textarea></div><button type='button' class='btn btn-danger' onclick='this.closest(\".ticker-row\").remove()' style='margin-bottom: 0; padding: 10px 12px; height: 100%;'><i class='fa-solid fa-xmark'></i></button>";
+  container.appendChild(row);
+}
+
+function renderDynamicParagraphs(containerId, paragraphsArr) {
+  const container = document.getElementById(containerId + '-container');
+  if (!container) return;
+  container.innerHTML = '';
+  if (paragraphsArr && paragraphsArr.length) {
+    paragraphsArr.forEach(p => {
+      const row = document.createElement('div');
+      row.className = 'ticker-row';
+      row.style.display = 'flex';
+      row.style.alignItems = 'center';
+      row.style.gap = '10px';
+      row.style.marginBottom = '10px';
+      row.innerHTML = "<div class='form-group' style='margin-bottom: 0; flex-grow: 1;'><textarea class='" + containerId + "-textarea spotlight-paragraph-textarea' rows='2' style='width: 100%; min-height: auto; resize: vertical;' required>" + p.replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</textarea></div><button type='button' class='btn btn-danger' onclick='this.closest(\".ticker-row\").remove()' style='margin-bottom: 0; padding: 10px 12px; height: 100%;'><i class='fa-solid fa-xmark'></i></button>";
+      container.appendChild(row);
+    });
+  }
+}
+
+function collectDynamicParagraphs(containerId) {
+  const textareas = document.querySelectorAll('.' + containerId + '-textarea');
+  const arr = [];
+  textareas.forEach(t => arr.push(t.value));
+  return arr;
+}
