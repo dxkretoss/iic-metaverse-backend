@@ -13,7 +13,7 @@
     rel="stylesheet">
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="/admin.css">
 </head>
 
 <body>
@@ -53,6 +53,10 @@
         <a href="#" class="menu-item page-selector" data-page="contact">
           <i class="fa-solid fa-envelope"></i>
           <span>Contact Us</span>
+        </a>
+        <a href="#" class="menu-item page-selector" data-page="inquiries">
+          <i class="fa-solid fa-inbox"></i>
+          <span>Form Submissions</span>
         </a>
       </nav>
 
@@ -2017,6 +2021,39 @@
           </div>
         </section>
 
+        <!-- GLOBAL PRESENCE -->
+        <section id="sec-contact-global" class="form-card section-block page-section-contact">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-earth-americas card-icon"></i>
+              <h2>Our Global Presence</h2>
+            </div>
+            <span class="section-tag">Global</span>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="contactGlobalBadge">Top Badge Text</label>
+              <input type="text" id="contactGlobalBadge" name="contactGlobalBadge" placeholder="[ WHERE WE ARE? ]">
+            </div>
+            <div class="form-group">
+              <label for="contactGlobalTitle">Section Title</label>
+              <input type="text" id="contactGlobalTitle" name="contactGlobalTitle" placeholder="Our Global Presence">
+            </div>
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Description Paragraphs</label>
+                <button type="button" class="btn btn-upload" onclick="addNewContactGlobalParagraphRow()"
+                  style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-plus"></i> Add Paragraph
+                </button>
+              </div>
+              <div id="contact-global-paragraphs-container" class="dynamic-list-container">
+                <!-- Global presence paragraphs render dynamically here -->
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- CONTACT DETAILS -->
         <section id="sec-contact-details" class="form-card section-block page-section-contact">
           <div class="card-header">
@@ -2026,22 +2063,148 @@
             </div>
             <span class="section-tag">Details</span>
           </div>
+
           <div class="card-body">
-            <div class="grid-layout cols-2">
-              <div class="form-group">
-                <label for="supportEmail">Technical Support E-mail</label>
-                <input type="email" id="supportEmail" name="supportEmail" placeholder="support@iic-metaverse.com">
+            <div class="form-group">
+              <label for="contacthelpTitle">Contact Help Title</label>
+              <input type="text" id="contacthelpTitle" name="contacthelpTitle" placeholder="We’re Here to Help">
+            </div>
+
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <label style="margin-bottom: 0; font-weight: 600;">Contact Help Paragraphs</label>
+                <button type="button" class="btn btn-upload" onclick="addNewcontacthelpParagraphRow()"
+                  style="padding: 6px 12px; font-size: 13px; margin: 0; width: auto; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-plus"></i> Add Paragraph
+                </button>
               </div>
-              <div class="form-group">
-                <label for="officeAddress">Physical HQ Office Address</label>
-                <input type="text" id="officeAddress" name="officeAddress">
+              <div id="contacthelp-paragraphs-container" class="dynamic-list-container">
+                <!-- contacthelp Paragraphs will render dynamically here -->
+              </div>
+            </div>
+
+            <div class="grid-layout cols-2 mb30">
+              <div class="sub-card">
+                <h3>Right Side Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="contacthelpImage-preview" src="/assests/images/Innovativesolutions.svg"
+                      alt="Right Side Image"
+                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
+                      Upload</button>
+                    <input type="file" id="contacthelpImage" name="contacthelpImage" accept="image/*"
+                      onchange="previewImage(this, 'contacthelpImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger"
+                    onclick="clearImage('contacthelpImage', 'contacthelpImage-preview', 'remove_contacthelpImage', event)"
+                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_contacthelpImage" name="remove_contacthelpImage" value="false">
+                </div>
+              </div>
+
+              <div class="sub-card">
+                <h3>Right Side Bg Image</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="contacthelpBgImage-preview" src="" alt="Right Side Bg Image"
+                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
+                      Upload</button>
+                    <input type="file" id="contacthelpBgImage" name="contacthelpBgImage" accept="image/*"
+                      onchange="previewImage(this, 'contacthelpBgImage-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger"
+                    onclick="clearImage('contacthelpBgImage', 'contacthelpBgImage-preview', 'remove_contacthelpBgImage', event)"
+                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_contacthelpBgImage" name="remove_contacthelpBgImage" value="false">
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="grid-layout cols-2 mb30">
+            <!-- Card 1 -->
+            <div class="sub-card coin-accent-gold">
+              <h3>Contact Card 1</h3>
+              <div class="coin-preview-row">
+                <div class="coin-image-container spec-square">
+                  <img id="ContactCard1Icon-preview" src="" alt="Icon 1"
+                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                </div>
+                <div class="upload-btn-wrapper">
+                  <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload
+                    Icon</button>
+                  <input type="file" id="ContactCard1Icon" name="ContactCard1Icon" accept="image/*"
+                    onchange="previewImage(this, 'ContactCard1Icon-preview')">
+                </div>
+                <button type="button" class="btn btn-danger"
+                  onclick="clearImage('ContactCard1Icon', 'ContactCard1Icon-preview', 'remove_ContactCard1Icon', event)"
+                  title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                <input type="hidden" id="remove_ContactCard1Icon" name="remove_ContactCard1Icon" value="false">
+              </div>
+
+              <div class="form-group mt15">
+                <label for="ContactCard1Title">Contact Title</label>
+                <input type="text" id="ContactCard1Title" name="ContactCard1Title" placeholder="General Inquiries">
+              </div>
+              <div class="form-group mt10">
+                <label for="ContactCard1Desc">Card Description</label>
+                <textarea id="ContactCard1Desc" name="ContactCard1Desc" rows="2"
+                  placeholder="For general questions about the IIC METAVERSE ecosystem:"></textarea>
+              </div>
+              <div class="form-group mt15">
+                <label for="ContactCard1Email">Contact Email</label>
+                <input type="text" id="ContactCard1Email" name="ContactCard1Email" placeholder="info@iiccrypto.com">
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="sub-card coin-accent-gold">
+              <h3>Contact Card 2</h3>
+              <div class="coin-preview-row">
+                <div class="coin-image-container spec-square">
+                  <img id="ContactCard2Icon-preview" src="" alt="Icon 1"
+                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                </div>
+                <div class="upload-btn-wrapper">
+                  <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload
+                    Icon</button>
+                  <input type="file" id="ContactCard2Icon" name="ContactCard2Icon" accept="image/*"
+                    onchange="previewImage(this, 'ContactCard2Icon-preview')">
+                </div>
+                <button type="button" class="btn btn-danger"
+                  onclick="clearImage('ContactCard2Icon', 'ContactCard2Icon-preview', 'remove_ContactCard2Icon', event)"
+                  title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                <input type="hidden" id="remove_ContactCard2Icon" name="remove_ContactCard2Icon" value="false">
+              </div>
+
+              <div class="form-group mt15">
+                <label for="ContactCard2Title">Contact Title</label>
+                <input type="text" id="ContactCard2Title" name="ContactCard2Title" placeholder="General Inquiries">
+              </div>
+              <div class="form-group mt10">
+                <label for="ContactCard2Desc">Card Description</label>
+                <textarea id="ContactCard2Desc" name="ContactCard2Desc" rows="2"
+                  placeholder="For general questions about the IIC METAVERSE ecosystem:"></textarea>
+              </div>
+              <div class="form-group mt15">
+                <label for="ContactCard2Email">Contact Email</label>
+                <input type="text" id="ContactCard2Email" name="ContactCard2Email" placeholder="info@iiccrypto.com">
+              </div>
+            </div>
+
+          </div>
+
+
         </section>
 
         <!-- SOCIAL PROFILES -->
-        <section id="sec-social-profiles" class="form-card section-block page-section-contact">
+        <!-- <section id="sec-social-profiles" class="form-card section-block page-section-contact">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-hashtag card-icon"></i>
@@ -2065,10 +2228,10 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <!-- Submit Button Footer -->
-        <div class="form-footer">
+        <div class="form-footer" id="cms-form-footer">
           <button type="button" id="btn-reset" class="btn btn-secondary">
             <i class="fa-solid fa-rotate-left"></i> Reset Page Defaults
           </button>
@@ -2077,10 +2240,69 @@
           </button>
         </div>
       </form>
+
+      <!-- Contact form submissions (read-only, separate from CMS save) -->
+      <div id="inquiries-panel" class="inquiries-panel hidden-panel">
+        <section class="form-card">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-inbox card-icon"></i>
+              <h2>Contact Form Submissions</h2>
+            </div>
+            <span class="section-tag" id="inquiries-count-tag">0 total</span>
+          </div>
+          <div class="card-body">
+            <p class="inquiries-hint">Submissions from the public contact form on the website appear here.</p>
+            <div class="inquiries-toolbar">
+              <button type="button" class="btn btn-secondary" onclick="fetchInquiries()">
+                <i class="fa-solid fa-arrows-rotate"></i> Refresh
+              </button>
+            </div>
+            <div id="inquiries-loading" class="inquiries-loading hidden-panel">
+              <i class="fa-solid fa-spinner fa-spin"></i> Loading submissions…
+            </div>
+            <div id="inquiries-empty" class="inquiries-empty hidden-panel">
+              <i class="fa-solid fa-inbox"></i>
+              <p>No submissions yet.</p>
+            </div>
+            <div class="inquiries-table-wrap">
+              <table class="inquiries-table" id="inquiries-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Inquiry Type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="inquiries-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Inquiry detail modal -->
+      <div id="inquiry-modal" class="inquiry-modal hidden-panel" onclick="closeInquiryModal(event)">
+        <div class="inquiry-modal-content" onclick="event.stopPropagation()">
+          <div class="inquiry-modal-header">
+            <h3>Submission Details</h3>
+            <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()" aria-label="Close">&times;</button>
+          </div>
+          <div class="inquiry-modal-body" id="inquiry-modal-body"></div>
+          <div class="inquiry-modal-footer">
+            <button type="button" class="btn btn-secondary" id="inquiry-modal-mark-read">Mark as read</button>
+            <button type="button" class="btn btn-danger" id="inquiry-modal-delete">Delete</button>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 
-  <script src="admin.js"></script>
+  <script src="/admin.js"></script>
 </body>
 
 </html>

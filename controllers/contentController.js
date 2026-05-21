@@ -73,6 +73,18 @@ const updateContent = async (req, res) => {
           } catch (parseErr) {
             console.error('Failed to parse dynamic spotlightParagraphs JSON:', parseErr);
           }
+        } else if (field === 'contacthelpParagraphs') {
+          try {
+            content.contacthelpParagraphs = JSON.parse(fields[field]);
+          } catch (parseErr) {
+            console.error('Failed to parse dynamic contacthelpParagraphs JSON:', parseErr);
+          }
+        } else if (field === 'contactGlobalParagraphs') {
+          try {
+            content.contactGlobalParagraphs = JSON.parse(fields[field]);
+          } catch (parseErr) {
+            console.error('Failed to parse dynamic contactGlobalParagraphs JSON:', parseErr);
+          }
         } else if (!field.startsWith('featureTitle') && !field.startsWith('remove_')) { // skip featureTitles & remove flags
           content[field] = fields[field];
         }
@@ -169,6 +181,18 @@ const updateContent = async (req, res) => {
     }
     if (fields.remove_ecosystemBgImage === 'true') {
       content.ecosystemBgImage = '';
+    }
+    if (fields.remove_contacthelpImage === 'true') {
+      content.contacthelpImage = '';
+    }
+    if (fields.remove_contacthelpBgImage === 'true') {
+      content.contacthelpBgImage = '';
+    }
+    if (fields.remove_ContactCard1Icon === 'true') {
+      content.ContactCard1Icon = '';
+    }
+    if (fields.remove_ContactCard2Icon === 'true') {
+      content.ContactCard2Icon = '';
     }
     
     if (fields.remove_spotlightTopIcon === 'true') content.spotlightTopIcon = '';
@@ -271,6 +295,18 @@ const updateContent = async (req, res) => {
       }
       if (req.files.ecosystemBgImage && req.files.ecosystemBgImage[0]) {
         content.ecosystemBgImage = `/uploads/${req.files.ecosystemBgImage[0].filename}`;
+      }
+      if (req.files.contacthelpImage && req.files.contacthelpImage[0]) {
+        content.contacthelpImage = `/uploads/${req.files.contacthelpImage[0].filename}`;
+      }
+      if (req.files.contacthelpBgImage && req.files.contacthelpBgImage[0]) {
+        content.contacthelpBgImage = `/uploads/${req.files.contacthelpBgImage[0].filename}`;
+      }
+      if (req.files.ContactCard1Icon && req.files.ContactCard1Icon[0]) {
+        content.ContactCard1Icon = `/uploads/${req.files.ContactCard1Icon[0].filename}`;
+      }
+      if (req.files.ContactCard2Icon && req.files.ContactCard2Icon[0]) {
+        content.ContactCard2Icon = `/uploads/${req.files.ContactCard2Icon[0].filename}`;
       }
       if (req.files.spotlightTopIcon && req.files.spotlightTopIcon[0]) {
         content.spotlightTopIcon = `/uploads/${req.files.spotlightTopIcon[0].filename}`;

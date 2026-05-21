@@ -6,6 +6,7 @@ require('dotenv').config();
 const connectDB = require('./config/db');
 const { seedDefaultContent } = require('./controllers/contentController');
 const contentRoutes = require('./routes/contentRoutes');
+const contactInquiryRoutes = require('./routes/contactInquiryRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/api/content', contentRoutes);
+app.use('/api/contact-inquiries', contactInquiryRoutes);
 
 // Root admin redirects to public/admin.html
 app.get('/admin', (req, res) => {
