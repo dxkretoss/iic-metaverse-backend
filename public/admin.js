@@ -254,8 +254,8 @@ document.querySelectorAll('.page-selector').forEach(btn => {
     e.preventDefault();
     document.querySelectorAll('.page-selector').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     activePage = btn.getAttribute('data-page');
+    localStorage.setItem('adminActivePage', activePage);
     activeSectionFilter = 'all';
 
     // Update dashboard headers
@@ -302,17 +302,20 @@ function renderSectionFilters() {
   if (activePage === 'inquiries') return;
 
   const currentSections = PAGE_SECTIONS[activePage] || [];
+  const savedSection = localStorage.getItem('adminActiveSection') || 'all';
+  activeSectionFilter = savedSection;
 
   // Create "All Sections" filter
   const allItem = document.createElement('a');
   allItem.href = '#';
-  allItem.className = 'menu-item active';
+  allItem.className = 'menu-item' + (activeSectionFilter === 'all' ? ' active' : '');
   allItem.innerHTML = `<i class="fa-solid fa-layer-group"></i> <span>All Sections</span>`;
   allItem.addEventListener('click', (e) => {
     e.preventDefault();
     sectionsFilterContainer.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
     allItem.classList.add('active');
     activeSectionFilter = 'all';
+    localStorage.setItem('adminActiveSection', 'all');
     updateSectionVisibility();
   });
   sectionsFilterContainer.appendChild(allItem);
@@ -321,20 +324,47 @@ function renderSectionFilters() {
   currentSections.forEach(sec => {
     const item = document.createElement('a');
     item.href = '#';
-    item.className = 'menu-item';
+    item.className = 'menu-item' + (activeSectionFilter === sec.id ? ' active' : '');
     item.innerHTML = `<i class="fa-solid ${sec.icon}"></i> <span>${sec.name}</span>`;
     item.addEventListener('click', (e) => {
       e.preventDefault();
       sectionsFilterContainer.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
       item.classList.add('active');
       activeSectionFilter = sec.id;
+      localStorage.setItem('adminActiveSection', sec.id);
       updateSectionVisibility();
     });
     sectionsFilterContainer.appendChild(item);
   });
+  
+  const hasActive = Array.from(sectionsFilterContainer.querySelectorAll('.menu-item')).some(i => i.classList.contains('active'));
+  if (!hasActive) {
+      activeSectionFilter = 'all';
+      allItem.classList.add('active');
+  }
 
   updateSectionVisibility();
-}
+};
+  // sectionsFilterContainer.appendChild(allItem);
+
+  // // Create individual filters
+  // currentSections.forEach(sec => {
+  //   const item = document.createElement('a');
+  //   item.href = '#';
+  //   item.className = 'menu-item';
+  //   item.innerHTML = `<i class="fa-solid ${sec.icon}"></i> <span>${sec.name}</span>`;
+  //   item.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     sectionsFilterContainer.querySelectorAll('.menu-item').forEach(i => i.classList.remove('active'));
+  //     item.classList.add('active');
+  //     activeSectionFilter = sec.id;
+  //     updateSectionVisibility();
+  //   });
+  //   sectionsFilterContainer.appendChild(item);
+  // });
+
+  // updateSectionVisibility();
+
 
 // Show/Hide sections in the form depending on page key and active section filter
 function updateSectionVisibility() {
@@ -2053,9 +2083,33 @@ function hideToast() {
 
 // Initial triggers
 window.addEventListener('DOMContentLoaded', () => {
+  const savedPage = localStorage.getItem('adminActivePage');
+  if (savedPage) {
+    const btn = document.querySelector(`.page-selector[data-page="${savedPage}"]`);
+    if (btn) {
+      document.querySelectorAll('.page-selector').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activePage = savedPage;
+      const pageNames = {
+        home: 'Homepage',
+        about: 'About Us Page',
+        technology: 'Technology Page',
+        token: 'Token Economy Page',
+        contact: 'Contact Us Page',
+        inquiries: 'Contact Form Submissions'
+      };
+      activePageLabel.innerText = pageNames[activePage] || activePage;
+    }
+  }
+
   updateAdminViewMode();
   renderSectionFilters();
-  fetchContent();
+
+  if (activePage === 'inquiries') {
+    fetchInquiries();
+  } else {
+    fetchContent();
+  }
 
   document.getElementById('inquiry-modal-mark-read')?.addEventListener('click', () => {
     if (activeInquiryId) markInquiryRead(activeInquiryId);
