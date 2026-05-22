@@ -39,6 +39,11 @@ const homepageSchema = new mongoose.Schema({
   financeDescription: { type: String, default: "IIC METAVERSE brings together advanced technology and real-world value into a single ecosystem—bridging the gap between traditional finance and digital innovation." },
   financeBadge: { type: String, default: "[ Innovative Solutions ]" },
   
+  aboutTitle: { type: String, default: "What is IIC METAVERSE" },
+  aboutDescription: { type: String, default: "At IIC METAVERSE, we combine blockchain, AI, and real-world business applications to create a borderless digital economy. Our solutions are designed to give businesses, investors, and communities the tools they need to thrive in a secure and scalable environment." },
+  aboutBgImage: { type: String, default: "" },
+  aboutMainImage: { type: String, default: "/assests/images/Innovativesolutions.svg" },
+  
   financeFeatures: {
     type: [featureCardSchema],
     default: [

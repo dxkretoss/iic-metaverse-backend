@@ -4,101 +4,112 @@
 */
 
 window.populatePageForm = function(data) {
-  // Inject values into the DOM safely
-  const el_contactHeroTopDescription = document.getElementById('contactHeroTopDescription'); if (el_contactHeroTopDescription && el_contactHeroTopDescription.type !== 'file') el_contactHeroTopDescription.value = data.contactHeroTopDescription || '';
-  const el_contactHeroTitle = document.getElementById('contactHeroTitle'); if (el_contactHeroTitle && el_contactHeroTitle.type !== 'file') el_contactHeroTitle.value = data.contactHeroTitle || '';
-  const el_contactHeroDescription = document.getElementById('contactHeroDescription'); if (el_contactHeroDescription && el_contactHeroDescription.type !== 'file') el_contactHeroDescription.value = data.contactHeroDescription || '';
-  const el_contactGlobalBadge = document.getElementById('contactGlobalBadge'); if (el_contactGlobalBadge && el_contactGlobalBadge.type !== 'file') el_contactGlobalBadge.value = data.contactGlobalBadge || '';
-  const el_contactGlobalTitle = document.getElementById('contactGlobalTitle'); if (el_contactGlobalTitle && el_contactGlobalTitle.type !== 'file') el_contactGlobalTitle.value = data.contactGlobalTitle || '';
-  const el_contact_global_paragraphs_container = document.getElementById('contact-global-paragraphs-container'); if (el_contact_global_paragraphs_container && el_contact_global_paragraphs_container.type !== 'file') el_contact_global_paragraphs_container.value = data['contact-global-paragraphs-container'] || '';
-  const el_contacthelpTitle = document.getElementById('contacthelpTitle'); if (el_contacthelpTitle && el_contacthelpTitle.type !== 'file') el_contacthelpTitle.value = data.contacthelpTitle || '';
-  const el_contacthelp_paragraphs_container = document.getElementById('contacthelp-paragraphs-container'); if (el_contacthelp_paragraphs_container && el_contacthelp_paragraphs_container.type !== 'file') el_contacthelp_paragraphs_container.value = data['contacthelp-paragraphs-container'] || '';
-  const el_contacthelpImage_preview = document.getElementById('contacthelpImage-preview'); if (el_contacthelpImage_preview && el_contacthelpImage_preview.type !== 'file') el_contacthelpImage_preview.value = data['contacthelpImage-preview'] || '';
-  const el_contacthelpImage = document.getElementById('contacthelpImage'); if (el_contacthelpImage && el_contacthelpImage.type !== 'file') el_contacthelpImage.value = data.contacthelpImage || '';
-  const el_remove_contacthelpImage = document.getElementById('remove_contacthelpImage'); if (el_remove_contacthelpImage && el_remove_contacthelpImage.type !== 'file') el_remove_contacthelpImage.value = data.remove_contacthelpImage || '';
-  const el_contacthelpBgImage_preview = document.getElementById('contacthelpBgImage-preview'); if (el_contacthelpBgImage_preview && el_contacthelpBgImage_preview.type !== 'file') el_contacthelpBgImage_preview.value = data['contacthelpBgImage-preview'] || '';
-  const el_contacthelpBgImage = document.getElementById('contacthelpBgImage'); if (el_contacthelpBgImage && el_contacthelpBgImage.type !== 'file') el_contacthelpBgImage.value = data.contacthelpBgImage || '';
-  const el_remove_contacthelpBgImage = document.getElementById('remove_contacthelpBgImage'); if (el_remove_contacthelpBgImage && el_remove_contacthelpBgImage.type !== 'file') el_remove_contacthelpBgImage.value = data.remove_contacthelpBgImage || '';
-  const el_ContactCard1Icon_preview = document.getElementById('ContactCard1Icon-preview'); if (el_ContactCard1Icon_preview && el_ContactCard1Icon_preview.type !== 'file') el_ContactCard1Icon_preview.value = data['ContactCard1Icon-preview'] || '';
-  const el_ContactCard1Icon = document.getElementById('ContactCard1Icon'); if (el_ContactCard1Icon && el_ContactCard1Icon.type !== 'file') el_ContactCard1Icon.value = data.ContactCard1Icon || '';
-  const el_remove_ContactCard1Icon = document.getElementById('remove_ContactCard1Icon'); if (el_remove_ContactCard1Icon && el_remove_ContactCard1Icon.type !== 'file') el_remove_ContactCard1Icon.value = data.remove_ContactCard1Icon || '';
-  const el_ContactCard1Title = document.getElementById('ContactCard1Title'); if (el_ContactCard1Title && el_ContactCard1Title.type !== 'file') el_ContactCard1Title.value = data.ContactCard1Title || '';
-  const el_ContactCard1Desc = document.getElementById('ContactCard1Desc'); if (el_ContactCard1Desc && el_ContactCard1Desc.type !== 'file') el_ContactCard1Desc.value = data.ContactCard1Desc || '';
-  const el_ContactCard1Email = document.getElementById('ContactCard1Email'); if (el_ContactCard1Email && el_ContactCard1Email.type !== 'file') el_ContactCard1Email.value = data.ContactCard1Email || '';
-  const el_ContactCard2Icon_preview = document.getElementById('ContactCard2Icon-preview'); if (el_ContactCard2Icon_preview && el_ContactCard2Icon_preview.type !== 'file') el_ContactCard2Icon_preview.value = data['ContactCard2Icon-preview'] || '';
-  const el_ContactCard2Icon = document.getElementById('ContactCard2Icon'); if (el_ContactCard2Icon && el_ContactCard2Icon.type !== 'file') el_ContactCard2Icon.value = data.ContactCard2Icon || '';
-  const el_remove_ContactCard2Icon = document.getElementById('remove_ContactCard2Icon'); if (el_remove_ContactCard2Icon && el_remove_ContactCard2Icon.type !== 'file') el_remove_ContactCard2Icon.value = data.remove_ContactCard2Icon || '';
-  const el_ContactCard2Title = document.getElementById('ContactCard2Title'); if (el_ContactCard2Title && el_ContactCard2Title.type !== 'file') el_ContactCard2Title.value = data.ContactCard2Title || '';
-  const el_ContactCard2Desc = document.getElementById('ContactCard2Desc'); if (el_ContactCard2Desc && el_ContactCard2Desc.type !== 'file') el_ContactCard2Desc.value = data.ContactCard2Desc || '';
-  const el_ContactCard2Email = document.getElementById('ContactCard2Email'); if (el_ContactCard2Email && el_ContactCard2Email.type !== 'file') el_ContactCard2Email.value = data.ContactCard2Email || '';
-  const el_telegramLink = document.getElementById('telegramLink'); if (el_telegramLink && el_telegramLink.type !== 'file') el_telegramLink.value = data.telegramLink || '';
-  const el_twitterLink = document.getElementById('twitterLink'); if (el_twitterLink && el_twitterLink.type !== 'file') el_twitterLink.value = data.twitterLink || '';
-  const el_discordLink = document.getElementById('discordLink'); if (el_discordLink && el_discordLink.type !== 'file') el_discordLink.value = data.discordLink || '';
-  const el_cms_form_footer = document.getElementById('cms-form-footer'); if (el_cms_form_footer && el_cms_form_footer.type !== 'file') el_cms_form_footer.value = data['cms-form-footer'] || '';
-  const el_btn_reset = document.getElementById('btn-reset'); if (el_btn_reset && el_btn_reset.type !== 'file') el_btn_reset.value = data['btn-reset'] || '';
-  const el_btn_save = document.getElementById('btn-save'); if (el_btn_save && el_btn_save.type !== 'file') el_btn_save.value = data['btn-save'] || '';
-  const el_inquiries_panel = document.getElementById('inquiries-panel'); if (el_inquiries_panel && el_inquiries_panel.type !== 'file') el_inquiries_panel.value = data['inquiries-panel'] || '';
-  const el_inquiries_count_tag = document.getElementById('inquiries-count-tag'); if (el_inquiries_count_tag && el_inquiries_count_tag.type !== 'file') el_inquiries_count_tag.value = data['inquiries-count-tag'] || '';
-  const el_inquiries_loading = document.getElementById('inquiries-loading'); if (el_inquiries_loading && el_inquiries_loading.type !== 'file') el_inquiries_loading.value = data['inquiries-loading'] || '';
-  const el_inquiries_empty = document.getElementById('inquiries-empty'); if (el_inquiries_empty && el_inquiries_empty.type !== 'file') el_inquiries_empty.value = data['inquiries-empty'] || '';
-  const el_inquiries_table = document.getElementById('inquiries-table'); if (el_inquiries_table && el_inquiries_table.type !== 'file') el_inquiries_table.value = data['inquiries-table'] || '';
-  const el_inquiries_table_body = document.getElementById('inquiries-table-body'); if (el_inquiries_table_body && el_inquiries_table_body.type !== 'file') el_inquiries_table_body.value = data['inquiries-table-body'] || '';
-  const el_inquiry_modal = document.getElementById('inquiry-modal'); if (el_inquiry_modal && el_inquiry_modal.type !== 'file') el_inquiry_modal.value = data['inquiry-modal'] || '';
-  const el_inquiry_modal_body = document.getElementById('inquiry-modal-body'); if (el_inquiry_modal_body && el_inquiry_modal_body.type !== 'file') el_inquiry_modal_body.value = data['inquiry-modal-body'] || '';
-  const el_inquiry_modal_mark_read = document.getElementById('inquiry-modal-mark-read'); if (el_inquiry_modal_mark_read && el_inquiry_modal_mark_read.type !== 'file') el_inquiry_modal_mark_read.value = data['inquiry-modal-mark-read'] || '';
-  const el_inquiry_modal_delete = document.getElementById('inquiry-modal-delete'); if (el_inquiry_modal_delete && el_inquiry_modal_delete.type !== 'file') el_inquiry_modal_delete.value = data['inquiry-modal-delete'] || '';
+  // Safe image preview setter
+  const setImg = (previewId, url) => {
+    if (typeof setImagePreview === 'function') {
+      setImagePreview(previewId, url);
+    } else {
+      const el = document.getElementById(previewId);
+      if (el) el.src = url || '';
+    }
+  };
+
+  // Helper to set text/textarea values safely
+  const setVal = (id, val) => {
+    const el = document.getElementById(id);
+    if (el && el.type !== 'file') {
+      el.value = val || '';
+    }
+  };
+
+  // Hero section
+  setVal('contactHeroTopDescription', data.contactHeroTopDescription);
+  setVal('contactHeroTitle', data.contactHeroTitle);
+  setVal('contactHeroDescription', data.contactHeroDescription);
+
+  // Global section
+  setVal('contactGlobalBadge', data.contactGlobalBadge);
+  setVal('contactGlobalTitle', data.contactGlobalTitle);
+
+  // Help section
+  setVal('contacthelpTitle', data.contacthelpTitle);
+  setImg('contacthelpImage-preview', data.contacthelpImage);
+  setVal('remove_contacthelpImage', 'false');
+  setImg('contacthelpBgImage-preview', data.contacthelpBgImage);
+  setVal('remove_contacthelpBgImage', 'false');
+
+  // Contact Cards
+  setImg('ContactCard1Icon-preview', data.ContactCard1Icon);
+  setVal('remove_ContactCard1Icon', 'false');
+  setVal('ContactCard1Title', data.ContactCard1Title);
+  setVal('ContactCard1Desc', data.ContactCard1Desc);
+  setVal('ContactCard1Email', data.ContactCard1Email);
+
+  setImg('ContactCard2Icon-preview', data.ContactCard2Icon);
+  setVal('remove_ContactCard2Icon', 'false');
+  setVal('ContactCard2Title', data.ContactCard2Title);
+  setVal('ContactCard2Desc', data.ContactCard2Desc);
+  setVal('ContactCard2Email', data.ContactCard2Email);
+
+  // Social Links
+  setVal('telegramLink', data.telegramLink);
+  setVal('twitterLink', data.twitterLink);
+  setVal('discordLink', data.discordLink);
+
+  // Dynamic paragraphs rendering
   if (data.contactGlobalParagraphs) renderContactGlobalParagraphsEditor(data.contactGlobalParagraphs);
   if (data.contacthelpParagraphs) rendercontacthelpParagraphsEditor(data.contacthelpParagraphs);
 };
 
 window.appendPageFormData = function(formData) {
+  const appendVal = (key, id) => {
+    const el = document.getElementById(id);
+    if (el) formData.append(key, el.value);
+  };
+  const appendFile = (key, id) => {
+    const el = document.getElementById(id);
+    if (el && el.files && el.files[0]) {
+      formData.append(key, el.files[0]);
+    }
+  };
+
   // Collect values from the DOM
-  formData.append('contactHeroTitle', document.getElementById('contactHeroTitle').value);
-    formData.append('contactHeroDescription', document.getElementById('contactHeroDescription').value);
-    formData.append('contactHeroTopDescription', document.getElementById('contactHeroTopDescription').value);
+  appendVal('contactHeroTitle', 'contactHeroTitle');
+  appendVal('contactHeroDescription', 'contactHeroDescription');
+  appendVal('contactHeroTopDescription', 'contactHeroTopDescription');
 
-    formData.append('contactGlobalBadge', document.getElementById('contactGlobalBadge').value);
-    formData.append('contactGlobalTitle', document.getElementById('contactGlobalTitle').value);
-    const contactGlobalParagraphs = [];
-    document.querySelectorAll('.contact-global-paragraph-textarea').forEach(textarea => {
-      contactGlobalParagraphs.push(textarea.value);
-    });
-    formData.append('contactGlobalParagraphs', JSON.stringify(contactGlobalParagraphs));
+  appendVal('contactGlobalBadge', 'contactGlobalBadge');
+  appendVal('contactGlobalTitle', 'contactGlobalTitle');
 
-    formData.append('contacthelpTitle', document.getElementById('contacthelpTitle').value);
+  const contactGlobalParagraphs = [];
+  document.querySelectorAll('.contact-global-paragraph-textarea').forEach(textarea => {
+    contactGlobalParagraphs.push(textarea.value);
+  });
+  formData.append('contactGlobalParagraphs', JSON.stringify(contactGlobalParagraphs));
 
-    const contacthelpParagraphs = [];
-    document.querySelectorAll('.contacthelp-paragraph-textarea').forEach(textarea => {
-      contacthelpParagraphs.push(textarea.value);
-    });
-    formData.append('contacthelpParagraphs', JSON.stringify(contacthelpParagraphs));
+  appendVal('contacthelpTitle', 'contacthelpTitle');
 
-    formData.append('ContactCard1Title', document.getElementById('ContactCard1Title').value);
-    formData.append('ContactCard1Desc', document.getElementById('ContactCard1Desc').value);
-    formData.append('ContactCard1Email', document.getElementById('ContactCard1Email').value);
+  const contacthelpParagraphs = [];
+  document.querySelectorAll('.contacthelp-paragraph-textarea').forEach(textarea => {
+    contacthelpParagraphs.push(textarea.value);
+  });
+  formData.append('contacthelpParagraphs', JSON.stringify(contacthelpParagraphs));
 
-    formData.append('ContactCard2Title', document.getElementById('ContactCard2Title').value);
-    formData.append('ContactCard2Desc', document.getElementById('ContactCard2Desc').value);
-    formData.append('ContactCard2Email', document.getElementById('ContactCard2Email').value);
+  appendVal('ContactCard1Title', 'ContactCard1Title');
+  appendVal('ContactCard1Desc', 'ContactCard1Desc');
+  appendVal('ContactCard1Email', 'ContactCard1Email');
 
-    const contacthelpImg = document.getElementById('contacthelpImage').files[0];
-    if (contacthelpImg) formData.append('contacthelpImage', contacthelpImg);
-    const contacthelpBg = document.getElementById('contacthelpBgImage').files[0];
-    if (contacthelpBg) formData.append('contacthelpBgImage', contacthelpBg);
+  appendVal('ContactCard2Title', 'ContactCard2Title');
+  appendVal('ContactCard2Desc', 'ContactCard2Desc');
+  appendVal('ContactCard2Email', 'ContactCard2Email');
 
-    const contactCard1IconFile = document.getElementById('ContactCard1Icon').files[0];
-    if (contactCard1IconFile) formData.append('ContactCard1Icon', contactCard1IconFile);
-    const contactCard2IconFile = document.getElementById('ContactCard2Icon').files[0];
-    if (contactCard2IconFile) formData.append('ContactCard2Icon', contactCard2IconFile);
+  appendFile('contacthelpImage', 'contacthelpImage');
+  appendFile('contacthelpBgImage', 'contacthelpBgImage');
+  appendFile('ContactCard1Icon', 'ContactCard1Icon');
+  appendFile('ContactCard2Icon', 'ContactCard2Icon');
 
-    formData.append('remove_contacthelpImage', document.getElementById('remove_contacthelpImage').value);
-    formData.append('remove_contacthelpBgImage', document.getElementById('remove_contacthelpBgImage').value);
-    formData.append('remove_ContactCard1Icon', document.getElementById('remove_ContactCard1Icon').value);
-    formData.append('remove_ContactCard2Icon', document.getElementById('remove_ContactCard2Icon').value);
-
-    // formData.append('telegramLink', document.getElementById('telegramLink').value);
-    // formData.append('twitterLink', document.getElementById('twitterLink').value);
-    // formData.append('discordLink', document.getElementById('discordLink').value);
-  
+  appendVal('remove_contacthelpImage', 'remove_contacthelpImage');
+  appendVal('remove_contacthelpBgImage', 'remove_contacthelpBgImage');
+  appendVal('remove_ContactCard1Icon', 'remove_ContactCard1Icon');
+  appendVal('remove_ContactCard2Icon', 'remove_ContactCard2Icon');
 };
-

@@ -27,7 +27,9 @@ const updateContentHelper = async (req, res, Model, pageKey, jsonFields) => {
     Object.keys(fields).forEach(field => {
       if (field.startsWith('remove_') && fields[field] === 'true') {
         const imageField = field.replace('remove_', '');
-        if (content[imageField] !== undefined) {
+        if (content.schema && content.schema.paths[imageField] !== undefined) {
+          content[imageField] = '';
+        } else if (content[imageField] !== undefined) {
           content[imageField] = '';
         }
       }
@@ -37,7 +39,9 @@ const updateContentHelper = async (req, res, Model, pageKey, jsonFields) => {
     if (req.files) {
       req.files.forEach(file => {
         // fieldname corresponds to the model field name
-        if (content[file.fieldname] !== undefined) {
+        if (content.schema && content.schema.paths[file.fieldname] !== undefined) {
+          content[file.fieldname] = '/uploads/' + file.filename;
+        } else if (content[file.fieldname] !== undefined) {
           content[file.fieldname] = '/uploads/' + file.filename;
         }
       });

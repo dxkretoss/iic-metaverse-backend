@@ -657,3 +657,22 @@ function collectDynamicParagraphs(containerId) {
   textareas.forEach(t => arr.push(t.value));
   return arr;
 }
+
+function addDynamicParagraph(containerId, baseId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const row = document.createElement('div');
+  row.className = 'ticker-row';
+  row.style.display = 'flex';
+  row.style.alignItems = 'center';
+  row.style.gap = '10px';
+  row.style.marginBottom = '10px';
+  row.innerHTML = "<div class='form-group' style='margin-bottom: 0; flex-grow: 1;'><textarea class='" + baseId + "-textarea spotlight-paragraph-textarea' rows='2' style='width: 100%; min-height: auto; resize: vertical;' required></textarea></div><button type='button' class='btn btn-danger' onclick='this.closest(\".ticker-row\").remove()' style='margin-bottom: 0; padding: 10px 12px; height: 100%;'><i class='fa-solid fa-xmark'></i></button>";
+  container.appendChild(row);
+}
+
+window.addParagraphField = addParagraphField;
+window.renderDynamicParagraphs = renderDynamicParagraphs;
+window.collectDynamicParagraphs = collectDynamicParagraphs;
+window.addDynamicParagraph = addDynamicParagraph;
+
