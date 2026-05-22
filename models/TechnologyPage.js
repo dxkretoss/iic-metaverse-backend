@@ -1,0 +1,185 @@
+const mongoose = require('mongoose');
+
+const technologypageSchema = new mongoose.Schema({
+  key: { type: String, required: true, unique: true }, // 'technology'
+
+  techHeroTopTitle: { type: String, default: "Engineered for the Next Generation of Digital Economy" },
+  techHeroTitle: { type: String, default: "Next-Gen Tech Infrastructure" },
+  techHeroDescription: { type: String, default: "Deep dive into our highly secure smart contracts, AI trade optimizations, and custom cross-chain layers." },
+  techHeroPrimaryBtnText: { type: String, default: "" },
+  techHeroPrimaryBtnLink: { type: String, default: "" },
+  techHeroSecondaryBtnText: { type: String, default: "" },
+  techHeroSecondaryBtnLink: { type: String, default: "" },
+ 
+  techCard1Title: { type: String, default: "Technology That Goes Beyond Traditional Blockchain" },
+  techCard1Paragraphs: {
+    type: [String],
+    default: [
+      "The IIC METAVERSE ecosystem is built on a proprietary Layer 1 blockchain infrastructure designed to overcome the limitations of conventional networks.",
+      "With a focus on real-world utility, scalability, and efficiency, the platform enables seamless integration between digital systems and tangible assets."
+    ]
+  },
+  techCard1BgImage: { type: String, default: "" },
+  techCard1Image: { type: String, default: "/assests/images/tech-card1.png" },
+
+  techCard2Title: { type: String, default: "Layer 1 Blockchain Architecture" },
+  techCard2TopParagraphs: {
+    type: [String],
+    default: ["IIC METAVERSE operates on a dedicated Layer 1 blockchain network — similar in foundational structure to platforms like Ethereum, but optimized for enhanced performance and real-world application."]
+  },
+  techCard2Point1Text: { type: String, default: "Fully independent blockchain infrastructure" },
+  techCard2Point1Icon: { type: String, default: "/assests/images/check.png" },
+  techCard2Point2Text: { type: String, default: "Dedicated validation and consensus mechanism" },
+  techCard2Point2Icon: { type: String, default: "/assests/images/check.png" },
+  techCard2Point3Text: { type: String, default: "Designed for enterprise-grade deployment" },
+  techCard2Point3Icon: { type: String, default: "/assests/images/check.png" },
+  techCard2Point4Text: { type: String, default: "Supports smart contracts and decentralized applications" },
+  techCard2Point4Icon: { type: String, default: "/assests/images/check.png" },
+  techCard2BottomParagraphs: {
+    type: [String],
+    default: ["A foundation built for flexibility, control, and long-term scalability."]
+  },
+  techCard2BgImage: { type: String, default: "" },
+  techCard2Image: { type: String, default: "/assests/images/tech-card2.png" },
+
+  techCard3Title: { type: String, default: "" },
+  techCard3Point1Text: { type: String, default: "~5-second block time enabling near real-time transaction confirmation" },
+  techCard3Point1Icon: { type: String, default: "/assests/images/icon-time.png" },
+  techCard3Point2Text: { type: String, default: "High throughput supporting enterprise and consumer applications" },
+  techCard3Point2Icon: { type: String, default: "/assests/images/icon-throughput.png" },
+  techCard3Point3Text: { type: String, default: "Optimized for both micro-transactions and large-scale operations" },
+  techCard3Point3Icon: { type: String, default: "/assests/images/icon-scale.png" },
+  techCard3Paragraphs: {
+    type: [String],
+    default: ["Traditional networks often struggle with congestion and delays - IIC METAVERSE is designed to eliminate these bottlenecks."]
+  },
+  techCard3BgImage: { type: String, default: "" },
+  techCard3Image: { type: String, default: "/assests/images/tech-card3.png" },
+
+  techConsensusBadge: { type: String, default: '[ POA ]' },
+  techConsensusTitle: { type: String, default: 'Consensus Mechanism' },
+  techConsensusDescription: { type: String, default: 'The network utilizes a Proof-of-Authority (PoA) consensus mechanism, ensuring:' },
+  techConsensusCard1Icon: { type: String, default: '' },
+  techConsensusCard1Desc: { type: String, default: 'Faster transaction validation' },
+  techConsensusCard2Icon: { type: String, default: '' },
+  techConsensusCard2Desc: { type: String, default: 'Reduced energy consumption' },
+  techConsensusCard3Icon: { type: String, default: '' },
+  techConsensusCard3Desc: { type: String, default: 'Controlled and secure node participation' },
+  techConsensusBottomDesc: { type: String, default: 'PoA enables a balance between performance and governance, making it ideal for real-world financial applications.' },
+
+  techSmartTitle: { type: String, default: 'Smart Contracts & Automation' },
+  techSmartDesc: { type: String, default: 'IIC METAVERSE supports full smart contract functionality, enabling:' },
+  techSmartCheckpoints: { type: [String], default: ['Automated financial processes', 'Transparent execution of transactions', 'Development of decentralized applications (dApps)'] },
+  techSmartFeature1Icon: { type: String, default: '' },
+  techSmartFeature1Name: { type: String, default: 'Asset tokenization' },
+  techSmartFeature2Icon: { type: String, default: '' },
+  techSmartFeature2Name: { type: String, default: 'Financial settlements' },
+  techSmartFeature3Icon: { type: String, default: '' },
+  techSmartFeature3Name: { type: String, default: 'Digital agreements and workflows' },
+  techSmartRightBgImage: { type: String, default: '' },
+  techSmartRightImage: { type: String, default: '' },
+
+  techSlide1Image: { type: String, default: '' },
+  techSlide1Title: { type: String, default: 'Interoperability & Cross-Chain Capability' },
+  techSlide1Desc: { type: String, default: 'The platform is designed to integrate with major blockchain ecosystems such as:' },
+  techSlide1Point1Icon: { type: String, default: '' },
+  techSlide1Point1Text: { type: String, default: 'BNB Chain' },
+  techSlide1Point2Icon: { type: String, default: '' },
+  techSlide1Point2Text: { type: String, default: 'Avalanche' },
+  techSlide1FeatureHeading: { type: String, default: 'Capabilities:' },
+  techSlide1Feature1Icon: { type: String, default: '' },
+  techSlide1Feature1Text: { type: String, default: 'Cross-chain asset transfers' },
+  techSlide1Feature2Icon: { type: String, default: '' },
+  techSlide1Feature2Text: { type: String, default: 'Liquidity bridging' },
+  techSlide1Feature3Icon: { type: String, default: '' },
+  techSlide1Feature3Text: { type: String, default: 'Multi-chain application development' },
+
+  techSlide2Title: { type: String, default: 'Real-World Integration Layer' },
+  techSlide2Desc: { type: String, default: 'The technology stack supports real-world asset integration, enabling:' },
+  techSlide2Feature1Icon: { type: String, default: '' },
+  techSlide2Feature1Text: { type: String, default: 'Tokenization of physical assets such as gold and real estate' },
+  techSlide2Feature2Icon: { type: String, default: '' },
+  techSlide2Feature2Text: { type: String, default: 'Integration with financial systems' },
+  techSlide2Feature3Icon: { type: String, default: '' },
+  techSlide2Feature3Text: { type: String, default: 'Support for enterprise and institutional use cases' },
+  techSlide2Image: { type: String, default: '' },
+
+  techSlide3Image: { type: String, default: '' },
+  techSlide3Title: { type: String, default: 'AI Integration' },
+  techSlide3Desc: { type: String, default: 'Artificial intelligence enhances the platform by enabling:' },
+  techSlide3Feature1Icon: { type: String, default: '' },
+  techSlide3Feature1Text: { type: String, default: 'Smart automation of processes' },
+  techSlide3Feature2Icon: { type: String, default: '' },
+  techSlide3Feature2Text: { type: String, default: 'Predictive analytics and optimization' },
+  techSlide3Feature3Icon: { type: String, default: '' },
+  techSlide3Feature3Text: { type: String, default: 'Enhanced user experience and operational efficiency' },
+
+  techSecuritySlider1Title: { type: String, default: 'Security Infrastructure' },
+  techSecuritySlider1Desc: { type: String, default: 'Security is a core pillar of the IIC METAVERSE ecosystem, supported by:' },
+  techSecuritySlider1Feature1Icon: { type: String, default: '' },
+  techSecuritySlider1Feature1Text: { type: String, default: 'Advanced wallet protection mechanisms' },
+  techSecuritySlider1Feature2Icon: { type: String, default: '' },
+  techSecuritySlider1Feature2Text: { type: String, default: 'Multi-layer authentication systems' },
+  techSecuritySlider1Feature3Icon: { type: String, default: '' },
+  techSecuritySlider1Feature3Text: { type: String, default: 'Secure transaction validation protocols' },
+  techSecuritySlider1RightImage: { type: String, default: '' },
+  techSecuritySlider1RightBgImage: { type: String, default: '' },
+  
+  techSecuritySlider2Title: { type: String, default: 'Innovative Hardware Security' },
+  techSecuritySlider2Desc: { type: String, default: 'A next-generation authentication device (Smart Ring) is under development in collaboration with:' },
+  techSecuritySlider2Point1Icon: { type: String, default: '' },
+  techSecuritySlider2Point1Text: { type: String, default: 'Toshiba' },
+  techSecuritySlider2Point2Icon: { type: String, default: '' },
+  techSecuritySlider2Point2Text: { type: String, default: 'Siemens' },
+  techSecuritySlider2FeatureTitle: { type: String, default: 'Purpose:' },
+  techSecuritySlider2FeatureList: { type: [String], default: ['Physical verification of transactions', 'Enhanced protection against unauthorized access', 'Integration of digital and physical security layers'] },
+  techSecuritySlider2RightImage: { type: String, default: '' },
+  techSecuritySlider2RightBgImage: { type: String, default: '' },
+
+  techCostTitle: { type: String, default: 'Cost Efficiency' },
+  techCostParagraphs: { type: [String], default: ['Significantly lower transaction fees compared to legacy networks', 'Optimized infrastructure for cost-efficient operations'] },
+
+  techTransparencyTitle: { type: String, default: 'Transparency & Blockchain Explorer' },
+  techTransparencyDesc: { type: String, default: 'IIC METAVERSE provides a dedicated blockchain explorer (IICSCAN), enabling:' },
+  techTransparencyCard1Icon: { type: String, default: '' },
+  techTransparencyCard1Desc: { type: String, default: 'Real-time transaction tracking' },
+  techTransparencyCard2Icon: { type: String, default: '' },
+  techTransparencyCard2Desc: { type: String, default: 'Gas fee visibility' },
+  techTransparencyCard3Icon: { type: String, default: '' },
+  techTransparencyCard3Desc: { type: String, default: 'Wallet activity monitoring' },
+  techTransparencyCard4Icon: { type: String, default: '' },
+  techTransparencyCard4Desc: { type: String, default: 'Independent verification of network activity' },
+
+  techCompAdvTitle: { type: String, default: 'Competitive Advantage' },
+  techCompAdvDesc: { type: String, default: '' },
+  techCompAdvFeatureTitle: { type: String, default: 'Compared to traditional blockchain platforms:' },
+  techCompAdvFeature1Icon: { type: String, default: '' },
+  techCompAdvFeature1Text: { type: String, default: 'Faster than Bitcoin (~10 min block time)' },
+  techCompAdvFeature2Icon: { type: String, default: '' },
+  techCompAdvFeature2Text: { type: String, default: 'More cost-efficient than Ethereum' },
+  techCompAdvFeature3Icon: { type: String, default: '' },
+  techCompAdvFeature3Text: { type: String, default: 'More real-world focused than typical DeFi ecosystems' },
+  
+  techCompAdvPointsTitle: { type: String, default: 'Capabilities:' },
+  techCompAdvPoint1Icon: { type: String, default: '' },
+  techCompAdvPoint1Text: { type: String, default: 'Gold-backed asset integration' },
+  techCompAdvPoint2Icon: { type: String, default: '' },
+  techCompAdvPoint2Text: { type: String, default: 'Multi-utility ecosystem (metaverse + RWA + AI)' },
+  techCompAdvPoint3Icon: { type: String, default: '' },
+  techCompAdvPoint3Text: { type: String, default: 'Institutional and enterprise alignment' },
+  
+  techCompAdvRightImage: { type: String, default: '' },
+  techCompAdvRightBgImage: { type: String, default: '' },
+
+  techFutureTitle: { type: String, default: 'Technology Built for the Future' },
+  techFutureDesc: { type: String, default: 'IIC METAVERSE combines advanced blockchain architecture, real-world integration, and intelligent systems to create a platform ready for global adoption.' },
+  techFutureBtn1Text: { type: String, default: 'EXPLORE ECOSYSTEM' },
+  techFutureBtn1Link: { type: String, default: '#' },
+  techFutureBtn2Text: { type: String, default: 'CONTACT US' },
+  techFutureBtn2Link: { type: String, default: '#' },
+  techFutureTopRightImage: { type: String, default: '' },
+  techFutureBottomLeftImage: { type: String, default: '' }
+
+}, { timestamps: true });
+
+module.exports = mongoose.model('TechnologyPage', technologypageSchema);
