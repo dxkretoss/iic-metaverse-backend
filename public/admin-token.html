@@ -238,6 +238,243 @@
           </div>
         </section>
 
+        <!-- SMART COINS SECTION -->
+
+        <section id="sec-token-smartcoins" class="form-card section-block page-section-token">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-gem card-icon"></i>
+              <h2>Smart Coins, Strong Value</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Main Section Title</label>
+              <input type="text" id="tokenSmartCoinsTitle" name="tokenSmartCoinsTitle"
+                placeholder="Smart Coins, Strong Value">
+            </div>
+
+            <!-- TAB 1: DINAAR -->
+            <div class="sub-card mb20">
+              <div class="sub-card-group-title">Tab 1 (e.g. Dinaar Coin)</div>
+              <div class="form-group">
+                <label>Tab 1 Button Text</label>
+                <input type="text" id="tokenSmartCoinsTab1BtnText" name="tokenSmartCoinsTab1BtnText">
+              </div>
+
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Top Section</h4>
+              <div class="grid-layout cols-2 mb20">
+                <div>
+                  <div class="form-group">
+                    <label>Left Side Title</label>
+                    <input type="text" id="tokenSmartCoinsTab1Title" name="tokenSmartCoinsTab1Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Left Side Descriptions</label>
+                    <div id="tokenSmartCoinsTab1DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10"
+                      onclick="addDynamicParagraph('tokenSmartCoinsTab1DescList-container', 'tokenSmartCoinsTab1DescList')"><i
+                        class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab1Image-preview" src="" alt="Image"
+                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSmartCoinsTab1Image" name="tokenSmartCoinsTab1Image"
+                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab1Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger"
+                        onclick="clearImage('tokenSmartCoinsTab1Image', 'tokenSmartCoinsTab1Image-preview', 'remove_tokenSmartCoinsTab1Image', event)"><i
+                          class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab1Image" name="remove_tokenSmartCoinsTab1Image"
+                        value="false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Right Side Background Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab1BgImage-preview" src="" alt="Image"
+                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Bg Image</button>
+                        <input type="file" id="tokenSmartCoinsTab1BgImage" name="tokenSmartCoinsTab1BgImage"
+                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab1BgImage-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger"
+                        onclick="clearImage('tokenSmartCoinsTab1BgImage', 'tokenSmartCoinsTab1BgImage-preview', 'remove_tokenSmartCoinsTab1BgImage', event)"><i
+                          class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab1BgImage"
+                        name="remove_tokenSmartCoinsTab1BgImage" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Bottom Section (Key
+                Features)</h4>
+              <div class="form-group">
+                <label>Features Heading</label>
+                <input type="text" id="tokenSmartCoinsTab1FeatureHeading" name="tokenSmartCoinsTab1FeatureHeading"
+                  placeholder="Key Features">
+              </div>
+              <div class="grid-layout cols-2 mb20">
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 1 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F1Title" name="tokenSmartCoinsTab1F1Title">
+                  <label class="mt10">Feature 1 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F1Desc" name="tokenSmartCoinsTab1F1Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 2 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F2Title" name="tokenSmartCoinsTab1F2Title">
+                  <label class="mt10">Feature 2 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F2Desc" name="tokenSmartCoinsTab1F2Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 3 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F3Title" name="tokenSmartCoinsTab1F3Title">
+                  <label class="mt10">Feature 3 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F3Desc" name="tokenSmartCoinsTab1F3Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 4 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F4Title" name="tokenSmartCoinsTab1F4Title">
+                  <label class="mt10">Feature 4 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F4Desc" name="tokenSmartCoinsTab1F4Desc">
+                </div>
+                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
+                  <label>Feature 5 Title</label>
+                  <input type="text" id="tokenSmartCoinsTab1F5Title" name="tokenSmartCoinsTab1F5Title">
+                  <label class="mt10">Feature 5 Description</label>
+                  <input type="text" id="tokenSmartCoinsTab1F5Desc" name="tokenSmartCoinsTab1F5Desc">
+                </div>
+              </div>
+
+              <div class="form-group mt20">
+                <label>Value Proposition Heading</label>
+                <input type="text" id="tokenSmartCoinsTab1ValueHeading" name="tokenSmartCoinsTab1ValueHeading"
+                  placeholder="Value Proposition">
+              </div>
+              <div class="form-group">
+                <label>Value Proposition Description</label>
+                <textarea id="tokenSmartCoinsTab1ValueDesc" name="tokenSmartCoinsTab1ValueDesc" class="form-control"
+                  rows="2"></textarea>
+              </div>
+            </div>
+
+            <!-- TAB 2: SAYA -->
+            <div class="sub-card">
+              <div class="sub-card-group-title">Tab 2 (e.g. Saya Coin)</div>
+              <div class="form-group">
+                <label>Tab 2 Button Text</label>
+                <input type="text" id="tokenSmartCoinsTab2BtnText" name="tokenSmartCoinsTab2BtnText">
+              </div>
+
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Top Section</h4>
+              <div class="grid-layout cols-2 mb20">
+                <div>
+                  <div class="form-group">
+                    <label>Left Side Title</label>
+                    <input type="text" id="tokenSmartCoinsTab2Title" name="tokenSmartCoinsTab2Title">
+                  </div>
+                  <div class="form-group">
+                    <label>Left Side Descriptions</label>
+                    <div id="tokenSmartCoinsTab2DescList-container" class="ticker-row-wrapper mb10"></div>
+                    <button type="button" class="btn btn-secondary btn-sm mt10"
+                      onclick="addDynamicParagraph('tokenSmartCoinsTab2DescList-container', 'tokenSmartCoinsTab2DescList')"><i
+                        class="fa-solid fa-plus"></i> Add Description</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <label>Right Side Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab2Image-preview" src="" alt="Image"
+                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
+                        <input type="file" id="tokenSmartCoinsTab2Image" name="tokenSmartCoinsTab2Image"
+                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab2Image-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger"
+                        onclick="clearImage('tokenSmartCoinsTab2Image', 'tokenSmartCoinsTab2Image-preview', 'remove_tokenSmartCoinsTab2Image', event)"><i
+                          class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab2Image" name="remove_tokenSmartCoinsTab2Image"
+                        value="false">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Right Side Background Image</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container spec-square">
+                        <img id="tokenSmartCoinsTab2BgImage-preview" src="" alt="Image"
+                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm">Upload Bg Image</button>
+                        <input type="file" id="tokenSmartCoinsTab2BgImage" name="tokenSmartCoinsTab2BgImage"
+                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab2BgImage-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger"
+                        onclick="clearImage('tokenSmartCoinsTab2BgImage', 'tokenSmartCoinsTab2BgImage-preview', 'remove_tokenSmartCoinsTab2BgImage', event)"><i
+                          class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenSmartCoinsTab2BgImage"
+                        name="remove_tokenSmartCoinsTab2BgImage" value="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Bottom Section</h4>
+              <div class="form-group mt20">
+                <label>Feature Heading 1 (e.g. Key Functions:)</label>
+                <input type="text" id="tokenSmartCoinsTab2F1Heading" name="tokenSmartCoinsTab2F1Heading">
+              </div>
+              <div class="form-group">
+                <label>Feature 1 List (Bullets)</label>
+                <div id="tokenSmartCoinsTab2F1List-container" class="ticker-row-wrapper mb10"></div>
+                <button type="button" class="btn btn-secondary btn-sm mt10"
+                  onclick="addDynamicParagraph('tokenSmartCoinsTab2F1List-container', 'tokenSmartCoinsTab2F1List')"><i
+                    class="fa-solid fa-plus"></i> Add Bullet Point</button>
+              </div>
+
+              <div class="form-group mt20">
+                <label>Feature Heading 2 (e.g. Token Model Highlights:)</label>
+                <input type="text" id="tokenSmartCoinsTab2F2Heading" name="tokenSmartCoinsTab2F2Heading">
+              </div>
+              <div class="form-group">
+                <label>Feature 2 List (Bullets)</label>
+                <div id="tokenSmartCoinsTab2F2List-container" class="ticker-row-wrapper mb10"></div>
+                <button type="button" class="btn btn-secondary btn-sm mt10"
+                  onclick="addDynamicParagraph('tokenSmartCoinsTab2F2List-container', 'tokenSmartCoinsTab2F2List')"><i
+                    class="fa-solid fa-plus"></i> Add Bullet Point</button>
+              </div>
+
+              <div class="form-group mt20">
+                <label>Value Proposition Heading</label>
+                <input type="text" id="tokenSmartCoinsTab2ValueHeading" name="tokenSmartCoinsTab2ValueHeading"
+                  placeholder="Value Proposition">
+              </div>
+              <div class="form-group">
+                <label>Value Proposition Description</label>
+                <textarea id="tokenSmartCoinsTab2ValueDesc" name="tokenSmartCoinsTab2ValueDesc" class="form-control"
+                  rows="2"></textarea>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
         <!-- TOKEN HYBRID MODEL -->
 
@@ -1066,243 +1303,7 @@
 
 
 
-        <!-- SMART COINS SECTION -->
 
-        <section id="sec-token-smartcoins" class="form-card section-block page-section-token">
-          <div class="card-header">
-            <div class="header-title">
-              <i class="fa-solid fa-gem card-icon"></i>
-              <h2>Smart Coins, Strong Value</h2>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-              <label>Main Section Title</label>
-              <input type="text" id="tokenSmartCoinsTitle" name="tokenSmartCoinsTitle"
-                placeholder="Smart Coins, Strong Value">
-            </div>
-
-            <!-- TAB 1: DINAAR -->
-            <div class="sub-card mb20">
-              <div class="sub-card-group-title">Tab 1 (e.g. Dinaar Coin)</div>
-              <div class="form-group">
-                <label>Tab 1 Button Text</label>
-                <input type="text" id="tokenSmartCoinsTab1BtnText" name="tokenSmartCoinsTab1BtnText">
-              </div>
-
-              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Top Section</h4>
-              <div class="grid-layout cols-2 mb20">
-                <div>
-                  <div class="form-group">
-                    <label>Left Side Title</label>
-                    <input type="text" id="tokenSmartCoinsTab1Title" name="tokenSmartCoinsTab1Title">
-                  </div>
-                  <div class="form-group">
-                    <label>Left Side Descriptions</label>
-                    <div id="tokenSmartCoinsTab1DescList-container" class="ticker-row-wrapper mb10"></div>
-                    <button type="button" class="btn btn-secondary btn-sm mt10"
-                      onclick="addDynamicParagraph('tokenSmartCoinsTab1DescList-container', 'tokenSmartCoinsTab1DescList')"><i
-                        class="fa-solid fa-plus"></i> Add Description</button>
-                  </div>
-                </div>
-                <div>
-                  <div class="form-group">
-                    <label>Right Side Image</label>
-                    <div class="coin-preview-row mb10">
-                      <div class="coin-image-container spec-square">
-                        <img id="tokenSmartCoinsTab1Image-preview" src="" alt="Image"
-                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
-                      </div>
-                      <div class="upload-btn-wrapper">
-                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
-                        <input type="file" id="tokenSmartCoinsTab1Image" name="tokenSmartCoinsTab1Image"
-                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab1Image-preview')">
-                      </div>
-                      <button type="button" class="btn btn-danger"
-                        onclick="clearImage('tokenSmartCoinsTab1Image', 'tokenSmartCoinsTab1Image-preview', 'remove_tokenSmartCoinsTab1Image', event)"><i
-                          class="fa-solid fa-trash-can"></i></button>
-                      <input type="hidden" id="remove_tokenSmartCoinsTab1Image" name="remove_tokenSmartCoinsTab1Image"
-                        value="false">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Right Side Background Image</label>
-                    <div class="coin-preview-row mb10">
-                      <div class="coin-image-container spec-square">
-                        <img id="tokenSmartCoinsTab1BgImage-preview" src="" alt="Image"
-                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
-                      </div>
-                      <div class="upload-btn-wrapper">
-                        <button type="button" class="btn btn-upload btn-sm">Upload Bg Image</button>
-                        <input type="file" id="tokenSmartCoinsTab1BgImage" name="tokenSmartCoinsTab1BgImage"
-                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab1BgImage-preview')">
-                      </div>
-                      <button type="button" class="btn btn-danger"
-                        onclick="clearImage('tokenSmartCoinsTab1BgImage', 'tokenSmartCoinsTab1BgImage-preview', 'remove_tokenSmartCoinsTab1BgImage', event)"><i
-                          class="fa-solid fa-trash-can"></i></button>
-                      <input type="hidden" id="remove_tokenSmartCoinsTab1BgImage"
-                        name="remove_tokenSmartCoinsTab1BgImage" value="false">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Bottom Section (Key
-                Features)</h4>
-              <div class="form-group">
-                <label>Features Heading</label>
-                <input type="text" id="tokenSmartCoinsTab1FeatureHeading" name="tokenSmartCoinsTab1FeatureHeading"
-                  placeholder="Key Features">
-              </div>
-              <div class="grid-layout cols-2 mb20">
-                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
-                  <label>Feature 1 Title</label>
-                  <input type="text" id="tokenSmartCoinsTab1F1Title" name="tokenSmartCoinsTab1F1Title">
-                  <label class="mt10">Feature 1 Description</label>
-                  <input type="text" id="tokenSmartCoinsTab1F1Desc" name="tokenSmartCoinsTab1F1Desc">
-                </div>
-                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
-                  <label>Feature 2 Title</label>
-                  <input type="text" id="tokenSmartCoinsTab1F2Title" name="tokenSmartCoinsTab1F2Title">
-                  <label class="mt10">Feature 2 Description</label>
-                  <input type="text" id="tokenSmartCoinsTab1F2Desc" name="tokenSmartCoinsTab1F2Desc">
-                </div>
-                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
-                  <label>Feature 3 Title</label>
-                  <input type="text" id="tokenSmartCoinsTab1F3Title" name="tokenSmartCoinsTab1F3Title">
-                  <label class="mt10">Feature 3 Description</label>
-                  <input type="text" id="tokenSmartCoinsTab1F3Desc" name="tokenSmartCoinsTab1F3Desc">
-                </div>
-                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
-                  <label>Feature 4 Title</label>
-                  <input type="text" id="tokenSmartCoinsTab1F4Title" name="tokenSmartCoinsTab1F4Title">
-                  <label class="mt10">Feature 4 Description</label>
-                  <input type="text" id="tokenSmartCoinsTab1F4Desc" name="tokenSmartCoinsTab1F4Desc">
-                </div>
-                <div class="form-group" style="background:#111; padding:10px; border-radius:5px;">
-                  <label>Feature 5 Title</label>
-                  <input type="text" id="tokenSmartCoinsTab1F5Title" name="tokenSmartCoinsTab1F5Title">
-                  <label class="mt10">Feature 5 Description</label>
-                  <input type="text" id="tokenSmartCoinsTab1F5Desc" name="tokenSmartCoinsTab1F5Desc">
-                </div>
-              </div>
-
-              <div class="form-group mt20">
-                <label>Value Proposition Heading</label>
-                <input type="text" id="tokenSmartCoinsTab1ValueHeading" name="tokenSmartCoinsTab1ValueHeading"
-                  placeholder="Value Proposition">
-              </div>
-              <div class="form-group">
-                <label>Value Proposition Description</label>
-                <textarea id="tokenSmartCoinsTab1ValueDesc" name="tokenSmartCoinsTab1ValueDesc" class="form-control"
-                  rows="2"></textarea>
-              </div>
-            </div>
-
-            <!-- TAB 2: SAYA -->
-            <div class="sub-card">
-              <div class="sub-card-group-title">Tab 2 (e.g. Saya Coin)</div>
-              <div class="form-group">
-                <label>Tab 2 Button Text</label>
-                <input type="text" id="tokenSmartCoinsTab2BtnText" name="tokenSmartCoinsTab2BtnText">
-              </div>
-
-              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Top Section</h4>
-              <div class="grid-layout cols-2 mb20">
-                <div>
-                  <div class="form-group">
-                    <label>Left Side Title</label>
-                    <input type="text" id="tokenSmartCoinsTab2Title" name="tokenSmartCoinsTab2Title">
-                  </div>
-                  <div class="form-group">
-                    <label>Left Side Descriptions</label>
-                    <div id="tokenSmartCoinsTab2DescList-container" class="ticker-row-wrapper mb10"></div>
-                    <button type="button" class="btn btn-secondary btn-sm mt10"
-                      onclick="addDynamicParagraph('tokenSmartCoinsTab2DescList-container', 'tokenSmartCoinsTab2DescList')"><i
-                        class="fa-solid fa-plus"></i> Add Description</button>
-                  </div>
-                </div>
-                <div>
-                  <div class="form-group">
-                    <label>Right Side Image</label>
-                    <div class="coin-preview-row mb10">
-                      <div class="coin-image-container spec-square">
-                        <img id="tokenSmartCoinsTab2Image-preview" src="" alt="Image"
-                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
-                      </div>
-                      <div class="upload-btn-wrapper">
-                        <button type="button" class="btn btn-upload btn-sm">Upload Image</button>
-                        <input type="file" id="tokenSmartCoinsTab2Image" name="tokenSmartCoinsTab2Image"
-                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab2Image-preview')">
-                      </div>
-                      <button type="button" class="btn btn-danger"
-                        onclick="clearImage('tokenSmartCoinsTab2Image', 'tokenSmartCoinsTab2Image-preview', 'remove_tokenSmartCoinsTab2Image', event)"><i
-                          class="fa-solid fa-trash-can"></i></button>
-                      <input type="hidden" id="remove_tokenSmartCoinsTab2Image" name="remove_tokenSmartCoinsTab2Image"
-                        value="false">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label>Right Side Background Image</label>
-                    <div class="coin-preview-row mb10">
-                      <div class="coin-image-container spec-square">
-                        <img id="tokenSmartCoinsTab2BgImage-preview" src="" alt="Image"
-                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
-                      </div>
-                      <div class="upload-btn-wrapper">
-                        <button type="button" class="btn btn-upload btn-sm">Upload Bg Image</button>
-                        <input type="file" id="tokenSmartCoinsTab2BgImage" name="tokenSmartCoinsTab2BgImage"
-                          accept="image/*" onchange="previewImage(this, 'tokenSmartCoinsTab2BgImage-preview')">
-                      </div>
-                      <button type="button" class="btn btn-danger"
-                        onclick="clearImage('tokenSmartCoinsTab2BgImage', 'tokenSmartCoinsTab2BgImage-preview', 'remove_tokenSmartCoinsTab2BgImage', event)"><i
-                          class="fa-solid fa-trash-can"></i></button>
-                      <input type="hidden" id="remove_tokenSmartCoinsTab2BgImage"
-                        name="remove_tokenSmartCoinsTab2BgImage" value="false">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <h4 class="mt20 mb10" style="border-bottom: 1px solid #333; padding-bottom: 5px;">Bottom Section</h4>
-              <div class="form-group mt20">
-                <label>Feature Heading 1 (e.g. Key Functions:)</label>
-                <input type="text" id="tokenSmartCoinsTab2F1Heading" name="tokenSmartCoinsTab2F1Heading">
-              </div>
-              <div class="form-group">
-                <label>Feature 1 List (Bullets)</label>
-                <div id="tokenSmartCoinsTab2F1List-container" class="ticker-row-wrapper mb10"></div>
-                <button type="button" class="btn btn-secondary btn-sm mt10"
-                  onclick="addDynamicParagraph('tokenSmartCoinsTab2F1List-container', 'tokenSmartCoinsTab2F1List')"><i
-                    class="fa-solid fa-plus"></i> Add Bullet Point</button>
-              </div>
-
-              <div class="form-group mt20">
-                <label>Feature Heading 2 (e.g. Token Model Highlights:)</label>
-                <input type="text" id="tokenSmartCoinsTab2F2Heading" name="tokenSmartCoinsTab2F2Heading">
-              </div>
-              <div class="form-group">
-                <label>Feature 2 List (Bullets)</label>
-                <div id="tokenSmartCoinsTab2F2List-container" class="ticker-row-wrapper mb10"></div>
-                <button type="button" class="btn btn-secondary btn-sm mt10"
-                  onclick="addDynamicParagraph('tokenSmartCoinsTab2F2List-container', 'tokenSmartCoinsTab2F2List')"><i
-                    class="fa-solid fa-plus"></i> Add Bullet Point</button>
-              </div>
-
-              <div class="form-group mt20">
-                <label>Value Proposition Heading</label>
-                <input type="text" id="tokenSmartCoinsTab2ValueHeading" name="tokenSmartCoinsTab2ValueHeading"
-                  placeholder="Value Proposition">
-              </div>
-              <div class="form-group">
-                <label>Value Proposition Description</label>
-                <textarea id="tokenSmartCoinsTab2ValueDesc" name="tokenSmartCoinsTab2ValueDesc" class="form-control"
-                  rows="2"></textarea>
-              </div>
-            </div>
-
-          </div>
-        </section>
 
         <!-- TOKEN FUTURE CTA -->
 

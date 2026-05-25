@@ -19,13 +19,14 @@ const PAGE_SECTIONS = {
     { id: 'hero', name: 'Hero Banner', icon: 'fa-circle-play' },
     { id: 'tickers', name: 'Live Tickers', icon: 'fa-chart-line' },
     { id: 'coins', name: 'Featured Coins', icon: 'fa-coins' },
+    { id: 'finance', name: 'Global Finance', icon: 'fa-globe' },
     { id: 'featured-coins-detail', name: 'Featured Coins Detail', icon: 'fa-coins' },
     { id: 'features-hv2', name: 'Technology Stack', icon: 'fa-microchip' },
     { id: 'why-us', name: 'Why Us Section', icon: 'fa-question-circle' },
     { id: 'global-impact', name: 'Global Impact', icon: 'fa-earth-americas' },
     { id: 'cta', name: 'Call To Action', icon: 'fa-bullhorn' },
     { id: 'news', name: 'Latest News', icon: 'fa-newspaper' },
-    { id: 'finance', name: 'Global Finance', icon: 'fa-globe' }
+
   ],
   about: [
     { id: 'about-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
@@ -51,13 +52,18 @@ const PAGE_SECTIONS = {
   ],
   token: [
     { id: 'token-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
-    { id: 'tokenomics', name: 'Token Distribution', icon: 'fa-chart-pie' }
+    { id: 'token-dual', name: 'Dual-Token Ecosystem', icon: 'fa-coins' },
+    { id: 'token-smartcoins', name: 'Smart Coins', icon: 'fa-gem' },
+    { id: 'token-hybrid', name: 'Hybrid Model', icon: 'fa-code-branch' },
+    { id: 'token-system', name: 'How the System Works', icon: 'fa-cogs' },
+    { id: 'token-integration', name: 'Integration Features', icon: 'fa-layer-group' },
+    { id: 'token-future', name: 'Future Ecosystem', icon: 'fa-rocket' }
   ],
   contact: [
     { id: 'contact-hero', name: 'Hero Banner', icon: 'fa-circle-play' },
-    { id: 'contact-global', name: 'Global Presence', icon: 'fa-earth-americas' },
     { id: 'contact-details', name: 'Company Details', icon: 'fa-envelope-open-text' },
-    { id: 'social-profiles', name: 'Social Handles', icon: 'fa-hashtag' }
+    { id: 'contact-global', name: 'Global Presence', icon: 'fa-earth-americas' },
+    // { id: 'social-profiles', name: 'Social Handles', icon: 'fa-hashtag' }
   ]
 };
 
@@ -213,10 +219,10 @@ const DEFAULT_VALUES = {
   },
   token: {
     tokenHeroTitle: "The Tokenomics Engine",
-    tokenHeroDescription: "Explore how DINAAR and SAYA utility tokens drive transaction velocity, rewards, and staking pools.",    
+    tokenHeroDescription: "Explore how DINAAR and SAYA utility tokens drive transaction velocity, rewards, and staking pools.",
   },
   contact: {
-    contactHeroTopDescription:'Let’s Build the Future Together',
+    contactHeroTopDescription: 'Let’s Build the Future Together',
     contactHeroTitle: "Get in Touch",
     contactHeroDescription: "Have questions about integration or institutional partnerships? Our 24/7 technical team is here to assist.",
     contactGlobalBadge: "[ WHERE WE ARE? ]",
@@ -242,7 +248,7 @@ const DEFAULT_VALUES = {
     ContactCard2Title: "General Inquiries",
     ContactCard2Desc: "For general questions about the IIC METAVERSE ecosystem:",
     ContactCard2Email: "info@iiccrypto.com",
-    
+
     // telegramLink: "https://t.me/iicmetaverse",
     // twitterLink: "https://twitter.com/iicmetaverse",
     // discordLink: "https://discord.gg/iicmetaverse"

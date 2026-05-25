@@ -247,6 +247,223 @@
           </div>
         </section>
 
+        <!-- SECTION: GLOBAL FINANCE SECTION -->
+
+        <section id="sec-finance" class="form-card section-block page-section-home">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-globe card-icon"></i>
+              <h2>Global Finance Section</h2>
+            </div>
+            <span class="section-tag">Finance</span>
+          </div>
+          <div class="card-body">
+            <!-- Part 1: Main Section Headers -->
+            <div class="sub-card-group-title">Main Section Headers</div>
+            <div class="grid-layout cols-2 mb20">
+              <div class="form-group">
+                <label for="financeHeading">Main Title</label>
+                <input type="text" id="financeHeading" name="financeHeading"
+                  placeholder="A New Standard for Global Finance">
+              </div>
+              <div class="form-group">
+                <label for="financeBadge">Left Badge Text</label>
+                <input type="text" id="financeBadge" name="financeBadge" placeholder="[ Innovative Solutions ]">
+              </div>
+            </div>
+            <div class="form-group mb30">
+              <label for="financeDescription">Main Section Description</label>
+              <textarea id="financeDescription" name="financeDescription" rows="2"
+                placeholder="Enter main description..."></textarea>
+            </div>
+
+            <!-- Part 2: What is IIC METAVERSE card (Left & Right Uploads) -->
+            <div class="sub-card-group-title">"What is IIC METAVERSE" Card (Images & Copy)</div>
+            <div class="grid-layout cols-2 mb30">
+              <!-- Text inputs on Left -->
+              <div class="sub-card">
+                <h3>Card Copy</h3>
+                <div class="form-group">
+                  <label for="aboutTitle">Card Title</label>
+                  <input type="text" id="aboutTitle" name="aboutTitle" placeholder="What is IIC METAVERSE">
+                </div>
+                <div class="form-group">
+                  <label for="aboutDescription">Card Description</label>
+                  <textarea id="aboutDescription" name="aboutDescription" rows="5"
+                    placeholder="Enter card description..."></textarea>
+                </div>
+              </div>
+
+              <!-- Image inputs on Right -->
+              <div class="sub-card">
+                <h3>Images</h3>
+
+                <!-- Bg Image Upload -->
+                <div class="image-upload-block mb20">
+                  <label>Background Image (Right Side Bg)</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="aboutBgImage-preview" src="" alt="No Background Image"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>No Bg Image</text></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload
+                        Bg</button>
+                      <input type="file" id="aboutBgImage" name="aboutBgImage" accept="image/*"
+                        onchange="previewImage(this, 'aboutBgImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger"
+                      onclick="clearImage('aboutBgImage', 'aboutBgImage-preview', 'remove_aboutBgImage', event)"
+                      title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_aboutBgImage" name="remove_aboutBgImage" value="false">
+                  </div>
+                </div>
+
+                <!-- Main Image Upload -->
+                <div class="image-upload-block">
+                  <label>Main Image (Right Side Foreground)</label>
+                  <div class="coin-preview-row">
+                    <div class="coin-image-container spec-square">
+                      <img id="aboutMainImage-preview" src="" alt="No Main Image"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>No Main Image</text></svg>'">
+                    </div>
+                    <div class="upload-btn-wrapper">
+                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload
+                        Main</button>
+                      <input type="file" id="aboutMainImage" name="aboutMainImage" accept="image/*"
+                        onchange="previewImage(this, 'aboutMainImage-preview')">
+                    </div>
+                    <button type="button" class="btn btn-danger"
+                      onclick="clearImage('aboutMainImage', 'aboutMainImage-preview', 'remove_aboutMainImage', event)"
+                      title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                    <input type="hidden" id="remove_aboutMainImage" name="remove_aboutMainImage" value="false">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Part 3: The 4 Feature Cards -->
+            <div class="sub-card-group-title">Four Ecosystem Feature Cards</div>
+            <div class="grid-layout cols-2 mb30" id="finance-features-admin-grid">
+              <!-- Feature Card 0 -->
+              <div class="sub-card">
+                <h3>Feature Card 1</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="featureImage0-preview" src="" alt="Feature 1"
+                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
+                      Upload</button>
+                    <input type="file" id="featureImage0" name="featureImage0" accept="image/*"
+                      onchange="previewImage(this, 'featureImage0-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger"
+                    onclick="clearImage('featureImage0', 'featureImage0-preview', 'remove_featureImage0', event)"
+                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_featureImage0" name="remove_featureImage0" value="false">
+                </div>
+                <div class="form-group mt10">
+                  <label for="featureTitle0">Title</label>
+                  <input type="text" id="featureTitle0" name="featureTitle0" placeholder="Blockchain infrastructure">
+                </div>
+              </div>
+
+              <!-- Feature Card 1 -->
+              <div class="sub-card">
+                <h3>Feature Card 2</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="featureImage1-preview" src="" alt="Feature 2"
+                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
+                      Upload</button>
+                    <input type="file" id="featureImage1" name="featureImage1" accept="image/*"
+                      onchange="previewImage(this, 'featureImage1-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger"
+                    onclick="clearImage('featureImage1', 'featureImage1-preview', 'remove_featureImage1', event)"
+                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_featureImage1" name="remove_featureImage1" value="false">
+                </div>
+                <div class="form-group mt10">
+                  <label for="featureTitle1">Title</label>
+                  <input type="text" id="featureTitle1" name="featureTitle1" placeholder="Artificial intelligence">
+                </div>
+              </div>
+
+              <!-- Feature Card 2 -->
+              <div class="sub-card">
+                <h3>Feature Card 3</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="featureImage2-preview" src="" alt="Feature 3"
+                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
+                      Upload</button>
+                    <input type="file" id="featureImage2" name="featureImage2" accept="image/*"
+                      onchange="previewImage(this, 'featureImage2-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger"
+                    onclick="clearImage('featureImage2', 'featureImage2-preview', 'remove_featureImage2', event)"
+                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_featureImage2" name="remove_featureImage2" value="false">
+                </div>
+                <div class="form-group mt10">
+                  <label for="featureTitle2">Title</label>
+                  <input type="text" id="featureTitle2" name="featureTitle2"
+                    placeholder="Real-world asset tokenization">
+                </div>
+              </div>
+
+              <!-- Feature Card 3 -->
+              <div class="sub-card">
+                <h3>Feature Card 4</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="featureImage3-preview" src="" alt="Feature 4"
+                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
+                      Upload</button>
+                    <input type="file" id="featureImage3" name="featureImage3" accept="image/*"
+                      onchange="previewImage(this, 'featureImage3-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger"
+                    onclick="clearImage('featureImage3', 'featureImage3-preview', 'remove_featureImage3', event)"
+                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_featureImage3" name="remove_featureImage3" value="false">
+                </div>
+                <div class="form-group mt10">
+                  <label for="featureTitle3">Title</label>
+                  <input type="text" id="featureTitle3" name="featureTitle3"
+                    placeholder="Metaverse and digital services">
+                </div>
+              </div>
+            </div>
+
+            <!-- Part 4: Bottom Action Button -->
+            <div class="sub-card-group-title">Bottom Action Button</div>
+            <div class="grid-layout cols-2">
+              <div class="form-group">
+                <label for="financeBtnText">Button Label</label>
+                <input type="text" id="financeBtnText" name="financeBtnText" placeholder="learn more">
+              </div>
+              <div class="form-group">
+                <label for="financeBtnLink">Button Link (URL / Page)</label>
+                <input type="text" id="financeBtnLink" name="financeBtnLink"
+                  placeholder="e.g. /token-economy.html or #">
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- SECTION: FEATURED COINS DETAIL (TECHNOLOGY SECTION) -->
 
         <section id="sec-featured-coins-detail" class="form-card section-block page-section-home">
@@ -989,222 +1206,7 @@
           </div>
         </section>
 
-        <!-- SECTION: GLOBAL FINANCE SECTION -->
 
-        <section id="sec-finance" class="form-card section-block page-section-home">
-          <div class="card-header">
-            <div class="header-title">
-              <i class="fa-solid fa-globe card-icon"></i>
-              <h2>Global Finance Section</h2>
-            </div>
-            <span class="section-tag">Finance</span>
-          </div>
-          <div class="card-body">
-            <!-- Part 1: Main Section Headers -->
-            <div class="sub-card-group-title">Main Section Headers</div>
-            <div class="grid-layout cols-2 mb20">
-              <div class="form-group">
-                <label for="financeHeading">Main Title</label>
-                <input type="text" id="financeHeading" name="financeHeading"
-                  placeholder="A New Standard for Global Finance">
-              </div>
-              <div class="form-group">
-                <label for="financeBadge">Left Badge Text</label>
-                <input type="text" id="financeBadge" name="financeBadge" placeholder="[ Innovative Solutions ]">
-              </div>
-            </div>
-            <div class="form-group mb30">
-              <label for="financeDescription">Main Section Description</label>
-              <textarea id="financeDescription" name="financeDescription" rows="2"
-                placeholder="Enter main description..."></textarea>
-            </div>
-
-            <!-- Part 2: What is IIC METAVERSE card (Left & Right Uploads) -->
-            <div class="sub-card-group-title">"What is IIC METAVERSE" Card (Images & Copy)</div>
-            <div class="grid-layout cols-2 mb30">
-              <!-- Text inputs on Left -->
-              <div class="sub-card">
-                <h3>Card Copy</h3>
-                <div class="form-group">
-                  <label for="aboutTitle">Card Title</label>
-                  <input type="text" id="aboutTitle" name="aboutTitle" placeholder="What is IIC METAVERSE">
-                </div>
-                <div class="form-group">
-                  <label for="aboutDescription">Card Description</label>
-                  <textarea id="aboutDescription" name="aboutDescription" rows="5"
-                    placeholder="Enter card description..."></textarea>
-                </div>
-              </div>
-
-              <!-- Image inputs on Right -->
-              <div class="sub-card">
-                <h3>Images</h3>
-
-                <!-- Bg Image Upload -->
-                <div class="image-upload-block mb20">
-                  <label>Background Image (Right Side Bg)</label>
-                  <div class="coin-preview-row">
-                    <div class="coin-image-container spec-square">
-                      <img id="aboutBgImage-preview" src="" alt="No Background Image"
-                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>No Bg Image</text></svg>'">
-                    </div>
-                    <div class="upload-btn-wrapper">
-                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload
-                        Bg</button>
-                      <input type="file" id="aboutBgImage" name="aboutBgImage" accept="image/*"
-                        onchange="previewImage(this, 'aboutBgImage-preview')">
-                    </div>
-                    <button type="button" class="btn btn-danger"
-                      onclick="clearImage('aboutBgImage', 'aboutBgImage-preview', 'remove_aboutBgImage', event)"
-                      title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
-                    <input type="hidden" id="remove_aboutBgImage" name="remove_aboutBgImage" value="false">
-                  </div>
-                </div>
-
-                <!-- Main Image Upload -->
-                <div class="image-upload-block">
-                  <label>Main Image (Right Side Foreground)</label>
-                  <div class="coin-preview-row">
-                    <div class="coin-image-container spec-square">
-                      <img id="aboutMainImage-preview" src="" alt="No Main Image"
-                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>No Main Image</text></svg>'">
-                    </div>
-                    <div class="upload-btn-wrapper">
-                      <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload
-                        Main</button>
-                      <input type="file" id="aboutMainImage" name="aboutMainImage" accept="image/*"
-                        onchange="previewImage(this, 'aboutMainImage-preview')">
-                    </div>
-                    <button type="button" class="btn btn-danger"
-                      onclick="clearImage('aboutMainImage', 'aboutMainImage-preview', 'remove_aboutMainImage', event)"
-                      title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
-                    <input type="hidden" id="remove_aboutMainImage" name="remove_aboutMainImage" value="false">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Part 3: The 4 Feature Cards -->
-            <div class="sub-card-group-title">Four Ecosystem Feature Cards</div>
-            <div class="grid-layout cols-2 mb30" id="finance-features-admin-grid">
-              <!-- Feature Card 0 -->
-              <div class="sub-card">
-                <h3>Feature Card 1</h3>
-                <div class="coin-preview-row">
-                  <div class="coin-image-container spec-square">
-                    <img id="featureImage0-preview" src="" alt="Feature 1"
-                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
-                  </div>
-                  <div class="upload-btn-wrapper">
-                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
-                      Upload</button>
-                    <input type="file" id="featureImage0" name="featureImage0" accept="image/*"
-                      onchange="previewImage(this, 'featureImage0-preview')">
-                  </div>
-                  <button type="button" class="btn btn-danger"
-                    onclick="clearImage('featureImage0', 'featureImage0-preview', 'remove_featureImage0', event)"
-                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
-                  <input type="hidden" id="remove_featureImage0" name="remove_featureImage0" value="false">
-                </div>
-                <div class="form-group mt10">
-                  <label for="featureTitle0">Title</label>
-                  <input type="text" id="featureTitle0" name="featureTitle0" placeholder="Blockchain infrastructure">
-                </div>
-              </div>
-
-              <!-- Feature Card 1 -->
-              <div class="sub-card">
-                <h3>Feature Card 2</h3>
-                <div class="coin-preview-row">
-                  <div class="coin-image-container spec-square">
-                    <img id="featureImage1-preview" src="" alt="Feature 2"
-                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
-                  </div>
-                  <div class="upload-btn-wrapper">
-                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
-                      Upload</button>
-                    <input type="file" id="featureImage1" name="featureImage1" accept="image/*"
-                      onchange="previewImage(this, 'featureImage1-preview')">
-                  </div>
-                  <button type="button" class="btn btn-danger"
-                    onclick="clearImage('featureImage1', 'featureImage1-preview', 'remove_featureImage1', event)"
-                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
-                  <input type="hidden" id="remove_featureImage1" name="remove_featureImage1" value="false">
-                </div>
-                <div class="form-group mt10">
-                  <label for="featureTitle1">Title</label>
-                  <input type="text" id="featureTitle1" name="featureTitle1" placeholder="Artificial intelligence">
-                </div>
-              </div>
-
-              <!-- Feature Card 2 -->
-              <div class="sub-card">
-                <h3>Feature Card 3</h3>
-                <div class="coin-preview-row">
-                  <div class="coin-image-container spec-square">
-                    <img id="featureImage2-preview" src="" alt="Feature 3"
-                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
-                  </div>
-                  <div class="upload-btn-wrapper">
-                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
-                      Upload</button>
-                    <input type="file" id="featureImage2" name="featureImage2" accept="image/*"
-                      onchange="previewImage(this, 'featureImage2-preview')">
-                  </div>
-                  <button type="button" class="btn btn-danger"
-                    onclick="clearImage('featureImage2', 'featureImage2-preview', 'remove_featureImage2', event)"
-                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
-                  <input type="hidden" id="remove_featureImage2" name="remove_featureImage2" value="false">
-                </div>
-                <div class="form-group mt10">
-                  <label for="featureTitle2">Title</label>
-                  <input type="text" id="featureTitle2" name="featureTitle2"
-                    placeholder="Real-world asset tokenization">
-                </div>
-              </div>
-
-              <!-- Feature Card 3 -->
-              <div class="sub-card">
-                <h3>Feature Card 4</h3>
-                <div class="coin-preview-row">
-                  <div class="coin-image-container spec-square">
-                    <img id="featureImage3-preview" src="" alt="Feature 4"
-                      onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23555%22 font-size=%2210%22>Empty</text></svg>'">
-                  </div>
-                  <div class="upload-btn-wrapper">
-                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i>
-                      Upload</button>
-                    <input type="file" id="featureImage3" name="featureImage3" accept="image/*"
-                      onchange="previewImage(this, 'featureImage3-preview')">
-                  </div>
-                  <button type="button" class="btn btn-danger"
-                    onclick="clearImage('featureImage3', 'featureImage3-preview', 'remove_featureImage3', event)"
-                    title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
-                  <input type="hidden" id="remove_featureImage3" name="remove_featureImage3" value="false">
-                </div>
-                <div class="form-group mt10">
-                  <label for="featureTitle3">Title</label>
-                  <input type="text" id="featureTitle3" name="featureTitle3"
-                    placeholder="Metaverse and digital services">
-                </div>
-              </div>
-            </div>
-
-            <!-- Part 4: Bottom Action Button -->
-            <div class="sub-card-group-title">Bottom Action Button</div>
-            <div class="grid-layout cols-2">
-              <div class="form-group">
-                <label for="financeBtnText">Button Label</label>
-                <input type="text" id="financeBtnText" name="financeBtnText" placeholder="learn more">
-              </div>
-              <div class="form-group">
-                <label for="financeBtnLink">Button Link (URL / Page)</label>
-                <input type="text" id="financeBtnLink" name="financeBtnLink"
-                  placeholder="e.g. /token-economy.html or #">
-              </div>
-            </div>
-          </div>
-        </section>
 
         <!-- Submit Button Footer -->
         <div class="form-footer" id="cms-form-footer">
