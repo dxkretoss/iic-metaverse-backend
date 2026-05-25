@@ -3,6 +3,7 @@ const AboutPage = require('../models/AboutPage');
 const TechnologyPage = require('../models/TechnologyPage');
 const TokenPage = require('../models/TokenPage');
 const ContactPage = require('../models/ContactPage');
+const Admin = require('../models/Admin');
 
 const getModelByKey = (key) => {
   switch (key) {
@@ -16,6 +17,21 @@ const getModelByKey = (key) => {
 };
 
 const seedDefaultContent = async () => {
+  // Seed admin user
+  try {
+    const adminExists = await Admin.findOne({ email: 'admin@metaverse.in' });
+    if (!adminExists) {
+      const admin = new Admin({
+        email: 'admin@metaverse.in',
+        password: 'Metaverse@123'
+      });
+      await admin.save();
+      console.log("Seeded default admin credentials successfully.");
+    }
+  } catch (err) {
+    console.error('Error seeding admin user:', err);
+  }
+
   const pageKeys = ['home', 'about', 'technology', 'token', 'contact'];
   try {
     for (const key of pageKeys) {

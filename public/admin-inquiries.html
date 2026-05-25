@@ -27,8 +27,10 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-logo">
-        <i class="fa-solid fa-cube logo-icon"></i>
-        <span>IIC-METAVERSE</span>
+        <!-- <i class="fa-solid fa-cube logo-icon"></i>
+        <span>IIC-METAVERSE</span> -->
+        <img src="/uploads/logo.svg" alt="Metaverse" />
+
       </div>
 
       <!-- Page Selection Group -->
@@ -82,7 +84,8 @@
       <header class="top-bar">
         <div class="welcome-text">
           <!-- <h1>Ecosystem Control Console</h1> -->
-          <p>Active Page: <strong id="active-page-label" style="color: var(--accent-cyan);">Form Submissions</strong></p>
+          <p>Active Page: <strong id="active-page-label" style="color: var(--accent-cyan);">Form Submissions</strong>
+          </p>
         </div>
         <div class="action-buttons">
           <button type="button" onclick="fetchContent()" class="btn btn-secondary">
@@ -104,7 +107,7 @@
       <!-- Main Form -->
       <form id="admin-form" class="admin-form" enctype="multipart/form-data"></form>
 
-        
+
 
       <!-- Contact form submissions (read-only, separate from CMS save) -->
       <div id="inquiries-panel" class="inquiries-panel hidden-panel">
@@ -147,7 +150,7 @@
               </table>
             </div>
           </div>
-                </section>
+        </section>
 
         <!-- Newsletter Subscribers -->
         <section class="form-card" style="margin-top: 30px;">
@@ -165,11 +168,14 @@
                 <i class="fa-solid fa-arrows-rotate"></i> Refresh
               </button>
             </div>
-            <div id="subscribers-loading" class="inquiries-loading hidden-panel" style="text-align: center; padding: 20px; font-size: 14px; color: var(--text-muted);">
+            <div id="subscribers-loading" class="inquiries-loading hidden-panel"
+              style="text-align: center; padding: 20px; font-size: 14px; color: var(--text-muted);">
               <i class="fa-solid fa-spinner fa-spin"></i> Loading subscribers...
             </div>
-            <div id="subscribers-empty" class="inquiries-empty hidden-panel" style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
-              <i class="fa-solid fa-envelope" style="font-size: 48px; margin-bottom: 15px; color: var(--border-color);"></i>
+            <div id="subscribers-empty" class="inquiries-empty hidden-panel"
+              style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+              <i class="fa-solid fa-envelope"
+                style="font-size: 48px; margin-bottom: 15px; color: var(--border-color);"></i>
               <p>No subscribers yet.</p>
             </div>
             <div class="inquiries-table-wrap" id="subscribers-table-wrap" style="display: none;">
@@ -193,7 +199,8 @@
         <div class="inquiry-modal-content" onclick="event.stopPropagation()">
           <div class="inquiry-modal-header">
             <h3>Submission Details</h3>
-            <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()" aria-label="Close">&times;</button>
+            <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()"
+              aria-label="Close">&times;</button>
           </div>
           <div class="inquiry-modal-body" id="inquiry-modal-body"></div>
           <div class="inquiry-modal-footer">
@@ -203,13 +210,11 @@
         </div>
       </div>
     </main>
-  <!-- Scripts -->
-  <script src="/js/admin-config.js?v=1.0.2"></script>
-  <script src="/js/admin-core.js?v=1.0.2"></script>
-  <script src="/js/admin-dynamic-handlers.js?v=1.0.2"></script>
-  <script src="/js/admin-inquiries.js?v=1.0.2"></script>
+    <!-- Scripts -->
+    <script src="/js/admin-config.js?v=1.0.2"></script>
+    <script src="/js/admin-core.js?v=1.0.2"></script>
+    <script src="/js/admin-dynamic-handlers.js?v=1.0.2"></script>
+    <script src="/js/admin-inquiries.js?v=1.0.2"></script>
 </body>
 
 </html>
-
-

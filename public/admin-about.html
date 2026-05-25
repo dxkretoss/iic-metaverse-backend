@@ -27,8 +27,10 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-logo">
-        <i class="fa-solid fa-cube logo-icon"></i>
-        <span>IIC-METAVERSE</span>
+        <!-- <i class="fa-solid fa-cube logo-icon"></i>
+        <span>IIC-METAVERSE</span> -->
+        <img src="/uploads/logo.svg" alt="Metaverse" />
+
       </div>
 
       <!-- Page Selection Group -->
@@ -131,8 +133,8 @@
         </section>
 
         <!-- ABOUT GALLERY -->
-        
-<section id="sec-about-gallery" class="form-card section-block page-section-about">
+
+        <section id="sec-about-gallery" class="form-card section-block page-section-about">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-images card-icon"></i>
@@ -234,8 +236,8 @@
         </section>
 
         <!-- ABOUT LEADERSHIP/OWNERS -->
-        
-<section id="sec-about-owners" class="form-card section-block page-section-about">
+
+        <section id="sec-about-owners" class="form-card section-block page-section-about">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-users-gear card-icon"></i>
@@ -357,8 +359,8 @@
         </section>
 
         <!-- VISION & MISSION -->
-        
-<section id="sec-vision-mission" class="form-card section-block page-section-about">
+
+        <section id="sec-vision-mission" class="form-card section-block page-section-about">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-eye card-icon"></i>
@@ -427,8 +429,8 @@
         </section>
 
         <!-- ECOSYSTEM -->
-        
-<section id="sec-ecosystem" class="form-card section-block page-section-about">
+
+        <section id="sec-ecosystem" class="form-card section-block page-section-about">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-network-wired card-icon"></i>
@@ -501,8 +503,8 @@
         </section>
 
         <!-- COMMUNITY SPOTLIGHT -->
-        
-<section id="sec-spotlight" class="form-card section-block page-section-about">
+
+        <section id="sec-spotlight" class="form-card section-block page-section-about">
           <div class="card-header">
             <div class="header-title">
               <i class="fa-solid fa-lightbulb card-icon"></i>
@@ -798,10 +800,10 @@
 
         <!-- ==================== 3. TECHNOLOGY PAGE SECTIONS ==================== -->
         <!-- TECH HERO -->
-        
 
 
-      
+
+
         <!-- Submit Button Footer -->
         <div class="form-footer" id="cms-form-footer">
           <button type="button" id="btn-reset" class="btn btn-secondary">
@@ -862,76 +864,78 @@
         <div class="inquiry-modal-content" onclick="event.stopPropagation()">
           <div class="inquiry-modal-header">
             <h3>Submission Details</h3>
-            <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()" aria-label="Close">&times;</button>
+            <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()"
+              aria-label="Close">&times;</button>
           </div>
           <div class="inquiry-modal-body" id="inquiry-modal-body"></div>
           <div class="inquiry-modal-footer">
             <button type="button" class="btn btn-secondary" id="inquiry-modal-mark-read">Mark as read</button>
             <button type="button" class="btn btn-danger" id="inquiry-modal-delete">Delete</button>
-      <!-- Contact form submissions (read-only, separate from CMS save) -->
-      <div id="inquiries-panel" class="inquiries-panel hidden-panel">
-        <section class="form-card">
-          <div class="card-header">
-            <div class="header-title">
-              <i class="fa-solid fa-inbox card-icon"></i>
-              <h2>Contact Form Submissions</h2>
+            <!-- Contact form submissions (read-only, separate from CMS save) -->
+            <div id="inquiries-panel" class="inquiries-panel hidden-panel">
+              <section class="form-card">
+                <div class="card-header">
+                  <div class="header-title">
+                    <i class="fa-solid fa-inbox card-icon"></i>
+                    <h2>Contact Form Submissions</h2>
+                  </div>
+                  <span class="section-tag" id="inquiries-count-tag">0 total</span>
+                </div>
+                <div class="card-body">
+                  <p class="inquiries-hint">Submissions from the public contact form on the website appear here.</p>
+                  <div class="inquiries-toolbar">
+                    <button type="button" class="btn btn-secondary" onclick="fetchInquiries()">
+                      <i class="fa-solid fa-arrows-rotate"></i> Refresh
+                    </button>
+                  </div>
+                  <div id="inquiries-loading" class="inquiries-loading hidden-panel">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Loading submissions…
+                  </div>
+                  <div id="inquiries-empty" class="inquiries-empty hidden-panel">
+                    <i class="fa-solid fa-inbox"></i>
+                    <p>No submissions yet.</p>
+                  </div>
+                  <div class="inquiries-table-wrap">
+                    <table class="inquiries-table" id="inquiries-table">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Company</th>
+                          <th>Inquiry Type</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="inquiries-table-body"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
             </div>
-            <span class="section-tag" id="inquiries-count-tag">0 total</span>
-          </div>
-          <div class="card-body">
-            <p class="inquiries-hint">Submissions from the public contact form on the website appear here.</p>
-            <div class="inquiries-toolbar">
-              <button type="button" class="btn btn-secondary" onclick="fetchInquiries()">
-                <i class="fa-solid fa-arrows-rotate"></i> Refresh
-              </button>
-            </div>
-            <div id="inquiries-loading" class="inquiries-loading hidden-panel">
-              <i class="fa-solid fa-spinner fa-spin"></i> Loading submissions…
-            </div>
-            <div id="inquiries-empty" class="inquiries-empty hidden-panel">
-              <i class="fa-solid fa-inbox"></i>
-              <p>No submissions yet.</p>
-            </div>
-            <div class="inquiries-table-wrap">
-              <table class="inquiries-table" id="inquiries-table">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Company</th>
-                    <th>Inquiry Type</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="inquiries-table-body"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-      </div>
 
-      <!-- Inquiry detail modal -->
-      <div id="inquiry-modal" class="inquiry-modal hidden-panel" onclick="closeInquiryModal(event)">
-        <div class="inquiry-modal-content" onclick="event.stopPropagation()">
-          <div class="inquiry-modal-header">
-            <h3>Submission Details</h3>
-            <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()" aria-label="Close">&times;</button>
-          </div>
-          <div class="inquiry-modal-body" id="inquiry-modal-body"></div>
-          <div class="inquiry-modal-footer">
-            <button type="button" class="btn btn-secondary" id="inquiry-modal-mark-read">Mark as read</button>
-            <button type="button" class="btn btn-danger" id="inquiry-modal-delete">Delete</button>
-          </div>
-        </div>
-      </div>
+            <!-- Inquiry detail modal -->
+            <div id="inquiry-modal" class="inquiry-modal hidden-panel" onclick="closeInquiryModal(event)">
+              <div class="inquiry-modal-content" onclick="event.stopPropagation()">
+                <div class="inquiry-modal-header">
+                  <h3>Submission Details</h3>
+                  <button type="button" class="inquiry-modal-close" onclick="closeInquiryModal()"
+                    aria-label="Close">&times;</button>
+                </div>
+                <div class="inquiry-modal-body" id="inquiry-modal-body"></div>
+                <div class="inquiry-modal-footer">
+                  <button type="button" class="btn btn-secondary" id="inquiry-modal-mark-read">Mark as read</button>
+                  <button type="button" class="btn btn-danger" id="inquiry-modal-delete">Delete</button>
+                </div>
+              </div>
+            </div>
     </main>
-  <!-- Scripts -->
-  <script src="/js/admin-config.js?v=1.0.2"></script>
-  <script src="/js/admin-core.js?v=1.0.2"></script>
-  <script src="/js/admin-dynamic-handlers.js?v=1.0.2"></script>
-  <script src="/js/admin-about.js?v=1.0.2"></script>
+    <!-- Scripts -->
+    <script src="/js/admin-config.js?v=1.0.2"></script>
+    <script src="/js/admin-core.js?v=1.0.2"></script>
+    <script src="/js/admin-dynamic-handlers.js?v=1.0.2"></script>
+    <script src="/js/admin-about.js?v=1.0.2"></script>
 </body>
 
 </html>

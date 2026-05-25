@@ -6,6 +6,9 @@ require('dotenv').config();
 const connectDB = require('./config/db');
 const { seedDefaultContent } = require('./utils/seed');
 
+const adminAuthRoutes = require('./routes/adminAuthRoutes');
+const authMiddleware = require('./middleware/auth');
+
 const homeRoutes = require('./routes/homeRoutes');
 const aboutRoutes = require('./routes/aboutRoutes');
 const technologyRoutes = require('./routes/technologyRoutes');
@@ -28,6 +31,22 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Admin authentication route (public login)
+app.use('/api/admin', adminAuthRoutes);
+
+// Global Administrative Actions security middleware
+app.use((req, res, next) => {
+  const isPublicGet = req.method === 'GET' && !req.path.startsWith('/api/contact-inquiries') && !req.path.startsWith('/api/subscribe');
+  const isPublicCreateInquiry = req.method === 'POST' && req.path === '/api/contact-inquiries';
+  const isPublicCreateSubscription = req.method === 'POST' && req.path === '/api/subscribe';
+  
+  if (isPublicGet || isPublicCreateInquiry || isPublicCreateSubscription || !req.path.startsWith('/api/')) {
+    return next();
+  }
+  
+  return authMiddleware(req, res, next);
+});
+
 // Routes
 app.use('/api/home', homeRoutes);
 app.use('/api/about', aboutRoutes);
@@ -37,7 +56,7 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/contact-inquiries', contactInquiryRoutes);
 app.use('/api/subscribe', subscriberRoutes);
 
-// Root admin redirects to public/admin-home.html
+// Root admin redirects to public/admin-home.html (which will auto-redirect to login.html if not authenticated)
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin-home.html'));
 });

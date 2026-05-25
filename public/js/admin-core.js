@@ -1,3 +1,33 @@
+// Secure Page Authentication & Fetch Interceptor
+(function() {
+  const token = localStorage.getItem('adminToken');
+  if (!token) {
+    window.location.href = '/login.html';
+    return;
+  }
+
+  // Intercept all outgoing fetch requests to inject Authorization header dynamically
+  const originalFetch = window.fetch;
+  window.fetch = async function(url, options = {}) {
+    options.headers = options.headers || {};
+    if (!options.headers['Authorization'] && !options.headers['authorization']) {
+      options.headers['Authorization'] = `Bearer ${token}`;
+    }
+    try {
+      const response = await originalFetch(url, options);
+      if (response.status === 401) {
+        localStorage.removeItem('adminToken');
+        localStorage.removeItem('adminEmail');
+        window.location.href = '/login.html';
+      }
+      return response;
+    } catch (err) {
+      console.error("Fetch intercept error:", err);
+      throw err;
+    }
+  };
+})();
+
 function updateAdminViewMode() {
   const adminForm = document.getElementById('admin-form');
   const formFooter = document.getElementById('cms-form-footer');
@@ -265,6 +295,28 @@ function hideToast() {
 
 // Initial triggers
 window.addEventListener('DOMContentLoaded', () => {
+  // Append Sign Out button to sidebar dynamically
+  const sidebarFooter = document.querySelector('.sidebar-footer');
+  if (sidebarFooter) {
+    const logoutBtn = document.createElement('button');
+    logoutBtn.type = 'button';
+    logoutBtn.className = 'logout-btn';
+    logoutBtn.innerHTML = '<i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out';
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('adminToken');
+      localStorage.removeItem('adminEmail');
+      window.location.href = '/login.html';
+    });
+    sidebarFooter.appendChild(logoutBtn);
+  }
+
+  // Update Admin Info dynamically if username elements exist
+  const userNameEl = document.querySelector('.user-name');
+  const adminEmail = localStorage.getItem('adminEmail');
+  if (userNameEl && adminEmail) {
+    userNameEl.textContent = adminEmail.split('@')[0];
+  }
+
   updateAdminViewMode();
   renderSectionFilters();
 
