@@ -1,7 +1,8 @@
-async function fetchInquiries() {
+﻿async function fetchInquiries() {
   const loading = document.getElementById('inquiries-loading');
   const empty = document.getElementById('inquiries-empty');
-  const tableWrap = document.querySelector('.inquiries-table-wrap');
+  // Use id instead of class because there are now two table wraps on the page!
+  const tableWrap = document.getElementById('inquiries-table').closest('.inquiries-table-wrap');
   const tbody = document.getElementById('inquiries-table-body');
   const countTag = document.getElementById('inquiries-count-tag');
 
@@ -22,16 +23,18 @@ async function fetchInquiries() {
     if (!inquiriesCache.length) {
       if (empty) empty.classList.remove('hidden-panel');
       if (tbody) tbody.innerHTML = '';
-      return;
+    } else {
+      if (tableWrap) tableWrap.style.display = 'block';
+      renderInquiriesTable(inquiriesCache);
     }
-
-    if (tableWrap) tableWrap.style.display = 'block';
-    renderInquiriesTable(inquiriesCache);
   } catch (err) {
     console.error(err);
     if (loading) loading.classList.add('hidden-panel');
     showToast('Error', 'Could not load contact form submissions.', true);
   }
+
+  // Trigger subscribers fetch!
+  fetchSubscribers();
 }
 
 function formatInquiryDate(dateStr) {
@@ -46,6 +49,7 @@ function formatInquiryDate(dateStr) {
   });
 }
 
+// Escapes special HTML characters to prevent XSS injection
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -158,4 +162,74 @@ async function deleteInquiryById(id) {
   }
 }
 
-// Fetch active page data from Node Express Server
+// --- Newsletter Subscribers ---
+let subscribersCache = [];
+
+async function fetchSubscribers() {
+  const loading = document.getElementById('subscribers-loading');
+  const empty = document.getElementById('subscribers-empty');
+  const tableWrap = document.getElementById('subscribers-table-wrap');
+  const tbody = document.getElementById('subscribers-table-body');
+  const countTag = document.getElementById('subscribers-count-tag');
+
+  if (loading) loading.classList.remove('hidden-panel');
+  if (empty) empty.classList.add('hidden-panel');
+  if (tableWrap) tableWrap.style.display = 'none';
+
+  try {
+    const response = await fetch('/api/subscribe');
+    if (!response.ok) throw new Error('API unreachable');
+    const resData = await response.json();
+
+    subscribersCache = resData.data || [];
+    if (countTag) countTag.textContent = `${subscribersCache.length} total`;
+
+    if (loading) loading.classList.add('hidden-panel');
+
+    if (!subscribersCache.length) {
+      if (empty) empty.classList.remove('hidden-panel');
+      if (tbody) tbody.innerHTML = '';
+      return;
+    }
+
+    if (tableWrap) tableWrap.style.display = 'block';
+    renderSubscribersTable(subscribersCache);
+  } catch (err) {
+    console.error(err);
+    if (loading) loading.classList.add('hidden-panel');
+    showToast('Error', 'Could not load subscribers list.', true);
+  }
+}
+
+function renderSubscribersTable(subscribers) {
+  const tbody = document.getElementById('subscribers-table-body');
+  if (!tbody) return;
+
+  tbody.innerHTML = subscribers.map(sub => {
+    return `
+      <tr>
+        <td>${formatInquiryDate(sub.createdAt)}</td>
+        <td><a href="mailto:${escapeHtml(sub.email)}">${escapeHtml(sub.email)}</a></td>
+        <td>
+          <button type="button" class="btn btn-danger btn-table" onclick="deleteSubscriberById('${sub._id}')">Delete</button>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+async function deleteSubscriberById(id) {
+  if (!confirm('Remove this subscriber permanently?')) return;
+
+  try {
+    const response = await fetch(`/api/subscribe/${id}`, { method: 'DELETE' });
+    const resData = await response.json();
+    if (!response.ok) throw new Error(resData.error || 'Delete failed');
+
+    showToast('Deleted', 'Subscriber removed successfully.', false);
+    fetchSubscribers();
+  } catch (err) {
+    console.error(err);
+    showToast('Error', 'Could not delete subscriber.', true);
+  }
+}

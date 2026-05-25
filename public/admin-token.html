@@ -892,6 +892,31 @@
                       placeholder="Feature Text">
                   </div>
 
+                  <div class="form-group"
+                    style="border: 1px solid var(--border-color); padding: 10px; border-radius: 6px;">
+                    <label>Feature 4</label>
+                    <div class="coin-preview-row mb10">
+                      <div class="coin-image-container" style="width:40px; height:40px;">
+                        <img id="tokenIntegrationSlide2Feature4Icon-preview" src="" alt="Icon"
+                          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23222%22/></svg>'">
+                      </div>
+                      <div class="upload-btn-wrapper">
+                        <button type="button" class="btn btn-upload btn-sm"
+                          style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                        <input type="file" id="tokenIntegrationSlide2Feature4Icon"
+                          name="tokenIntegrationSlide2Feature4Icon" accept="image/*"
+                          onchange="previewImage(this, 'tokenIntegrationSlide2Feature4Icon-preview')">
+                      </div>
+                      <button type="button" class="btn btn-danger"
+                        onclick="clearImage('tokenIntegrationSlide2Feature4Icon', 'tokenIntegrationSlide2Feature4Icon-preview', 'remove_tokenIntegrationSlide2Feature4Icon', event)"
+                        style="padding: 4px 8px;"><i class="fa-solid fa-trash-can"></i></button>
+                      <input type="hidden" id="remove_tokenIntegrationSlide2Feature4Icon"
+                        name="remove_tokenIntegrationSlide2Feature4Icon" value="false">
+                    </div>
+                    <input type="text" id="tokenIntegrationSlide2Feature4Text" name="tokenIntegrationSlide2Feature4Text"
+                      placeholder="Feature Text">
+                  </div>
+
                 </div>
                 <div>
                   <div class="form-group">

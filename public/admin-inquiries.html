@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -124,7 +124,7 @@
               </button>
             </div>
             <div id="inquiries-loading" class="inquiries-loading hidden-panel">
-              <i class="fa-solid fa-spinner fa-spin"></i> Loading submissions…
+              <i class="fa-solid fa-spinner fa-spin"></i> Loading submissionsâ€¦
             </div>
             <div id="inquiries-empty" class="inquiries-empty hidden-panel">
               <i class="fa-solid fa-inbox"></i>
@@ -144,6 +144,44 @@
                   </tr>
                 </thead>
                 <tbody id="inquiries-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+                </section>
+
+        <!-- Newsletter Subscribers -->
+        <section class="form-card" style="margin-top: 30px;">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-envelope card-icon"></i>
+              <h2>Newsletter Subscribers</h2>
+            </div>
+            <span class="section-tag" id="subscribers-count-tag">0 total</span>
+          </div>
+          <div class="card-body">
+            <p class="inquiries-hint">Users who subscribed to your newsletter through the footer forms.</p>
+            <div class="inquiries-toolbar">
+              <button type="button" class="btn btn-secondary" onclick="fetchSubscribers()">
+                <i class="fa-solid fa-arrows-rotate"></i> Refresh
+              </button>
+            </div>
+            <div id="subscribers-loading" class="inquiries-loading hidden-panel" style="text-align: center; padding: 20px; font-size: 14px; color: var(--text-muted);">
+              <i class="fa-solid fa-spinner fa-spin"></i> Loading subscribers...
+            </div>
+            <div id="subscribers-empty" class="inquiries-empty hidden-panel" style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+              <i class="fa-solid fa-envelope" style="font-size: 48px; margin-bottom: 15px; color: var(--border-color);"></i>
+              <p>No subscribers yet.</p>
+            </div>
+            <div class="inquiries-table-wrap" id="subscribers-table-wrap" style="display: none;">
+              <table class="inquiries-table" id="subscribers-table">
+                <thead>
+                  <tr>
+                    <th>Subscribed Date</th>
+                    <th>Email Address</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="subscribers-table-body"></tbody>
               </table>
             </div>
           </div>
@@ -173,3 +211,5 @@
 </body>
 
 </html>
+
+

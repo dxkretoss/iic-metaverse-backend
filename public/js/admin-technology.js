@@ -202,6 +202,23 @@ window.populatePageForm = function(data) {
   setImg('techCostRightBgImage-preview', data.techCostRightBgImage);
   setVal('remove_techCostRightBgImage', 'false');
 
+  // Transparency Section
+  setVal('techTransparencyTitle', data.techTransparencyTitle);
+  setVal('techTransparencyDesc', data.techTransparencyDesc);
+  setImg('techTransparencyCard1Icon-preview', data.techTransparencyCard1Icon);
+  setVal('remove_techTransparencyCard1Icon', 'false');
+  setVal('techTransparencyCard1Desc', data.techTransparencyCard1Desc);
+  setImg('techTransparencyCard2Icon-preview', data.techTransparencyCard2Icon);
+  setVal('remove_techTransparencyCard2Icon', 'false');
+  setVal('techTransparencyCard2Desc', data.techTransparencyCard2Desc);
+  setImg('techTransparencyCard3Icon-preview', data.techTransparencyCard3Icon);
+  setVal('remove_techTransparencyCard3Icon', 'false');
+  setVal('techTransparencyCard3Desc', data.techTransparencyCard3Desc);
+  setImg('techTransparencyCard4Icon-preview', data.techTransparencyCard4Icon);
+  setVal('remove_techTransparencyCard4Icon', 'false');
+  setVal('techTransparencyCard4Desc', data.techTransparencyCard4Desc);
+
+
   // Comp Adv Section
   setVal('techCompAdvTitle', data.techCompAdvTitle);
   setVal('techCompAdvDesc', data.techCompAdvDesc);
@@ -297,7 +314,7 @@ window.appendPageFormData = function(formData) {
   appendFile('techCard3Point1Icon', 'techCard3Point1Icon');
   appendVal('techCard3Point2Text', 'techCard3Point2Text');
   appendFile('techCard3Point2Icon', 'techCard3Point2Icon');
-  appendVal('techCard3Point3Text', 'techCard3Point3Icon');
+  appendVal('techCard3Point3Text', 'techCard3Point3Text');
   appendFile('techCard3Point3Icon', 'techCard3Point3Icon');
   formData.append('techCard3Paragraphs', JSON.stringify(collectDynamicParagraphs('techCard3Paragraphs')));
   appendFile('techCard3BgImage', 'techCard3BgImage');

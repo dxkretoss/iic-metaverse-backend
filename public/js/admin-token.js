@@ -158,6 +158,10 @@ window.populatePageForm = function (data) {
   setVal('remove_tokenIntegrationSlide2Feature3Icon', 'false');
   setVal('tokenIntegrationSlide2Feature3Text', data.tokenIntegrationSlide2Feature3Text);
 
+  setImg('tokenIntegrationSlide2Feature4Icon-preview', data.tokenIntegrationSlide2Feature4Icon);
+  setVal('remove_tokenIntegrationSlide2Feature4Icon', 'false');
+  setVal('tokenIntegrationSlide2Feature4Text', data.tokenIntegrationSlide2Feature4Text);
+
   // Integration Slide 3
   setVal('tokenIntegrationSlide3Title', data.tokenIntegrationSlide3Title);
   setImg('tokenIntegrationSlide3Image-preview', data.tokenIntegrationSlide3Image);
@@ -350,6 +354,8 @@ window.appendPageFormData = function (formData) {
   appendVal("tokenIntegrationSlide2Feature2Text");
   appendFileToFormData("tokenIntegrationSlide2Feature3Icon", "remove_tokenIntegrationSlide2Feature3Icon");
   appendVal("tokenIntegrationSlide2Feature3Text");
+  appendFileToFormData("tokenIntegrationSlide2Feature4Icon", "remove_tokenIntegrationSlide2Feature4Icon");
+  appendVal("tokenIntegrationSlide2Feature4Text");
 
   appendFileToFormData("tokenIntegrationSlide3Image", "remove_tokenIntegrationSlide3Image");
   appendVal("tokenIntegrationSlide3Title");

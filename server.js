@@ -12,6 +12,7 @@ const technologyRoutes = require('./routes/technologyRoutes');
 const tokenRoutes = require('./routes/tokenRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const contactInquiryRoutes = require('./routes/contactInquiryRoutes');
+const subscriberRoutes = require('./routes/subscriberRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -34,6 +35,7 @@ app.use('/api/technology', technologyRoutes);
 app.use('/api/token', tokenRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/contact-inquiries', contactInquiryRoutes);
+app.use('/api/subscribe', subscriberRoutes);
 
 // Root admin redirects to public/admin-home.html
 app.get('/admin', (req, res) => {
@@ -51,3 +53,4 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Admin Panel is available at http://localhost:${PORT}/admin`);
 });
+

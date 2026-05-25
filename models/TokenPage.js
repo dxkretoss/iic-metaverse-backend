@@ -91,6 +91,8 @@ const tokenpageSchema = new mongoose.Schema({
   tokenIntegrationSlide2Feature2Text: { type: String, default: 'Real-world asset backing to maintain trust' },
   tokenIntegrationSlide2Feature3Icon: { type: String, default: '' },
   tokenIntegrationSlide2Feature3Text: { type: String, default: 'Controlled token distribution mechanisms' },
+  tokenIntegrationSlide2Feature4Icon: { type: String, default: '' },
+  tokenIntegrationSlide2Feature4Text: { type: String, default: 'Multi-layered security and compliance' },
 
   tokenIntegrationSlide3Image: { type: String, default: '' },
   tokenIntegrationSlide3Title: { type: String, default: 'Global Accessibility' },
