@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIC-Metaverse | Footer Social Links Control Panel</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/admin.css">
+</head>
+
+<body>
+  <div class="background-decor">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="/uploads/logo.svg" alt="Metaverse" />
+      </div>
+
+      <!-- Page Selection Group -->
+      <div class="sidebar-group-title">Active Pages</div>
+      <nav class="sidebar-menu pages-menu">
+        <a href="/admin-home.html" class="menu-item page-selector" data-page="home">
+          <i class="fa-solid fa-house"></i>
+          <span>Homepage</span>
+        </a>
+        <a href="/admin-about.html" class="menu-item page-selector" data-page="about">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>About Us</span>
+        </a>
+        <a href="/admin-technology.html" class="menu-item page-selector" data-page="technology">
+          <i class="fa-solid fa-microchip"></i>
+          <span>Technology</span>
+        </a>
+        <a href="/admin-token.html" class="menu-item page-selector" data-page="token">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Token Economy</span>
+        </a>
+        <a href="/admin-contact.html" class="menu-item page-selector" data-page="contact">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact Us</span>
+        </a>
+        <a href="/admin-inquiries.html" class="menu-item page-selector" data-page="inquiries">
+          <i class="fa-solid fa-inbox"></i>
+          <span>Form Submissions</span>
+        </a>
+        <a href="/admin-socials.html" class="menu-item page-selector active" data-page="socials">
+          <i class="fa-solid fa-share-nodes"></i>
+          <span>Social Links</span>
+        </a>
+      </nav>
+
+      <!-- Section Filter Group (Updates dynamically based on page selection) -->
+      <div class="sidebar-group-title section-filters-title">Page Sections</div>
+      <nav class="sidebar-menu sections-menu" id="sections-filter-container">
+        <!-- Will be populated dynamically via JS -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="profile-pic">A</div>
+          <div class="profile-info">
+            <span class="user-name">Administrator</span>
+            <span class="user-role">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="top-bar">
+        <div class="welcome-text">
+          <p>Active Page: <strong id="active-page-label" style="color: var(--accent-cyan);">Social Links</strong></p>
+        </div>
+        <div class="action-buttons">
+          <button type="button" onclick="fetchContent()" class="btn btn-secondary">
+            <i class="fa-solid fa-arrows-rotate"></i> Sync Live Data
+          </button>
+        </div>
+      </header>
+
+      <!-- Status Toast / Alert -->
+      <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <div class="toast-content">
+          <h4 id="toast-title">Success</h4>
+          <p id="toast-msg">Settings saved successfully!</p>
+        </div>
+        <button class="toast-close" onclick="hideToast()">&times;</button>
+      </div>
+
+      <!-- Main Form -->
+      <form id="admin-form" class="admin-form" enctype="multipart/form-data">
+
+        <!-- SECTION: FOOTER SOCIAL LINKS -->
+        <section id="sec-socials" class="form-card section-block page-section-socials">
+          <div class="card-header">
+            <div class="header-title">
+              <i class="fa-solid fa-share-nodes card-icon"></i>
+              <h2>Footer Social Links Configuration</h2>
+            </div>
+            <span class="section-tag">Global Footer</span>
+          </div>
+          <div class="card-body">
+            <p class="section-description">Manage the 4 active social media platforms displayed in the global footer. You can upload custom PNG/JPG/SVG/WEBP icons and set target URLs for each platform.</p>
+
+            <div class="grid-layout cols-2">
+              <!-- Social 0: Facebook -->
+              <div class="sub-card coin-accent-green">
+                <h3>1. Facebook</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="image0-preview" src="" alt="Facebook Icon" onerror="this.src='/assests/images/facebook.svg'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Icon</button>
+                    <input type="file" id="image0" name="image0" accept="image/*" onchange="previewImage(this, 'image0-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('image0', 'image0-preview', 'remove_image0', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_image0" name="remove_image0" value="false">
+                </div>
+                <div class="form-group">
+                  <label for="name0">Platform Name</label>
+                  <input type="text" id="name0" name="name0" required placeholder="Facebook">
+                </div>
+                <div class="form-group">
+                  <label for="link0">Target URL</label>
+                  <input type="text" id="link0" name="link0" required placeholder="https://www.facebook.com/">
+                </div>
+              </div>
+
+              <!-- Social 1: X (Twitter) -->
+              <div class="sub-card coin-accent-red">
+                <h3>2. X (Twitter)</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="image1-preview" src="" alt="X Icon" onerror="this.src='/assests/images/x.svg'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Icon</button>
+                    <input type="file" id="image1" name="image1" accept="image/*" onchange="previewImage(this, 'image1-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('image1', 'image1-preview', 'remove_image1', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_image1" name="remove_image1" value="false">
+                </div>
+                <div class="form-group">
+                  <label for="name1">Platform Name</label>
+                  <input type="text" id="name1" name="name1" required placeholder="X">
+                </div>
+                <div class="form-group">
+                  <label for="link1">Target URL</label>
+                  <input type="text" id="link1" name="link1" required placeholder="https://x.com/">
+                </div>
+              </div>
+
+              <!-- Social 2: Instagram -->
+              <div class="sub-card coin-accent-orange">
+                <h3>3. Instagram</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="image2-preview" src="" alt="Instagram Icon" onerror="this.src='/assests/images/insta.svg'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Icon</button>
+                    <input type="file" id="image2" name="image2" accept="image/*" onchange="previewImage(this, 'image2-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('image2', 'image2-preview', 'remove_image2', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_image2" name="remove_image2" value="false">
+                </div>
+                <div class="form-group">
+                  <label for="name2">Platform Name</label>
+                  <input type="text" id="name2" name="name2" required placeholder="Instagram">
+                </div>
+                <div class="form-group">
+                  <label for="link2">Target URL</label>
+                  <input type="text" id="link2" name="link2" required placeholder="https://www.instagram.com/">
+                </div>
+              </div>
+
+              <!-- Social 3: LinkedIn -->
+              <div class="sub-card coin-accent-blue">
+                <h3>4. LinkedIn</h3>
+                <div class="coin-preview-row">
+                  <div class="coin-image-container spec-square">
+                    <img id="image3-preview" src="" alt="LinkedIn Icon" onerror="this.src='/assests/images/linkedin.svg'">
+                  </div>
+                  <div class="upload-btn-wrapper">
+                    <button type="button" class="btn btn-upload"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Icon</button>
+                    <input type="file" id="image3" name="image3" accept="image/*" onchange="previewImage(this, 'image3-preview')">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="clearImage('image3', 'image3-preview', 'remove_image3', event)" title="Remove Image"><i class="fa-solid fa-trash-can"></i></button>
+                  <input type="hidden" id="remove_image3" name="remove_image3" value="false">
+                </div>
+                <div class="form-group">
+                  <label for="name3">Platform Name</label>
+                  <input type="text" id="name3" name="name3" required placeholder="LinkedIn">
+                </div>
+                <div class="form-group">
+                  <label for="link3">Target URL</label>
+                  <input type="text" id="link3" name="link3" required placeholder="https://www.linkedin.com/">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Submit Button Footer -->
+        <div class="form-footer" id="cms-form-footer">
+          <button type="button" id="btn-reset" class="btn btn-secondary">
+            <i class="fa-solid fa-rotate-left"></i> Reset Defaults
+          </button>
+          <button type="submit" id="btn-save" class="btn btn-primary">
+            <i class="fa-solid fa-floppy-disk"></i> Save Console Configuration
+          </button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/admin-config.js?v=1.0.2"></script>
+  <script src="/js/admin-core.js?v=1.0.2"></script>
+  <script src="/js/admin-dynamic-handlers.js?v=1.0.2"></script>
+  <script src="/js/admin-socials.js?v=1.0.2"></script>
+</body>
+
+</html>

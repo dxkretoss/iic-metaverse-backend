@@ -64,7 +64,8 @@ const PAGE_SECTIONS = {
     { id: 'contact-details', name: 'Company Details', icon: 'fa-envelope-open-text' },
     { id: 'contact-global', name: 'Global Presence', icon: 'fa-earth-americas' },
     // { id: 'social-profiles', name: 'Social Handles', icon: 'fa-hashtag' }
-  ]
+  ],
+  socials: []
 };
 
 // Default backup values for all pages (CMS Resets)
@@ -252,7 +253,13 @@ const DEFAULT_VALUES = {
     // telegramLink: "https://t.me/iicmetaverse",
     // twitterLink: "https://twitter.com/iicmetaverse",
     // discordLink: "https://discord.gg/iicmetaverse"
-  }
+  },
+  socials: [
+    { name: 'Facebook', link: 'https://www.facebook.com/', image: '/assests/images/facebook.svg' },
+    { name: 'X', link: 'https://x.com/', image: '/assests/images/x.svg' },
+    { name: 'Instagram', link: 'https://www.instagram.com/', image: '/assests/images/insta.svg' },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/', image: '/assests/images/linkedin.svg' }
+  ]
 };
 
 

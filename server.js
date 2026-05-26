@@ -16,6 +16,7 @@ const tokenRoutes = require('./routes/tokenRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const contactInquiryRoutes = require('./routes/contactInquiryRoutes');
 const subscriberRoutes = require('./routes/subscriberRoutes');
+const socialsRoutes = require('./routes/socialsRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -55,6 +56,7 @@ app.use('/api/token', tokenRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/contact-inquiries', contactInquiryRoutes);
 app.use('/api/subscribe', subscriberRoutes);
+app.use('/api/socials', socialsRoutes);
 
 // Root admin redirects to public/admin-home.html (which will auto-redirect to login.html if not authenticated)
 app.get('/admin', (req, res) => {

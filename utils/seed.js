@@ -3,6 +3,7 @@ const AboutPage = require('../models/AboutPage');
 const TechnologyPage = require('../models/TechnologyPage');
 const TokenPage = require('../models/TokenPage');
 const ContactPage = require('../models/ContactPage');
+const Socials = require('../models/Socials');
 const Admin = require('../models/Admin');
 
 const getModelByKey = (key) => {
@@ -12,6 +13,7 @@ const getModelByKey = (key) => {
     case 'technology': return TechnologyPage;
     case 'token': return TokenPage;
     case 'contact': return ContactPage;
+    case 'socials': return Socials;
     default: return HomePage;
   }
 };
@@ -32,7 +34,7 @@ const seedDefaultContent = async () => {
     console.error('Error seeding admin user:', err);
   }
 
-  const pageKeys = ['home', 'about', 'technology', 'token', 'contact'];
+  const pageKeys = ['home', 'about', 'technology', 'token', 'contact', 'socials'];
   try {
     for (const key of pageKeys) {
       const Model = getModelByKey(key);
